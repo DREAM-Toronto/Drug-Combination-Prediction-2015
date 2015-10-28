@@ -1,12 +1,13 @@
 # DREAMutilities.R
 #
 # Purpose: Utility functions for working with raw drug data
-# Version: 0.2
+# Version: 0.2.1
 # Date:    Oct 22 2015
 # Author:  Boris and DREAM team UofT
 #
 # ToDo:    Make surface plot log/log concentration
 #
+# V 0.2.1  Plot DRS on logarithmic scale
 # V 0.2    Updated paths etc. and comitted to Repository
 #          Created list object for DRS data
 #          
@@ -132,28 +133,41 @@ integrateDRS <- function(drs) {
 # ==== plotDRS ========================================
 # plots a DRS list
 plotDRS <- function(drs, col="white", zlim= c(0,110)) {
-  persp3D(x = drs$concA,
-        y = drs$concB,
+  scaleA <- drs$concA %>% reRangeConc %>% log
+  scaleB <- drs$concB %>% reRangeConc %>% log
+  persp3D(x = scaleA,
+        y = scaleB,
         z = drs$drDat,
         theta = 135, phi = 30,
-        xlim=c(0.9*drs$concA[2], 1.1*drs$concA[6]),
-        ylim=c(0.9*drs$concB[2], 1.1*drs$concB[6]),
+        xlim=c(0.9*scaleA[1], 1.1*scaleA[6]),
+        ylim=c(0.9*scaleB[1], 1.1*scaleB[6]),
         zlim=zlim,
-        log=c("x", "y"),
         col = col,
+        border = "black",
         ltheta = 120, shade = 0.75,
         ticktype = "detailed",
         cex.axis = 0.67,
         cex.lab = 0.67,
         cex.main = 0.80,
-        xlab = drs$A,
-        ylab = drs$B,
+        xlab = paste("log [", drs$A, "]", sep=""),
+        ylab = paste("log [", drs$B, "]", sep=""),
         zlab = drs$type,
         main = paste(drs$A, "+", drs$B, "in", drs$C))
 }
 
+reRangeConc <- function(v) {
+	# re-range a 6-element vector of compound
+	# concentrations to set the first element
+	# (which is 0) to one log step smaller than
+	# the second element, so the data can be 
+	# displayed on a log scale.
+	fac <- v[3] / v[2]
+	v[1] <- v[2] / fac
+	return(v)
+}
 
-# ==== explore =============================================
+
+# ==== explore ========================================
 
 compoundA <- "ADAM17"
 compoundB <- "AKT"
@@ -166,7 +180,8 @@ synS <- calcDifference(predDRS, obsDRS)
 
 plotDRS(obsDRS, col="lightblue")
 plotDRS(predDRS, col="seagreen")
-plotDRS(synS, col="firebrick", zlim=c(-30, 30))
+plotDRS(synS, col="firebrick",
+        zlim=c(3/4 * min(synS$drDat), 4/3 * max(synS$drDat)))
 
 
 iObs <- integrateDRS(obsDRS)
