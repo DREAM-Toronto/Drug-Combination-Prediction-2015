@@ -87,6 +87,26 @@ makeFileName <- function(a, b, c) {
 }
 
 
+# ==== getMono =============================================
+# Get a monotherapy DRC list from a DRS.
+
+getMono <- function(DRS, compound) {
+	DRC <- list()
+	DRC$A <- compound
+	DRC$C <- DRS$C
+	if (DRC$A == DRS$A) {
+		DRC$conc <- DRS$concA
+		DRC$dat  <- DRS$drDat[, "0"]
+	} else if (DRC$A == DRS$B) {
+		DRC$conc <- DRS$concB
+		DRC$dat  <- DRS$drDat["0", ]
+	} else {
+		stop("Requested compound not in DRS list.")
+	}
+    return(DRC)
+}
+
+
 # ==== makeAdditive ========================================
 makeAdditive <- function(drs) {
 # Makes a combination response matrix with a simple
@@ -130,7 +150,7 @@ integrateDRS <- function(drs) {
 }
 
 
-# ==== plotDRS ========================================
+# ==== plotDRS =============================================
 # plots a DRS list
 plotDRS <- function(drs, col="white", zlim= c(0,110)) {
   scaleA <- drs$concA %>% reRangeConc %>% log
