@@ -56,3 +56,20 @@ Feature -> ML -> Combination scores
 * Ashley (AshleyWWW)
 * Jack (c5chenpe)
 * Bhawan (B-1P)
+
+## Groups & Responsibilities
+
+### Workflow
+
+* Targets: Nathan, Jack
+* Data Preprocessing: Ashley, Fred
+* Data Reduction: Boris
+* Cross Validation: Chris, Julian
+* Drug Similarity: Bhawan, Zach, Ricardo, Emma
+* Cell Line Similarity: Pruthvi, Jenny
+
+### Support
+* Scoring:
+* Submission: Jack, Nathan
+* Documentation: Julian
+* QA:
