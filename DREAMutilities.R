@@ -1,12 +1,13 @@
 # DREAMutilities.R
 #
 # Purpose: Utility functions for working with raw drug data
-# Version: 0.2.1
-# Date:    Oct 22 2015
+# Version: 0.3
+# Date:    Oct 29 2015
 # Author:  Boris and DREAM team UofT
 #
 # ToDo:    Make surface plot log/log concentration
 #
+# V 0.3    Add NLS fit for monotherapy and plot
 # V 0.2.1  Plot DRS on logarithmic scale
 # V 0.2    Updated paths etc. and comitted to Repository
 #          Created list object for DRS data
@@ -150,8 +151,66 @@ integrateDRS <- function(drs) {
 }
 
 
+
+# ==== nlsDRC ==============================================
+# non-linear least-squares fit of a Dose Response
+# Curve.
+
+nlsDRC <- function(drc) {
+    Dose   = drc$conc
+    Effect = drc$dat
+    nlsHill <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
+                start = c(IC50 = max(Dose)/2,
+                          H    = 5,
+                          Einf = min(Effect)),
+                lower = c(IC50 = Dose[2], H = 0,   Einf = 0),
+                upper = c(IC50 = Dose[6], H = 10,  Einf = 100),
+                algorithm = "port")
+    return(nlsHill)
+}
+
+# ==== Hill coefficient function ===========================
+# Standard 4 parameter dose-effect function with E0
+# set to 100
+
+fHill <- function(dose, IC50, H, Einf) {
+	E0 <- 100
+	E <- E0 + ((Einf - E0) / (1 + ((IC50 / dose) ^ H)))
+    return(E)
+} 
+
+
+# ==== Plot DRC fit =======================================
+# Calculate and plot an NLS fit for a Dose Response Curve
+
+plotDRCfit <- function(drc) {
+    fit <- nlsDRC(drc)
+
+    scale <- drc$conc %>% reRangeConc %>% log
+
+    plot(scale, drc$dat,
+         ylim = c(0, 100),
+         xlab = sprintf("log([%s])", drc$A),
+         ylab = "% survivors",
+         main = sprintf("Monotherapy: %s in %s", drc$A, drc$C))
+
+    x <- seq(min(scale), max(scale), by = 0.01)
+    abline(h=100-((100-coef(fit)["Einf"])/2), col="#DDDDFF")
+    abline(v=log(coef(fit)["IC50"]), col="#DDDDFF")
+    points(x, fHill(exp(x),
+                    IC50 = coef(fit)["IC50"],
+                    H =    coef(fit)["H"],
+                    Einf = coef(fit)["Einf"]), 
+           col="#AA0000",
+           type="l")
+           
+
+    return(fit)
+} 
+
+
 # ==== plotDRS =============================================
-# plots a DRS list
+# plots a DRS list in a perspective plot
 plotDRS <- function(drs, col="white", zlim= c(0,110)) {
   scaleA <- drs$concA %>% reRangeConc %>% log
   scaleB <- drs$concB %>% reRangeConc %>% log
@@ -188,20 +247,44 @@ reRangeConc <- function(v) {
 
 
 # ==== explore ========================================
-
+if (FALSE) {
+# skip all of this code when source'ing	
+	
+	
+	
+# Define data
 compoundA <- "ADAM17"
-compoundB <- "AKT"
-cells <- "HCC1806"
+compoundB <- "MTOR_1"
+cells <- "DU-4475"
 fn <- makeFileName(compoundA, compoundB, cells)
 
+# read data
 obsDRS <- readDRS(fn)
+
+# plot monotherapy
+drcA<- getMono(obsDRS, "ADAM17")
+plotDRCfit(drcA)
+
+drcB<- getMono(obsDRS, "MTOR_1")
+plotDRCfit(drcB)
+
+
+# plot Dose Response Surface
+plotDRS(obsDRS)
+
+
+# make prediction
 predDRS <- makeAdditive(obsDRS)
 synS <- calcDifference(predDRS, obsDRS)
 
+# Compare observation and prediction
+opar <- par()
+par(mfrow = c(2,2)) 
 plotDRS(obsDRS, col="lightblue")
 plotDRS(predDRS, col="seagreen")
 plotDRS(synS, col="firebrick",
         zlim=c(3/4 * min(synS$drDat), 4/3 * max(synS$drDat)))
+par <- opar
 
 
 iObs <- integrateDRS(obsDRS)
@@ -250,9 +333,17 @@ for (i in 1:n) {
 }
 
 scores <- scores[1:ind, ]
-plot(scores, cex=0.8)
+vals <- c(scores[,"sCalc"], scores[,"sObs"])
+lim <- c(min(vals), max(vals))
+plot(scores, cex=0.8,
+     xlim = lim, ylim = lim)
+     
+cor(scores[,"sCalc"], scores[,"sObs"])
+reg <- lm(scores[,"sObs"] ~ scores[,"sCalc"])
+abline(reg, col="firebrick")
+abline(h=0, col="#DDDDFF")
+abline(v=0, col="#DDDDDDFF")
 
-corr <- lm(scores[,"sCalc"] ~ scores[,"sObs"])
-abline(corr, col="firebrick")
 
+} #end if (FALSE) ...
 # END
