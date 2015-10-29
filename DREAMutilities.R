@@ -1,12 +1,15 @@
 # DREAMutilities.R
 #
 # Purpose: Utility functions for working with raw drug data
-# Version: 0.3
+# Version: 0.4
 # Date:    Oct 29 2015
 # Author:  Boris and DREAM team UofT
 #
 # ToDo:    Make surface plot log/log concentration
 #
+# V 0.4    Handle convergence failures in NLS fit.
+#          Implement sequential additive model
+#          to estimate additive compound effects.
 # V 0.3    Add NLS fit for monotherapy and plot
 # V 0.2.1  Plot DRS on logarithmic scale
 # V 0.2    Updated paths etc. and comitted to Repository
@@ -110,15 +113,49 @@ getMono <- function(DRS, compound) {
 
 # ==== makeAdditive ========================================
 makeAdditive <- function(drs) {
-# Makes a combination response matrix with a simple
-# additive model.
+# Sequential additive model for drug combinations.
+#
+# The mathematics of Loewe's dose-additive model
+# is not applicable to our situation of partial
+# agonists, because an "equivalent dose" Beq of a
+# compound B that has a lower Einf than a compound
+# A is not defined for combinations for which
+# the mono-effect of A is greater than Einf of B.
+#
+# I use a sequential additive model instead: 
+# A compound B exerts it's effect in addition to A
+# by reducing the survivors of A by the percentage
+# expected from B.
+#
+# For a dosage pair dA, dB calculate the relative
+# effect EdB, EdB individually. The combined effect is
+# EdA * EdB/100 (with effects in % surviving cells).
+#
 # Returns a DRS list
 	add <- drs
-	add$type <- "% survivors (additive prediction)"
+	add$type <- "% survivors (sequential additive model)"
+
+    drcA <- getMono(drs, drs$A)
+    drcB <- getMono(drs, drs$B)
+
+    coefA <- nlsDRC(drcA)
+    coefB <- nlsDRC(drcB)
+
 	for (i in 1:6) {
-		for (j in 1:6) {
-			addVal <- 100 - ((100-drs$drDat[i,1]) + (100-drs$drDat[1,j]))
-			add$drDat[i, j] <- max(addVal, 0)  # set negative values to 0
+		add$drDat[i, 1] <- fHill(dose = drcA$conc[i],
+		                         IC50 = coefA["IC50"],
+		                         H    = coefA["H"],
+		                         Einf = coefA["Einf"])
+		add$drDat[1, i] <- fHill(dose = drcB$conc[i],
+		                         IC50 = coefB["IC50"],
+		                         H    = coefB["H"],
+		                         Einf = coefB["Einf"])
+    }
+
+	for (i in 2:6) {
+		for (j in 2:6) {
+			addVal <- add$drDat[i,1] * (add$drDat[1,j]/100)
+			add$drDat[i, j] <- addVal
 		}
 	}
 	return(add)
@@ -143,7 +180,7 @@ calcDifference <- function(a, b) {
 
 # ==== integrateDRS ========================================
 # Integrates a DRS matrix
-# Right now this is simply the sum, but we might do
+# Right now this is simply the sum, but we need
 # something more sophisticated in the future ...
 
 integrateDRS <- function(drs) {
@@ -151,23 +188,63 @@ integrateDRS <- function(drs) {
 }
 
 
-
 # ==== nlsDRC ==============================================
 # non-linear least-squares fit of a Dose Response
-# Curve.
+# Curve. Return the coefficients of the fit, unless
+# requesting the full fit. Coefficients for failed 
+# convergence are made-up for fully effective or
+# non effective compounds, if the data justifies this.
 
-nlsDRC <- function(drc) {
+nlsDRC <- function(drc, coefOnly=TRUE) {
     Dose   = drc$conc
     Effect = drc$dat
-    nlsHill <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
+
+    nlsHill <- list()
+    convergenceFailure <- FALSE
+    try(nlsHill <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
                 start = c(IC50 = max(Dose)/2,
                           H    = 5,
                           Einf = min(Effect)),
                 lower = c(IC50 = Dose[2], H = 0,   Einf = 0),
                 upper = c(IC50 = Dose[6], H = 10,  Einf = 100),
-                algorithm = "port")
-    return(nlsHill)
+                algorithm = "port"),
+         silent = TRUE)
+
+
+    if (length(nlsHill) == 0) {
+    	# Convergence failed.
+    	convergenceFailure <- TRUE
+    	
+    	# Use made-up coefficients.
+        if ((100 - mean(Effect)) > 95) {
+        	# Super effective - mean effects near zero
+            coefFit <- c(IC50 = reRangeConc(Dose)[1],
+                         H    = 20.0,
+                         Einf = 0.1)
+        } else if ((100 - mean(Effect)) < 5) {
+        	# Not effective - mean effects near 100
+            coefFit <- c(IC50 = Dose[6],
+                         H    = 0.05,
+                         Einf = 99.9)
+        } else {
+        	stop("NLS fit did not converge and data did not support made-up model.")
+        }
+    } else {
+    	# Fit converged.
+    	coefFit <- coef(nlsHill)
+    }
+
+    if (coefOnly) {
+    	return(coefFit)
+    } else {
+        if (convergenceFailure) {
+        	stop("NLS fit failed to converge.")
+        } else {
+            return(nlsHill)
+        }	
+    }
 }
+
 
 # ==== Hill coefficient function ===========================
 # Standard 4 parameter dose-effect function with E0
@@ -184,28 +261,28 @@ fHill <- function(dose, IC50, H, Einf) {
 # Calculate and plot an NLS fit for a Dose Response Curve
 
 plotDRCfit <- function(drc) {
-    fit <- nlsDRC(drc)
+
+    coefFit <- nlsDRC(drc)
 
     scale <- drc$conc %>% reRangeConc %>% log
 
     plot(scale, drc$dat,
-         ylim = c(0, 100),
+         ylim = c(-10, 110),
          xlab = sprintf("log([%s])", drc$A),
          ylab = "% survivors",
          main = sprintf("Monotherapy: %s in %s", drc$A, drc$C))
 
     x <- seq(min(scale), max(scale), by = 0.01)
-    abline(h=100-((100-coef(fit)["Einf"])/2), col="#DDDDFF")
-    abline(v=log(coef(fit)["IC50"]), col="#DDDDFF")
+    abline(h=100-((100-coefFit["Einf"])/2), col="#DDDDFF")
+    abline(v=log(coefFit["IC50"]), col="#DDDDFF")
     points(x, fHill(exp(x),
-                    IC50 = coef(fit)["IC50"],
-                    H =    coef(fit)["H"],
-                    Einf = coef(fit)["Einf"]), 
+                    IC50 = coefFit["IC50"],
+                    H =    coefFit["H"],
+                    Einf = coefFit["Einf"]), 
            col="#AA0000",
            type="l")
            
-
-    return(fit)
+    return(coefFit)
 } 
 
 
