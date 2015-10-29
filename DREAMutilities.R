@@ -41,6 +41,14 @@ if (! require(plot3D, quietly=TRUE)) {
 	library(plot3D)
 }
 
+if (! require(magrittr, quietly=TRUE)) {
+    # for plotting dose-response surfaces
+    install.packages("magrittr",
+                     repos="http://cran.us.r-project.org")
+    library(magrittr)
+}
+
+
 # == FUNCTIONS =============================================
 #
 
