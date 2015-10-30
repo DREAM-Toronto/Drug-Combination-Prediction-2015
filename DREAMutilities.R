@@ -1,12 +1,13 @@
 # DREAMutilities.R
 #
 # Purpose: Utility functions for working with raw drug data
-# Version: 0.4
-# Date:    Oct 29 2015
+# Version: 0.4.1
+# Date:    Oct 30 2015
 # Author:  Boris and DREAM team UofT
 #
-# ToDo:    Make surface plot log/log concentration
-#
+# V 0.4.1  Improve logic of nlsDRC, make fit more robust.
+#          Separate out data exploration examples into
+#              DREAMexploreData.R
 # V 0.4    Handle convergence failures in NLS fit.
 #          Implement sequential additive model
 #          to estimate additive compound effects.
@@ -187,29 +188,117 @@ calcDifference <- function(a, b) {
 
 
 # ==== integrateDRS ========================================
-# Integrates a DRS matrix
-# Right now this is simply the sum, but we need
-# something more sophisticated in the future ...
-
+# Integrates a DRS matrix in log concentration
+# space. We are simply multiplying the dx and
+# dy values from each datapoint midway to
+# its neighbor, by the value of the point.
+# Thus this is a simple stepwise approximation,
+# no interpolation is done.
 integrateDRS <- function(drs) {
-    return(sum(drs$drDat))
+
+	dRow <- makeDelta(conc2log(drs$concA))
+	dCol <- makeDelta(conc2log(drs$concB))
+
+    sum <- 0
+    for (i in 1:5) {
+    	for (j in 1:5) {    		
+    		sum <- sum + (dRow[i] * dCol[j] * drs$drDat[i+1, j+1])
+    	}
+    }
+    return(sum)
+}
+
+# Utility function for integrate DRS
+makeDelta <- function(v) {
+	# calculates interval represented
+	# by each concentration value in v
+	dv <- numeric(5)
+	dv[1] <- (v[2] - v[1]) / 2
+	dv[2] <- (v[3] - v[1]) / 2
+	dv[3] <- (v[4] - v[2]) / 2
+	dv[4] <- (v[5] - v[3]) / 2
+	dv[5] <- (v[5] - v[4]) / 2
+    return(dv)
+}
+
+
+# Utility function for integrate DRS
+conc2log <- function(conc) {
+	# Rescaling concentrations.
+	# This assumes that the concentration spans
+	# two orders of magnitude and the non-zero
+	# values are between 2 and 6 in a six-element
+	# vector. Min and Max are set to 1 and 100,
+	# and the intermediate concentrations are
+	# rescaled into this range.
+
+	conc <- conc[-1]  # drop 0 value
+	scale <- (100 - 1) / (conc[5] - conc[1])
+	conc <- ((conc - conc[1]) * scale) + 1 
+	return(log(conc))
 }
 
 
 # ==== nlsDRC ==============================================
 # non-linear least-squares fit of a Dose Response
 # Curve. Return the coefficients of the fit, unless
-# requesting the full fit. Coefficients for failed 
-# convergence are made-up for fully effective or
-# non effective compounds, if the data justifies this.
+# requesting the full fit. If a three-parameter fit
+# is unsuccessful, try fitting only H and Einf,
+# or only Einf. Note that effects are being constrained
+# between 0 and 100.
 
 nlsDRC <- function(drc, coefOnly=TRUE) {
     Dose   = drc$conc
     Effect = drc$dat
+    
+    # Constrain effects between 0 and 100
+    Effect[Effect <   0] <- 0
+    Effect[Effect > 100] <- 100
 
-    nlsHill <- list()
-    convergenceFailure <- FALSE
-    try(nlsHill <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
+    # try three-parameter fit
+    fit <- nlsDRC.3(Dose, Effect)
+    
+    if (fit$failed) {
+    	# try two-parameter fit with IC50 <- Dose[6]
+        fit <- nlsDRC.2(Dose, Effect, Dose[6])
+    }
+
+    if (fit$failed) {
+    	# try two-parameter fit with IC50 <- Dose[1]
+        fit <- nlsDRC.2(Dose, Effect, Dose[1])
+    }
+
+    if (fit$failed) {
+    	# try one-parameter fit with IC50 <- Dose[6]
+    	# (pseudo - linear)
+        fit <- nlsDRC.1(Dose, Effect, IC50 = Dose[6], H = 20)
+    }
+
+    if (fit$failed) {
+    	# try one-parameter fit with IC50 <- Dose[6]
+    	# (super-effective)
+        fit <- nlsDRC.1(Dose, Effect, IC50 = reRangeConc(Dose)[1], H = 0)
+    }
+
+    if (fit$failed) {
+    	# Still failed? Give up.
+    	browser()
+        stop("NLS fit did not converge. Check the data.")
+    }
+
+    if (coefOnly) {
+    	return(fit$coef)
+    } else {
+        return(fit$result)
+    }	
+}
+
+
+# Utility function for nlsDRC
+nlsDRC.3 <- function(Dose, Effect) {
+	# three-parameter fit of Hill curve
+	fit <- list()
+    try(fit$result <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
                 start = c(IC50 = max(Dose)/2,
                           H    = 5,
                           Einf = min(Effect)),
@@ -218,39 +307,62 @@ nlsDRC <- function(drc, coefOnly=TRUE) {
                 algorithm = "port"),
          silent = TRUE)
 
-
-    if (length(nlsHill) == 0) {
-    	# Convergence failed.
-    	convergenceFailure <- TRUE
-    	
-    	# Use made-up coefficients.
-        if ((100 - mean(Effect)) > 95) {
-        	# Super effective - mean effects near zero
-            coefFit <- c(IC50 = reRangeConc(Dose)[1],
-                         H    = 20.0,
-                         Einf = 0.1)
-        } else if ((100 - mean(Effect)) < 5) {
-        	# Not effective - mean effects near 100
-            coefFit <- c(IC50 = Dose[6],
-                         H    = 0.05,
-                         Einf = 99.9)
-        } else {
-        	stop("NLS fit did not converge and data did not support made-up model.")
-        }
+    if (length(fit$result) == 0) {
+    	fit$failed <- TRUE
     } else {
-    	# Fit converged.
-    	coefFit <- coef(nlsHill)
+    	fit$failed <- FALSE
+    	fit$coef <- c(coef(fit$result)["IC50"],
+                      coef(fit$result)["H"],
+                      coef(fit$result)["Einf"])   	
     }
+    return(fit)
+}
 
-    if (coefOnly) {
-    	return(coefFit)
+
+# Utility function for nlsDRC
+nlsDRC.2 <- function(Dose, Effect, IC50) {
+	# two-parameter fit of Hill curve: IC50 fixed; fit H, Einf
+	fit <- list()
+    try(fit$result <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
+                start = c(H    = 5,
+                          Einf = min(Effect)),
+                lower = c(H = 0,   Einf = 0),
+                upper = c(H = 10,  Einf = 100),
+                algorithm = "port"),
+         silent = TRUE)
+
+    if (length(fit$result) == 0) {
+    	fit$failed <- TRUE
     } else {
-        if (convergenceFailure) {
-        	stop("NLS fit failed to converge.")
-        } else {
-            return(nlsHill)
-        }	
+    	fit$failed <- FALSE    	
+    	fit$coef <- c(IC50 = IC50,
+                      coef(fit$result)["H"],
+                      coef(fit$result)["Einf"])   	
     }
+    return(fit)
+}
+
+
+# Utility function for nlsDRC
+nlsDRC.1 <- function(Dose, Effect, IC50, H) {
+	# one parameter fit of Hill curve: fit only Einf
+	fit <- list()
+    try(fit$result <- nls(Effect ~ fHill(Dose, IC50, H, Einf ),
+                start = c(Einf = min(Effect)),
+                lower = c(Einf = 0),
+                upper = c(Einf = 100),
+                algorithm = "port"),
+         silent = TRUE)
+
+    if (length(fit$result) == 0) {
+    	fit$failed <- TRUE
+    } else {
+    	fit$failed <- FALSE    	
+    	fit$coef <- c(IC50 = IC50,
+                      H =    H,
+                      coef(fit$result)["Einf"])   	
+    }
+    return(fit)
 }
 
 
@@ -289,7 +401,7 @@ plotDRCfit <- function(drc) {
                     Einf = coefFit["Einf"]), 
            col="#AA0000",
            type="l")
-           
+                 
     return(coefFit)
 } 
 
@@ -330,105 +442,4 @@ reRangeConc <- function(v) {
 	return(v)
 }
 
-
-# ==== explore ========================================
-if (FALSE) {
-# skip all of this code when source'ing	
-	
-	
-	
-# Define data
-compoundA <- "ADAM17"
-compoundB <- "MTOR_1"
-cells <- "DU-4475"
-fn <- makeFileName(compoundA, compoundB, cells)
-
-# read data
-obsDRS <- readDRS(fn)
-
-# plot monotherapy
-drcA<- getMono(obsDRS, "ADAM17")
-plotDRCfit(drcA)
-
-drcB<- getMono(obsDRS, "MTOR_1")
-plotDRCfit(drcB)
-
-
-# plot Dose Response Surface
-plotDRS(obsDRS)
-
-
-# make prediction
-predDRS <- makeAdditive(obsDRS)
-synS <- calcDifference(predDRS, obsDRS)
-
-# Compare observation and prediction
-opar <- par()
-par(mfrow = c(2,2)) 
-plotDRS(obsDRS, col="lightblue")
-plotDRS(predDRS, col="seagreen")
-plotDRS(synS, col="firebrick",
-        zlim=c(3/4 * min(synS$drDat), 4/3 * max(synS$drDat)))
-par <- opar
-
-
-iObs <- integrateDRS(obsDRS)
-iPred <- integrateDRS(predDRS)
-iSyn <- integrateDRS(synS)
-
-synScore <- 100 * (iPred - iObs) / iPred
-synScore
-
-# Note that this value does not implement the _actual_
-# Lowe model, and integration is not done in log-dose
-# space. This needs to be refined.
-
-# Test our simple synScores against the values found in
-# ch1_train_combination_and_monoTherapy.csv
-
-fname <- "../Challenge Data/Drug Synergy Data/ch1_train_combination_and_monoTherapy.csv"
-
-train <- read.csv(fname, stringsAsFactors=FALSE)
-head(train)
-nrow(train)
-
-# compute pred. and obs for n random rows
-n <- 300
-set.seed(112358)
-randRows <- sample(nrow(train), n)
-scores <- matrix(numeric(2*n), nrow=n, ncol=2)
-colnames(scores) <- c("sCalc", "sObs")
-ind <- 0
-for (i in 1:n) {
-	row <- randRows[i]
-	if (train[row,"QA"] == 1) {
-		A <- train[row,"COMPOUND_A"]
-		B <- train[row,"COMPOUND_B"]
-		C <- train[row,"CELL_LINE"]
-	    fn <- makeFileName(A, B, C)
-	    obsDRS <- readDRS(fn)
-		predDRS <- makeAdditive(obsDRS)
-		synS <- calcDifference(predDRS, obsDRS)
-        iObs <- integrateDRS(obsDRS)
-        iPred <- integrateDRS(predDRS)
-        ind <- ind + 1
-        scores[ind, "sCalc"] <- 100 * (iPred - iObs) / iPred
-        scores[ind, "sObs"] <- train[row,"SYNERGY_SCORE"]
-	}
-}
-
-scores <- scores[1:ind, ]
-vals <- c(scores[,"sCalc"], scores[,"sObs"])
-lim <- c(min(vals), max(vals))
-plot(scores, cex=0.8,
-     xlim = lim, ylim = lim)
-     
-cor(scores[,"sCalc"], scores[,"sObs"])
-reg <- lm(scores[,"sObs"] ~ scores[,"sCalc"])
-abline(reg, col="firebrick")
-abline(h=0, col="#DDDDFF")
-abline(v=0, col="#DDDDDDFF")
-
-
-} #end if (FALSE) ...
 # END
