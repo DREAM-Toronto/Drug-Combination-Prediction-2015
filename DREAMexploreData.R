@@ -179,6 +179,45 @@ abline(v=0, col="#DDDDFF")
 # experiments being "better" or "worse".
 
 
+# Compare multiple data for monotherapies:
+
+# Lets find all rows in the training data that contain
+# ADAM_17 as compound A
+
+ADAM17rows <- which(train[ ,"COMPOUND_A"] == "ADAM17")
+
+# what cell lines are associated with this compound
+train[ADAM17rows, "CELL_LINE"]
+
+# how often does each recur?
+table(train[ADAM17rows, "CELL_LINE"])
+
+# HCC1143 occurs 6 times. Let's fetch the monotherapies:
+# N.b. there are concise R idioms to do this, but 
+# the style of code below translates the easiest to
+# other languages:
+
+monoSet <- numeric()
+Bnames <- character()
+A <- "ADAM17"
+C <- "HCC1143"
+for (row in 1:nrow(train)) {
+	if (train[row, "COMPOUND_A"] == A &
+	    train[row, "CELL_LINE"] == C) {
+        B <- train[row, "COMPOUND_B"]
+        fn <-  makeFileName(A, B, C)
+        DRS <- readDRS(fn)
+        mono <- getMono(DRS, A)
+        monoSet <- rbind(monoSet, mono$dat)
+        Bnames <- c(Bnames, B)
+	}
+}
+rownames(monoSet) <- Bnames
+
+# Here are the ADAM17 effects, in the different experiments
+# when COMPOUND_B concentration is zero.
+monoSet
+
 
 
 # END
