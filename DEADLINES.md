@@ -4,7 +4,7 @@ There can be 3 submissions per round except for the Final Round.
 ## Subchallenge 1
 There are three rounds plus the Final Round.
 
-The submissio format for 1A and 1B is the same: one zip file containing two csv files named prediction.csv, and combination_priority.csv.
+The submission format for 1A and 1B is the same: one zip file containing two csv files named prediction.csv, and combination_priority.csv.
 
 For prediction.svn: three columns are CELL_LINE (normalized cell line name), COMBINATION_ID (two drug names separated by a dot) and PREDICTION (prediction value).
 
