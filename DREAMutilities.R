@@ -21,7 +21,7 @@
 
 # Define this variable as a path to your repository in your
 # ~/.Rprofile
-setwd(DREAMDIR)
+#setwd(DREAMDIR)
 
 
 # == CONSTANTS =============================================
@@ -30,7 +30,7 @@ setwd(DREAMDIR)
 # If you put your challenge data folder on the folder
 # that also contains the local copy of the Repository,
 # this is the right path to use. Recommended.
-TRAINING <- "../Challenge Data/Drug Synergy Data/Raw Data/Raw_Data_csv/ch1_training_combinations/"
+TRAINING <- "/home/pruthvi/Desktop/DREAM-Toronto/Drug Synergy Data/Raw Data/Raw_Data_csv/ch1_training_combinations/"
 
 
 # == PACKAGES ==============================================

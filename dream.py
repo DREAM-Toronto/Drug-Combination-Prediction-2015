@@ -47,8 +47,15 @@ for dat_a_lea in data_lea:
         b = -1
     b = 1
 
-print(train_dict)   
-print(lea_dict)
+pos = 0
+for i in train_dict:
+    if train_dict[i][-3] == '1':
+        pos+=1
+        
+print("pos:" + str(pos))
+
+print(len(train_dict))   
+print(len(lea_dict))
 
 
 class TraDataGUI:
@@ -351,5 +358,3 @@ fra1.pack(fill=BOTH,expand=1)
 fra2.pack(fill=BOTH,expand=1)
 datagui = LeaDataGUI(root)
 root.mainloop()
-
-
