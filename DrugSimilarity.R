@@ -147,7 +147,7 @@ distMW <- function(MW1, MW2) {
 # compute the distance between two drugs
 distDrug <- function(drug1, drug2) {
   
-  distance <- list(
+  distance <- c(
     distTarget(drug1[[1]],drug2[[1]]),
     distHBA(drug1[[2]],drug2[[2]]),
     distCLogP(drug1[[3]],drug2[[3]]),
@@ -390,8 +390,10 @@ corDrug <- function (drug1, drug2) {
 # For cell line: using mono therapy data only (for now)
 
 #Euclidean sum
-norm_vec <- function(x) sqrt(sum(x^2, na.rm=TRUE))
-
+norm_vec <- function(x){
+  print(x)
+  return sqrt(sum(x^2, na.rm=TRUE))
+}
 # call several sub functions to compute distance score between drug pairs for each cell line.  
 computeDrugDistanceMatrix <- function(weights) {
   
@@ -410,42 +412,37 @@ computeDrugDistanceMatrix <- function(weights) {
   rownames(cellMatrix) <- celllist["Sanger.Name"][,1]
   
   # Get the distance based off of physical / drug properties
-  #   for(d1 in druglist[,1]){
-  #     drugMatrix[d1,d1]<-1
-  #     for(d2 in druglist[,1]){
-  #       val <- norm_vec(distDrug(getDrugProperties(d1),getDrugProperties(d2)))
-  #       drugMatrix[d1,d2] <- val
-  #       drugMatrix[d2,d1] <- val
-  #     }
-  #   }
-  #   
-  #   # Normalize Drugmatrix 0 to 1.
-  #   drugMatrix <- t(apply(drugMatrix, 1, function(x)(x-min(x))/(max(x)-min(x))))
-  #   
-  #   # Change distance to similarity.
-  #   drugMatrix <- 1-drugMatrix
+    for(d1 in druglist[,1]){
+      drugMatrix[d1,d1]<-1
+      for(d2 in druglist[,1]){
+        val <- norm_vec(distDrug(getDrugProperties(d1),getDrugProperties(d2)))
+        drugMatrix[d1,d2] <- val
+        drugMatrix[d2,d1] <- val
+      }
+    }
+    
+    # Normalize Drugmatrix 0 to 1.
+    drugMatrix <- t(apply(drugMatrix, 1, function(x)(x-min(x))/(max(x)-min(x))))
+    
+    # Change distance to similarity.
+    drugMatrix <- 1-drugMatrix
   
+  print("Processing Drugs")
   for(d1 in druglist[,1]){
     drugMatrix[d1,d1]<-1
     for(d2 in druglist[,1]){
-      values <- c()
-      for(cl in celllist[,1]){
-        values <- c(values,corDrugGivenCellLine(d1,d2,cl))
-      }
-      drugMatrix[d1,d2]<-drugPropertiesWeight*drugMatrix[d1,d2] +  drugMonoWeight*mean(values)
+      print(c(d1, d2))
+      drugMatrix[d1,d2]<-mean(corDrug(d1,d2), na.rm=TRUE)
       drugMatrix[d2,d1]<-drugMatrix[d1,d2]
     }
   }
-  
+  print("Processing Cells")
   for(c1 in cellist){
     cellMatrix[c1,c1]<-1
     for(c2 in cellist){
-      values <- c()
-      for(d in druglist){
-        values <- c(values)
-      }
-      cellMatrix[c1,c2]<-mean(values)
-      cellMatrix[c2,c1]<-mean(values)
+      print(c(c1, c2))
+      cellMatrix[c1,c2]<- mean(corCellLine(c1,c2), na.rm=TRUE)
+      cellMatrix[c2,c1]<-cellMatrix[c1,c2]
     }
   }
   
