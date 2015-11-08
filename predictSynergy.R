@@ -1,15 +1,25 @@
 # predictSynergy.R
+# Driver for similarity predictions
 #
-# Purpose: - Reads Training Data
-#          - Gets compound and cell line  similarity;
+# Purpose: - Makes filenames available in environment
+#                so code can be run interactively,
+#                from commandline, or source()'d from
+#                XvalidatePredictions.R
+#          - if arg[5] defines METHOD as "QuickPredict",
+#                calls quickSimMat.R to produce DSM and
+#                CSM matrices; then calls quickPredict.R
+#                to make predictions and write prediction
+#                and confidence files for test set.
 #          - Reads test data;
 #          - Predicts synergy for test data
-#          - writes output
-#            
+#          - Writes output
 #
-# Date:    Nov 6 2015
+# Version: 0.2           
+#
+# Date:    Nov 7 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.2    Maintenance and refactoring.
 # V 0.1    First code
 # ==========================================================
 
@@ -24,16 +34,19 @@ args <- commandArgs(trailingOnly = TRUE)
 # If this script is run interactively - i.e. not source()'d
 # or run from commandline, you must uncomment the
 # assignments below and give them the filenames you need.
+# args <- character(4)
+# args[1] <- "../validate/ch1_train_combination_and_monoTherapy.csv"
+# args[2] <- "../validate/ch1_leaderBoard_monoTherapy.csv"      
+# args[3] <- "../validate/prediction.csv"
+# args[4] <- "../validate/combination_priority.csv"
+# args[5] <- "QuickPredict"
 
-# args <- character(3)
-# args[1] <- "../validate/xValTrain.csv"
-# args[2] <- "../validate/xValTest.csv"      
-# args[3] <- "../validate/test_predicted.csv"
 
-TRAIN_FILE <- args[1]
-TEST_FILE  <- args[2]
-PRED_FILE  <- args[3]
-
+TRAINING_SET_FILE <- args[1]
+TEST_SET_FILE     <- args[2]
+PREDICTED_FILE    <- args[3]
+PRIORITY_FILE     <- args[4]
+METHOD            <- args[5]   
 
 # == PACKAGES ==============================================
 
@@ -45,30 +58,23 @@ PRED_FILE  <- args[3]
 # == MAIN ==================================================
 #
 
-trainingData <- read.csv(TRAIN_FILE, stringsAsFactors=FALSE)
-
-
+if (METHOD <- "QuickPredict") {
+	
 # >>> COMPUTE SIMILARITIES
-# >>> here we need to source the code that computes
-# >>> compound and cell similarities
-
-
-# >>> Let's store the results in two files that we will
-# >>> assign to DSM_FILE (Drug Similarity Matrix) and
-# >>> CSM_FILE (Cell Similarity Matrix)
-
+# >>> source the code that computes
+# >>> compound and cell similarities and
+# >>> creates DSM and CSM matrices
+source("quickSimMat.R")
 
 # >>> MAKE PREDICTIONS
-# >>> Here we need to source the code that makes the actual
+# >>> source the code that makes the actual
 # >>> predictions.
+source("quickPredict.R")
 
-system(paste("makePrediction.py",
-             "TEST_FILE",
-             "DSM",
-             "CSM",
-             "PRED_FILE"))
+# Done
 
-# Done: PRED_FILE has been written
+}
+
 
 
 # [END]
