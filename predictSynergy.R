@@ -34,11 +34,11 @@ args <- commandArgs(trailingOnly = TRUE)
 # If this script is run interactively - i.e. not source()'d
 # or run from commandline, you must uncomment the
 # assignments below and give them the filenames you need.
-# args <- character(4)
+# args <- NULL
 # args[1] <- "../validate/ch1_train_combination_and_monoTherapy.csv"
 # args[2] <- "../validate/ch1_leaderBoard_monoTherapy.csv"      
-# args[3] <- "../validate/prediction.csv"
-# args[4] <- "../validate/combination_priority.csv"
+# args[3] <- "../validate/08.01-prediction.csv"
+# args[4] <- "../validate/08.01-combination_priority.csv"
 # args[5] <- "QuickPredict"
 
 
@@ -58,7 +58,7 @@ METHOD            <- args[5]
 # == MAIN ==================================================
 #
 
-if (METHOD <- "QuickPredict") {
+if (METHOD == "QuickPredict") {
 	
 # >>> COMPUTE SIMILARITIES
 # >>> source the code that computes
