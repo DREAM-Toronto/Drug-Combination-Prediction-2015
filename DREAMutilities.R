@@ -1,10 +1,12 @@
 # DREAMutilities.R
 #
 # Purpose: Utility functions for working with raw drug data
-# Version: 0.4.1
+# Version: 0.4.2
 # Date:    Oct 30 2015
 # Author:  Boris and DREAM team UofT
 #
+# V 0.4.2  Changed path of training data directory to
+#              create itself from DREAMDIR, defined in .Rprofile
 # V 0.4.1  Improve logic of nlsDRC, make fit more robust.
 #          Separate out data exploration examples into
 #              DREAMexploreData.R
@@ -19,18 +21,24 @@
 # V 0.1    First code
 # ==========================================================
 
-# Define this variable as a path to your repository in your
-# ~/.Rprofile
-#setwd(DREAMDIR)
+# Define DREAMDIR as a path to your project directory
+# in your ~/.Rprofile. DREAMDIR should contain:
+# - the folder "Drug-Combination-Prediction-2015", which is
+#       the repository on github
+# - the folder "Challenge Data", which contains 
+#       -- "Drug Synergy Data" and 
+#       -- "Sanger Molecular Data"
+# - other folders as needed.
+
+setwd(DREAMDIR)
 
 
 # == CONSTANTS =============================================
 #
 
-# If you put your challenge data folder on the folder
-# that also contains the local copy of the Repository,
-# this is the right path to use. Recommended.
-TRAINING <- "/home/pruthvi/Desktop/DREAM-Toronto/Drug Synergy Data/Raw Data/Raw_Data_csv/ch1_training_combinations/"
+TRAIN_DIR <- paste(DREAMDIR,
+                   "Challenge Data/Drug Synergy Data/Raw Data/Raw_Data_csv/ch1_training_combinations/",
+                   sep="")
 
 
 # == PACKAGES ==============================================
@@ -54,12 +62,12 @@ if (! require(magrittr, quietly=TRUE)) {
 #
 
 # ==== readDRS =============================================
-readDRS <- function(fn, path=TRAINING) {
+readDRS <- function(fn, path = TRAIN_DIR) {
 	# Read raw drug interaction data from csv file containing
 	# a dose-response surface (DRS).
 	# Arguments
 	#   fn: filename
-	#   path: default TRAINING.
+	#   path: default TRAIN_DIR but can be defined differently
 	# We assume row 1, column 1 are the concentrations
 	# and the data is in a 6x6, fully filled matrix
 	# of percent-surviving cells.
