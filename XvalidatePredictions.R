@@ -5,33 +5,48 @@
 #              similarity computations,
 #              predict synergy scores, and evaluate
 #              success.
-#            
 #
-# Date:    Nov 5 2015
+# Version: 0.2           
+#
+# Date:    Nov 7 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.2    Maintenance and refactoring.
+#          Loop over Xval runs.
+#          Calculate random correlations
 # V 0.1    First code
 # ==========================================================
 
 setwd(DREAMDIR)
-
+source("DREAMutilities.R")
 
 # == CONSTANTS =============================================
 #
+METHOD <- "QuickPredict"
+
+RUN_PATH <- "../validate/" # Directory for validation run data
+RUN_ID <- "07.01" # Filename prefix
+
 FRAC_HOLD <- 0.1  # Fraction of holdout data
 
-#
-EXCLUDE_POOR_QA <- FALSE  
+N_RUNS <- 1       # Number of cross-validation runs
 
+EXCLUDE_POOR_QA <- TRUE  # if TRUE, ignore all experiments
+                         # with QA != 1
 
-# 
-INFILE <- "../Challenge Data/Drug Synergy Data/ch1_train_combination_and_monoTherapy.csv"
+# Probably no need to change below here ====================                         
+# Master file that contains monotherapy data
+MASTER_DATA_FILE <- "../Challenge Data/Drug Synergy Data/ch1_train_combination_and_monoTherapy.csv"
 
-OUTFILE_TRAIN <- "../validate/xValTrain.csv"
+# Training subset filename
+TRAINING_SET_FILE <- sprintf("%s%s_TrainingSet.csv", RUN_PATH, RUN_ID)
 
-OUTFILE_HOLD <- "../validate/xValTest.csv"
+# Holdout subset filename
+TEST_SET_FILE <- sprintf("%s%s_HoldoutSet.csv", RUN_PATH, RUN_ID)
 
-TEST_PREDICTED_FILE <- "../validate/test_predicted.csv"
+# Prediction results
+PREDICTED_FILE <- sprintf("%s%s_prediction.csv", RUN_PATH, RUN_ID)
+PRIORITY_FILE <- sprintf("%s%s_combination_priority.csv", RUN_PATH, RUN_ID)
 
 
 # == PACKAGES ==============================================
@@ -44,53 +59,110 @@ TEST_PREDICTED_FILE <- "../validate/test_predicted.csv"
 # == MAIN ==================================================
 #
 
-# base file from which to select
-base <- read.csv(INFILE, stringsAsFactors=FALSE)
+# master file from which to select
+master <- read.csv(MASTER_DATA_FILE, stringsAsFactors=FALSE)
 
 if (EXCLUDE_POOR_QA) {
-	base <- base[base[,"QA"] == 1, ]
+	master <- master[master[,"QA"] == 1, ]
 }
 
-# split "base" into "training" and "holdout" data 
-nHold <- round(nrow(base) * FRAC_HOLD) # number of holdouts
-iHold <- sample(1:nrow(base), nHold)   # row index of holdouts
+allCorrelations <- NULL
+for (iRun in 1:N_RUNS) {
+	
+	# == MAKE TRAINING AND HOLDOUT SETS =======
+	nHold <- round(nrow(master) * FRAC_HOLD) # number of holdouts
+	iHold <- sample(1:nrow(master), nHold)   # random row index of holdouts
+	
+	trainSet <- master[-(iHold), ]
+	holdSet  <- master[iHold, ]
+	holdSet[, "SYNERGY_SCORE"] <- NA  # remove synergy values from
+	                                  # holdout data
+	
+	write.csv(trainSet, TRAINING_SET_FILE, row.names=FALSE)
+	write.csv(holdSet, TEST_SET_FILE, row.names=FALSE)
+	
+	# == RUN PREDICTION =======
+	
+	# predictSynergy.R is written to take input training and test
+	# filenames from commandline. If it it source()'ed instead
+	# redefine the commandArgs() function as below. 
+	
+	commandArgs <- function(trailingOnly) {
+		return(c(TRAINING_SET_FILE,
+		         TEST_SET_FILE,
+		         PREDICTED_FILE,
+		         PRIORITY_FILE,
+		         METHOD))
+	}
+	source("predictSynergy.R")
+	
+	# predictSynergy.R writes its result into 
+	# PREDICTED_FILE and PRIORITY_FILE
+	
+	# == READ AND COMBINE RESULTS =======
+	pred <- read.csv(PREDICTED_FILE, stringsAsFactors=FALSE)
+	conf <- read.csv(PRIORITY_FILE, stringsAsFactors=FALSE)
+    # head(pred)
+    # head(conf)
+	
+	results <- data.frame(RUN = rep(iRUN, nrow(pred)),
+	                      CELLS  = pred[ , "CELL_LINE"],
+	                      ID  = pred[ , "COMBINATION_ID"],
+	                      TRUE_SYN  = master[iHold, "SYNERGY_SCORE"],
+	                      PRED_SYN  = pred[ , "PREDICTION"],
+	                      SYN_CONF  = rep(0, nrow(pred)),
+	                      stringsAsFactors = FALSE)
+    for (i in 1:nrow(results)) { # add confidence values to results
+    	results[i, "SYN_CONF"] <- conf[ (conf[,"COMBINATION_ID"] == results[i, "ID"]) ,
+    	                                "CONFIDENCE" ]
+    }
+    # head(results)
+    
+    if (iRun == 1) {
+    	allResults <- results
+    } else {
+    	allResults <- rbind(allResults, results)
+    }
+    allCorrelations[iRun] <- cor(results[,"TRUE_SYN"],
+                                 results[,"PRED_SYN"],
+                                 use="complete.obs")
+}   # end for (iRun in 1:N_RUNS)
 
-trainSet <- base[-(iHold), ]
-holdSet  <- base[iHold, ]
-holdSet[, SYNERGY_SCORE] <- NA  # remove synergy values from
-                                # holdout data
 
-write.csv(trainSet, OUTFILE_TRAIN)
-write.csv(holdSet, OUTFILE_HOLD)
+# plot true scores vs. predictions
+true <- allResults[,"TRUE_SYN"]
+pred <- allResults[,"PRED_SYN"]
+plot(true, pred,
+     xlim = c(min(c(true, pred)), max(c(true, pred))),
+     ylim = c(min(c(true, pred)), max(c(true, pred))),
+     xlab = "True synergy scores",
+     ylab = "Predicted synergy scores",
+     main = sprintf("%s crossvalidation with %d%% holdouts, %d runs",
+                    METHOD,
+                    FRAC_HOLD * 100,
+                    N_RUNS),
+     cex.main = 0.8
+    )
+abline(h = 0, lwd = 0.5, col = "#CCCCCC")
+abline(v = 0, lwd = 0.5, col = "#CCCCCC")
 
-# == RUN PREDICTION =======
 
-TRAIN_FILE <- OUTFILE_TRAIN
-TEST_FILE <- OUTFILE_HOLD
+# get distribution of random correlations
+nRandRuns <- 10000  # Nice. Takes about 1 second...
+corRand <- numeric(nRandRuns)
 
-# predictSynergy.R is written to take input training and test
-# filenames from commandline. If it it source()'ed instead
-# redefine the commandArgs() function as below. 
-
-commandArgs <- function(trailingOnly) {
-	return(c(TRAIN_FILE, TEST_FILE, TEST_PREDICTED_FILE))
+for (i in 1:nRandRuns) {
+	corRand[i] <- cor(true, sample(pred, length(pred)))
 }
-source("predictSynergy.R")
 
-# predictSynergy.R writes its result into 
-# TEST_PREDICTED_FILE
-
-prediction <- read.csv(TEST_PREDICTED_FILE, stringsAsFactors=FALSE)
-
-predSynScores <- prediction[, SYNERGY_SCORE]
-trueSynScores <- base[iHold, SYNERGY_SCORE]
-
-plot(trueSynScores, predSynScores)
-
-# calculate correlation
-cor(trueSynScores, predSynScores)
-
-
+hist(corRand, 
+     breaks=20, 
+     xlim = c(min(min(corRand), min(allCorrelations)) * 1.2,
+              max(max(corRand), max(allCorrelations)) * 1.2)
+    )
+for (i in 1:length(allCorrelations)) {
+	abline(v = allCorrelations[i], col="#AA0000")
+}
 
 
 # [END]
