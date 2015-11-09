@@ -9,11 +9,12 @@
 #             are not both equal to column average (i.e.
 #             unobserved).
 #
-# Version: 0.2           
+# Version: 0.2.1           
 #
-# Date:    Nov 7 2015
+# Date:    Nov 8 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.2.1  Add progress messages.
 # V 0.2    Maintenance and refactoring.
 #          Bugfix in calculating CSM
 # V 0.1    First code
@@ -44,6 +45,7 @@ cor2p <- function(cor) {
 # == MAIN ==================================================
 #
 
+if (VERBOSE) {cat(paste("    preparing features ..."))}
 
 trainingData <- read.csv(TRAINING_SET_FILE,
                          header = TRUE,
@@ -130,6 +132,8 @@ for (id in 1:nDrugs) {
 
 # == COMPILE DSM DRUG SIMILARITY MATRIX =======
 
+if (VERBOSE) {cat(paste(" compiling DSM ..."))}
+
 d2 <- data  # make a copy that we can modify
             # by replacing NAs with
             # a value estimate
@@ -156,7 +160,9 @@ for (i in 1:nrow(d2)) {
 }
 # head(d2)
 
+
 # compile the DSM
+
 DSM <- matrix(numeric(nDrugs * nDrugs), ncol=nDrugs, nrow=nDrugs)
 rownames(DSM) <- drugs
 colnames(DSM) <- drugs
@@ -174,6 +180,8 @@ for (i in 1:nDrugs) {
 
 
 # == COMPILE CSM CELL SIMILARITY MATRIX =======
+
+if (VERBOSE) {cat(paste(" compiling CSM ..."))}
 
 # replace all NAs in "data" with column-averages
 for (i in colIC50) {
@@ -236,6 +244,7 @@ for (i in 1:nCells) {
 
 # head(CSM)	
 
+if (VERBOSE) {cat(paste(" Done\n"))}
 # Done: DSM and CSM have been computed
 
 
