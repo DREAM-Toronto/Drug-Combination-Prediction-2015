@@ -7,11 +7,13 @@
 # similarity of the resp. drugs and cells in the tranining
 # set to the test set combination. 
 #
-# Version: 0.2           
+# Version: 0.2.1           
 #
-# Date:    Nov 7 2015
+# Date:    Nov 8 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.2.1  Update handling of Bad Rows.
+#          Add progress messages.
 # V 0.2    Maintenance and refactoring.
 #          Bugfix in calculating CSM
 # V 0.1    First code
@@ -43,9 +45,9 @@ checkABC <- function(dat, drugs, cells) {
 	# "cells" contains cell names
     
     x <- NULL
-    x <- c(x, which(!(dat[i, "COMPOUND_A"] %in% drugs)))
-    x <- c(x, which(!(dat[i, "COMPOUND_B"] %in% drugs)))
-    x <- c(x, which(!(dat[i, "CELL_LINE"]  %in% cells)))
+    x <- c(x, which(!(dat[ , "COMPOUND_A"] %in% drugs)))
+    x <- c(x, which(!(dat[ , "COMPOUND_B"] %in% drugs)))
+    x <- c(x, which(!(dat[ , "CELL_LINE"]  %in% cells)))
 
     return(unique(x))
 }
@@ -55,11 +57,12 @@ checkABC <- function(dat, drugs, cells) {
 # == MAIN ==================================================
 #
 
+if (VERBOSE) {cat(paste("    Predicting synergy ..."))}
+
 testData <- read.csv(TEST_SET_FILE,
                      header = TRUE,
                      row.names = NULL,
                      stringsAsFactors = FALSE)
-nTest <- nrow(testData)
 
 # If DSM and CSM have not just been compiled, we need to 
 # read them from somewhere now ...
@@ -68,14 +71,28 @@ nTest <- nrow(testData)
 
 badRows <- checkABC(testData, drugs, cells)
 if (length(badRows) > 0) {
-	stop(paste("PANIC: Bad Rows in test set:", testData[badRows,], sep="\n"))
+	# during xValidation testing, it could happen that
+	# the holdout set contains drugs or cells that were
+	# not present in the training set. This should not
+	# happen in the real submissions, and it should be
+	# infrequent enough that we can simply remove the
+	# offending row(s) from the test data.
+	
+	testData <- testData[-(badRows),]
+	if (VERBOSE) {
+		cat(" removed Bad Row(s) ")
+		cat(paste(badRows, collapse = " "))
+		cat(" ...")
+	}
+
 }
+nTest <- nrow(testData)
 
 
-# simSyn holds the probability of similarity to a
-# requested unknown combination and the corresponding
-# similarity score, for each combination in the
-# training data.
+# Initialize simSyn to store holds the probability of 
+# similarity to arequested unknown combination and the
+# corresponding  similarity score, for each combination 
+# in the training data.
 simSyn <- matrix(0, nrow=nTrain, ncol=2)
 colnames(simSyn) <- c("pSim", "SYN")
 
@@ -97,7 +114,12 @@ for (iTest in 1:nTest) {
 	
 	# calculate weighted average for TOP_N rows
 	avSYN <- simSyn[1:TOP_N, "pSim"] * simSyn[1:TOP_N, "SYN"]
-	avSYN <- sum(avSYN) / sum(simSyn[1:TOP_N, "pSim"])
+	sumSYN <- sum(simSyn[1:TOP_N, "pSim"])
+	if (sumSYN == 0) { # all probabilities zero
+		avSYN <- 0
+	} else {
+        avSYN <- sum(avSYN) / sum(simSyn[1:TOP_N, "pSim"])
+	}
 	
 	# store result
 	testData[iTest, "SYNERGY_SCORE"] <- avSYN
@@ -145,5 +167,8 @@ write.csv(conf,
           row.names = FALSE)
 
 # Done.
+
+if (VERBOSE) {cat(paste(" Done\n"))}
+
 
 # [END]
