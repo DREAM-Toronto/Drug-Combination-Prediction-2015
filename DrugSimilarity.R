@@ -3,6 +3,8 @@ DRUG_PROPERTIES <- "../Challenge Data/Drug Synergy Data/Drug_info_release.csv"
 CELL_KILL_DIR <- "../Challenge Data/Drug Synergy Data/Raw Data/Raw_Data_csv/ch1_ch2_monoTherapy/"
 CELL_PROPERTIES <- "../Challenge Data/Sanger Molecular Data/cell_info.csv"
 
+
+
 # =============================================
 # Should consider moving these functions into utilities
 # Get the list all unique drug names 
@@ -391,9 +393,10 @@ corDrug <- function (drug1, drug2) {
 
 #Euclidean sum
 norm_vec <- function(x){
-  print(x)
-  return sqrt(sum(x^2, na.rm=TRUE))
+#  print(x)
+  return(sqrt(sum(x^2, na.rm=TRUE)))
 }
+
 # call several sub functions to compute distance score between drug pairs for each cell line.  
 computeDrugDistanceMatrix <- function(weights) {
   
