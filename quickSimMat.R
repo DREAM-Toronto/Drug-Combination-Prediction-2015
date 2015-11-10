@@ -9,11 +9,18 @@
 #             are not both equal to column average (i.e.
 #             unobserved).
 #
-# Version: 0.2.1           
+# Version: 0.3           
 #
-# Date:    Nov 8 2015
+# Date:    Nov 9 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.3    Refactor code for easier alternative handling
+#              of correlation calculations.
+#          Change correlation calculations to ignore pairs
+#              of unobserved values, to prevent pairs with
+#              many missing features to appear more similar.
+#              This improves the prediction quality by
+#              about 25%.
 # V 0.2.1  Add progress messages.
 # V 0.2    Maintenance and refactoring.
 #          Bugfix in calculating CSM
@@ -24,6 +31,41 @@
 
 # == FUNCTIONS =============================================
 #
+
+uniqueCor <- function(x, y) {
+	# x and y are feature vectors of triplets of 
+	# (IC50, H, Einf) for each drug or cell line.
+	#   - Remove all triplets in which both x and y
+	#     have NAs; 
+	#   - replace the NAs with averages;
+	#   - calculate correlation;
+	#   - convert correlation to probability.
+	# Output is the probability of similarity.
+    obs <- !(is.na(x) & is.na(y))
+    x <- x[obs]
+    y <- y[obs]
+    x <- na2means(x) 
+    y <- na2means(y)
+    cXY <- cor(x, y)
+    pXY <- cor2p(cXY)
+    return(pXY) 
+}
+
+na2means <- function(x) {
+	# replace all NA triplets in vector with
+	# averages
+    tri <- seq(1, length(x), by=3)
+    xMeans <- c(mean(x[tri],   na.rm=TRUE),
+                mean(x[tri+1], na.rm=TRUE),
+                mean(x[tri+2], na.rm=TRUE))
+	if (is.na(xMeans[1])) {
+		stop("PANIC: feature means is NA in vector.")
+    }
+    z <- rep(xMeans, length(tri))
+    sel <- is.na(x)
+    x[sel] <- z[sel]
+    return(x)
+}
 
 cor2p <- function(cor) {
 	# crude manual approximation to a CDF that converts
@@ -40,7 +82,6 @@ cor2p <- function(cor) {
 	if(cor < 0.9) { return(0.9)}
                     return(1.0)
 }
-
 
 # == MAIN ==================================================
 #
@@ -126,7 +167,6 @@ for (id in 1:nDrugs) {
 		} 
 	}
 }
-
 # head(data)
 
 
@@ -134,93 +174,29 @@ for (id in 1:nDrugs) {
 
 if (VERBOSE) {cat(paste(" compiling DSM ..."))}
 
-d2 <- data  # make a copy that we can modify
-            # by replacing NAs with
-            # a value estimate
-
-# replace all NAs with row-averages
-for (i in 1:nrow(d2)) {
-	# calculate row averages
-	mIC50 <- mean(d2[i, colIC50  ],   na.rm=TRUE)
-	mH    <- mean(d2[i, colIC50 + 1], na.rm=TRUE)
-	mEinf <- mean(d2[i, colIC50 + 2], na.rm=TRUE)
-	
-	if (is.nan(mIC50)) {
-		stop(sprintf("PANIC: no data at all for compound in row %d ", i))
-	}
-	
-	for (j in colIC50) {
-		# replace values if IC50 is NA
-		if (is.na(d2[i, j])) {
-			d2[i, j]   <- mIC50
-			d2[i, j+1] <- mH
-			d2[i, j+2] <- mEinf
-		}
-	}
-}
-# head(d2)
-
-
-# compile the DSM
-
+# initialize the DSM
 DSM <- matrix(numeric(nDrugs * nDrugs), ncol=nDrugs, nrow=nDrugs)
 rownames(DSM) <- drugs
 colnames(DSM) <- drugs
 
+# calculate correlations for each pair of feature vectors
+# and store in DSM
 for (i in 1:nDrugs) {
 	for (j in i:nDrugs) {
-		# similarity is cor2p() of the correlation
-		# coefficient of rows i and j
-		DSM[i,j] <- DSM[j,i] <- cor2p(cor(d2[i, ], d2[j, ]))
+		DSM[i,j] <- DSM[j,i] <- uniqueCor(data[i, ], data[j, ])
 	}
 }
-	
 # head(DSM)	
-
 
 
 # == COMPILE CSM CELL SIMILARITY MATRIX =======
 
 if (VERBOSE) {cat(paste(" compiling CSM ..."))}
 
-# replace all NAs in "data" with column-averages
-for (i in colIC50) {
-	mIC50 <- mean(data[ , i  ], na.rm=TRUE)
-	mH    <- mean(data[ , i+1], na.rm=TRUE)
-	mEinf <- mean(data[ , i+2], na.rm=TRUE)
-
-	if (is.nan(mIC50)) {
-		stop(sprintf("PANIC: no data at all for cell line in column %d ", i))
-	}
-
-	for (j in 1:nrow(data)) {
-		if (is.na(data[j, i])) {
-			data[j, i]   <- mIC50
-			data[j, i+1] <- mH
-			data[j, i+2] <- mEinf
-		}
-	}
-}
-# head(data)
-
 # initialize the CSM
 CSM <- matrix(numeric(nCells * nCells), ncol=nCells, nrow=nCells)
 rownames(CSM) <- cells
 colnames(CSM) <- cells
-
-# Note: below is erroneous code which was used in the
-# round 1 submission. The column-triplets are not 
-# correctly iterated over. It is kept here 
-# until the code has been submitted to git so that we have
-# a documentation of the error, and can experiment with
-# its consequences.
-# for (i in 1:n) {
-	# cell_i <- c(data[ , i], data[ , i+1], data[ , i+2])
-	# for (j in 1:n) {
-	    # cell_j <- c(data[ , j], data[ , j+1], data[ , j+2])
-		# CSM[i,j] <- cor2p(cor(cell_i, cell_j))
-	# }
-# }
 
 # collapse the column triplets into feature vectors
 fv <- matrix(numeric(nCells * nDrugs * 3),
@@ -238,10 +214,9 @@ for (i in 1:nCells) {
 # and store in CSM
 for (i in 1:nCells) {
 	for (j in i:nCells) {
-		CSM[i,j] <- CSM[j,i] <- cor2p(cor(fv[i, ], fv[j, ]))
+		CSM[i,j] <- CSM[j,i] <- uniqueCor(fv[i, ], fv[j, ])
 	}
 }
-
 # head(CSM)	
 
 if (VERBOSE) {cat(paste(" Done\n"))}
