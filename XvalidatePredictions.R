@@ -6,11 +6,16 @@
 #              predict synergy scores, and evaluate
 #              success.
 #
-# Version: 0.2.1           
+# Version: 0.3           
 #
-# Date:    Nov 8 2015
+# Date:    Nov 9 2015
 # Author:  Boris and DREAM team UofT
 #          
+# V 0.3    Add scoring according to AZ Challenge organizers -
+#              with partial correlations to remove drug
+#              combination and cell-line medians.
+#          Reorganize results
+# V 0.2.2  Maintenance
 # V 0.2.1  Add analysis and plots for multiple xVal runs.
 #          Handle edge cases (no data, combinations not
 #              unique ... )
@@ -23,13 +28,14 @@
 
 setwd(DREAMDIR)
 source("DREAMutilities.R")
+source("ch1scoring_functions.R")
 
 # == CONSTANTS =============================================
 #
 METHOD <- "QuickPredict"
 
 RUN_PATH <- "../validate/" # Directory for validation run data
-RUN_PREFIX <- "08.33pct" # Filename prefix
+RUN_PREFIX <- "09.test" # Filename prefix
 
 FRAC_HOLD <- 0.33  # Fraction of holdout data
 
@@ -77,6 +83,27 @@ if (EXCLUDE_POOR_QA) {
 	master <- master[master[,"QA"] == 1, ]
 }
 
+# == Datastructures to store results
+combVec = c(meanR   = numeric(),
+            steR    = numeric(),
+            meanMSE = numeric(),
+            steMSE  = numeric(),
+            N       = numeric())
+scores <- list(RUN = numeric(),
+               COR_PLAIN  = numeric(),
+               GLOBAL_SCORE  = numeric(),
+               COMB_SCORE_ALL = combVec,
+               COMB_SCORE_30  = combVec,
+               COMB_SCORE_20  = combVec,
+               COMB_SCORE_10  = combVec)
+
+allResults <- data.frame(RUN = numeric(),
+                         CELLS  = character(),
+                         ID  = character(),
+                         TRUE_SYN  = numeric(),
+                         PRED_SYN  = numeric(),
+                         SYN_CONF  = numeric(),
+                         stringsAsFactors = FALSE)
 
 
 # == LOOP OVER CROSS-VALIDATION RUNS =======
@@ -115,7 +142,9 @@ for (iRun in 1:N_RUNS) {
 		         PRIORITY_FILE,
 		         METHOD))
 	}
-	if (VERBOSE) {print(paste("xVal run: ", iRun, " / ", N_RUNS, "    ", Sys.time()))}
+	if (VERBOSE) {cat(paste("xVal run: ", iRun, "/", N_RUNS, "    ", Sys.time(), "\n"))}
+
+
 	source("predictSynergy.R")
 	
 	# predictSynergy.R writes its result into 
@@ -146,27 +175,103 @@ for (iRun in 1:N_RUNS) {
     	                                 master[ , "CELL_LINE"]      == pred[i, "CELL_LINE"],
     	                                     "SYNERGY_SCORE"] %>% mean
     }
+    	allResults <- rbind(allResults, results)
+
     # head(results)
     
-    xCor <- cor(results[,"TRUE_SYN"],
-                results[,"PRED_SYN"],
-                use="complete.obs")
-    if (iRun == 1) {
-    	allResults <- results
-    	allCorrelations <- xCor
-    } else {
-    	allResults <- rbind(allResults, results)
-     	allCorrelations <- c(allCorrelations, xCor)
-   }
+    # == SCORE THE RESULTS  =======
+	scores$RUN <- c(scores$RUN, iRun)
+    scores$COR_PLAIN  <- c(scores$COR_PLAIN,
+                           cor(results[,"TRUE_SYN"],
+                               results[,"PRED_SYN"],
+                               use="complete.obs"))
+    scores$GLOBAL_SCORE  <- c(scores$GLOBAL_SCORE,
+                              getGlobalScore_ch1(results))
+    scores$COMB_SCORE_ALL = rbind(scores$COMB_SCORE_ALL,
+                                  getDrugCombiScore_ch1(results, conf, topX=100))
+    scores$COMB_SCORE_30  = rbind(scores$COMB_SCORE_30,
+                                  getDrugCombiScore_ch1(results, conf, topX=30))
+    scores$COMB_SCORE_20  = rbind(scores$COMB_SCORE_20,
+                                  getDrugCombiScore_ch1(results, conf, topX=20))
+    scores$COMB_SCORE_10  = rbind(scores$COMB_SCORE_10,
+                                  getDrugCombiScore_ch1(results, conf, topX=10))
+   
+	                      
+   
 }   # end for (iRun in 1:N_RUNS)
 
-if (VERBOSE) {print(paste("xVal completed: ", Sys.time()))}
+if (VERBOSE) {cat(paste("xVal completed: ", Sys.time(), "\n\n"))}
 
 
 # == ANALYSE RUNS =======
 
-# == Scatterplot true vs. pred
+# == HISTOGRAM RANDOM VS. PREDICTED
+# create distribution of random scores
+nRandRuns <- 1000  # per xVal run
+scoreRand <- numeric(nRandRuns * N_RUNS)
+iC <- 1
+for (i in 1:N_RUNS) {
+	# subset of predictions for this run
+	tp <- allResults[allResults[, "RUN"] == i, c("CELLS", "ID", "TRUE_SYN", "PRED_SYN")]
+	for (j in 1:nRandRuns) {
+		# sample from subset
+		tp[ , "PRED_SYN"] <- sample(tp[ , "PRED_SYN"], nrow(tp))
+	    scoreRand[iC] <- getGlobalScore_ch1(tp)
+	    iC <- iC + 1
+	}
+}
 
+
+# Plot histogram,
+# superimpose histogram of predicted Global Scores
+colRand <- "#E6E0FF"
+colObs <- "#00DDAA44"
+hist(scoreRand, 
+     breaks=20, 
+     xlim = c(min(min(scoreRand), min(scores$GLOBAL_SCORE)) * 1.2,
+              max(max(scoreRand), max(scores$GLOBAL_SCORE)) * 1.2),
+     freq = FALSE,
+     col = colRand,
+     main = "Random and observed Global Scores",
+     cex.main = 0.8,
+     xlab = "Global Score"
+    )
+
+if (length(scores$GLOBAL_SCORE) == 1) {
+	abline(v = scores$GLOBAL_SCORE[rep(1,4)], col = colObs)
+} else {
+	par(new = TRUE)
+	hVals <- hist(scores$GLOBAL_SCORE, plot = FALSE)
+	hist(scores$GLOBAL_SCORE, 
+	     xlim = c(min(min(scoreRand), min(scores$GLOBAL_SCORE)) * 1.2,
+	              max(max(scoreRand), max(scores$GLOBAL_SCORE)) * 1.2),
+	     ylim = c(0, 5 * max(hVals$density)),
+	     breaks = round(N_RUNS)/2,
+	     freq = FALSE,
+	     col= colObs,
+	     border= "#666677",
+	     axes = FALSE,
+	     main = "",
+	     sub = (sprintf("mean Global Scores for predictions: %1.3f ± %1.3f",
+	                    mean(scores$GLOBAL_SCORE), sd(scores$GLOBAL_SCORE))),
+	     cex.sub = 0.8,
+	     xlab = "",
+	     ylab = ""
+	    )
+}
+
+legend("topright",
+       cex = 0.7,
+       legend = c(sprintf("%d,%03d random",
+                          floor(length(scoreRand)/1000),
+                          length(scoreRand) %% 1000),
+                  sprintf("%d predicted", N_RUNS)),
+       fill = c(colRand, colObs),
+       bty = "n",
+       title = "")
+
+
+# == Scatterplot true vs. pred
 true <- allResults[,"TRUE_SYN"]
 pred <- allResults[,"PRED_SYN"]
 plot(true, pred,
@@ -177,7 +282,7 @@ plot(true, pred,
      ylim = c(min(c(true, pred)), max(c(true, pred))),
      xlab = "True synergy scores",
      ylab = "Predicted synergy scores",
-     main = sprintf("%s crossvalidation with %d%% holdouts, %d runs",
+     main = sprintf("%s crossvalidation with %d%% holdouts, %d runs\n(new correlations)",
                     METHOD,
                     FRAC_HOLD * 100,
                     N_RUNS),
@@ -197,72 +302,6 @@ abline(v = 0, lwd = 0.5, col = "#CCCCCC")
 linMod <- lm(true ~ pred)
 abline(linMod, col="#BB0000")
 summary(linMod)
-
-# distribution of observed correlations
-allCorrelations
-mean(allCorrelations)
-sd(allCorrelations)
-
-# calculate distribution of random correlations
-nRandRuns <- 1000  # per xVal run
-corRand <- numeric(nRandRuns * N_RUNS)
-iC <- 1
-for (i in 1:N_RUNS) {
-	# subset of predictions for this run
-	tp <- allResults[allResults[, "RUN"] == i, c("TRUE_SYN", "PRED_SYN")]
-	for (j in 1:nRandRuns) {
-		# sample from subset
-	    corRand[iC] <- cor(tp[ , "TRUE_SYN"],
-	                      sample(tp[ , "PRED_SYN"], nrow(tp)))
-	    iC <- iC + 1
-	}
-}
-
-
-# Plot histogram of random correlations,
-# superimpose histogram observed prediction correlations
-colRand <- "#F5F5FF"
-colObs <- "#00DDAA33"
-hist(corRand, 
-     breaks=20, 
-     xlim = c(min(min(corRand), min(allCorrelations)) * 1.2,
-              max(max(corRand), max(allCorrelations)) * 1.2),
-     freq = FALSE,
-     col = colRand,
-     main = "Random and observed correlations",
-     cex.main = 0.8,
-     xlab = "R"
-    )
-
-if (length(allCorrelations) == 1) {
-	abline(v = allCorrelations[rep(1,4)], col = colObs)
-} else {
-	par(new = TRUE)
-	hVals <- hist(allCorrelations, plot = FALSE)
-	hist(allCorrelations, 
-	     xlim = c(min(min(corRand), min(allCorrelations)) * 1.2,
-	              max(max(corRand), max(allCorrelations)) * 1.2),
-	     ylim = c(0, 5 * max(hVals$density)),
-	     breaks = 8,
-	     freq = FALSE,
-	     col= colObs,
-	     border= "#666677",
-	     axes = FALSE,
-	     main = "",
-	     xlab = "",
-	     ylab = ""
-	    )
-}
-
-legend("topright",
-       cex = 0.7,
-       legend = c(sprintf("%d,%03d random",
-                          floor(length(corRand)/1000),
-                          length(corRand) %% 1000),
-                  sprintf("40 observed", N_RUNS)),
-       fill = c(colRand, colObs),
-       bty = "n",
-       title = "")
 
 
 
