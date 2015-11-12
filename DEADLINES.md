@@ -61,3 +61,9 @@ There are two rounds plus the Final Round.
 * Jan. 26, 2016: Round 2 ends; Final Round starts (1 submission only) (updated on Nov 12)
 * Feb. 9, 2016: Final Round ends; Scoring starts (updated on Nov 12)
 * Feb. 16, 2016: Scoring ends (updated on Nov 12)
+
+### News and Updates
+
+Nov 10, 2015: Report SD instead of STE - For subchallenges 1a, 1b, and 2, the reported standard error has been replaced by the standard deviation
+
+Nov 9, 2015: **Update ch2_test_monotherapy.csv** - The drug combination ‘AKT.AKT' was removed from the final test set in subchallenge 2, since it simply was the same drug paired with its self. This was not a drug combination rather a ‘mono-therapy’ at different concentrations. Leaderboard for subchallenge 1 is coming soon. Thanks for your participation / patience.
