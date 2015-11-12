@@ -14,13 +14,13 @@ For combination_priority.csv: two columns are COMBINATION_ID (two drug names sep
 * Sept. 3, 2015: Challenges opened
 * Sept. 10, 2015: Round 1 started
 * Oct. 15, 2015: Submission started
+* Nov. 6, 2015: Round 1 ended; Round 2 started
 
 ### Due
-* **Nov. 6, 2015: Round 1 ends; Round 2 starts (one week to go)**
-* Dec. 11, 2015: Round 2 ends; Round 3 starts
-* Jan. 12, 2016: Round 3 ends; Final Round starts (1 submission only)
-* Jan. 22, 2016: Final Round ends; Scoring starts
-* Jan. 30, 2016: Scoring ends
+* **Dec. 17, 2015: Round 2 ends; Round 3 starts (updated on Nov 12))**
+* Jan. 26, 2016: Round 3 ends; Final Round starts (1 submission only) (updated on Nov 12)
+* Feb. 9, 2016: Final Round ends; Scoring starts (updated on Nov 12)
+* Feb. 16, 2016: Scoring ends (updated on Nov 12)
 
 ## Subchallenge 2
 There are two rounds plus the Final Round.
@@ -31,7 +31,7 @@ There are two rounds plus the Final Round.
 * Oct. 15, 2015: Submission started
 
 ### Due
-* **Nov. 13, 2015: Round 1 ends; Round 2 starts (two weeks to go)**
-* Jan. 12, 2016: Round 2 ends; Final Round starts (1 submission only)
-* Jan. 22, 2016: Final Round ends; Scoring starts
-* Jan. 30, 2016: Scoring ends
+* **Dec 3, 2015: Round 1 ends; Round 2 starts (updated on Nov 12)**
+* Jan. 26, 2016: Round 2 ends; Final Round starts (1 submission only) (updated on Nov 12)
+* Feb. 9, 2016: Final Round ends; Scoring starts (updated on Nov 12)
+* Feb. 16, 2016: Scoring ends (updated on Nov 12)
