@@ -19,15 +19,6 @@
 #
 
 
-parCor <- function(u,v,w) {
-    # partial correlations
-    # originally by Michael P Menden, Julio Saez-Rodriguez
-    numerator <- cor(u,v) - cor(u,w) * cor(w,v)
-    denumerator <- sqrt(1-cor(u,w)^2) * sqrt(1-cor(w,v)^2)
-    return(numerator/denumerator)
-}
-
-
 getDrugCombiScore_ch1 <- function(data, conf, topX = 100) {
     # Calculate the drug combinations score of Subchallenge 1.
 	# Modified from original code by Michael P Menden,
@@ -74,6 +65,15 @@ getDrugCombiScore_ch1 <- function(data, conf, topX = 100) {
            meanMSE = mean(R[idx, "MSE"], na.rm=TRUE),
            steMSE  =   sd(R[idx, "MSE"], na.rm=TRUE) / N,
            N    = N))
+}
+
+
+parCor <- function(u,v,w) {
+    # partial correlations
+    # originally by Michael P Menden, Julio Saez-Rodriguez
+    numerator <- cor(u,v) - cor(u,w) * cor(w,v)
+    denumerator <- sqrt(1-cor(u,w)^2) * sqrt(1-cor(w,v)^2)
+    return(numerator/denumerator)
 }
 
 
