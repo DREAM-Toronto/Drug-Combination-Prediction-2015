@@ -46,6 +46,20 @@ Network data
 
 Feature -> ML -> Combination scores
 
+### Sub-Challenge 2
+
+**Round 1 DeadLine has been changed to Dec 3.**(See DeadLine File for more details)<br />
+1. Infer Drug Synergy without experimental synergy score.<br />
+2. Making drug predictions based on prior knowledge.<br />
+3. We are allowed to use ** molecular data for the cell lines, cell response data for all respective    mono-therapies, chemical information and putative targets of the compounds**<br />
+4. Require 740 drug combinations without overlapping with Subchallenge 1. <br />
+   -- 4a. A leaderboard set (370 combinations) and a final validation set (370 combinations) are required.<br />
+   -- 4b. A full synergy-prediction-matrix (Score either 1 or 0)<br />
+   -- 4c. A full synergy-confidence-matrix (Score ranging from 0 to 1)<br />
+5. The above data will be used to score accuracy of predictions.<br />
+6. Justify our stratifications and synergy predictions, by giving an algorithm and rationally translatable as biomarkers.<br />
+
+
 ## Checking in...
 
 * Boris (Hyginn)
