@@ -2,11 +2,12 @@
 # Produces feature vector and synergy data files from
 # training data.
 #
-# Version: 0.4           
+# Version: 0.4.1           
 #
-# Date:    Nov 13 2015
+# Date:    Nov 19 2015
 # Author:  Boris and DREAM Toronto
 #
+# V 0.4.1  Add output version column-scaled to [0,1]
 # V 0.4    Fixes incorrect handling of normalization by
 #              normalizing drug IC50 to max(MAX_CONC)
 #          Add PCA reduction of feature numbers
@@ -29,6 +30,7 @@ OUT_AV_FILE <- "drugFeaturesAv.csv"  # contains row averages for unobserved
 OUT_COMBI_FILE <- "combiFeaturesAv.csv" # concatenated features for combinations
 OUT_COMBI_NO_H_FILE <- "combiFeaturesAvNoH.csv" # as above but no H features
 OUT_COMBI_PC_FILE <- "combiFeaturesPC.csv"  # most predictive Principal Components only
+OUT_COMBI_PCS_FILE <- "combiFeaturesPCscaled.csv"  # most predictive Principal Components only
 OUT_SYN_FILE <- "drugSynergies.csv"
 
 # == FUNCTIONS =============================================
@@ -391,6 +393,18 @@ for (i in 1:nrow(syn)) {
 }
 # head(combiFeaturesPC)
 
+# Scale columns to [0, 1]
+combiFeaturesPCscal <- combiFeaturesPC
+for (i in 1:ncol(combiFeaturesPCscal)) {
+	x <- combiFeaturesPCscal[ , i]
+	x <- (x / (max(x) - min(x)))   # re-scale
+	x <- x - min(x)                # re-center
+	combiFeaturesPCscal[ , i] <- x # re-assign
+    print(summary(x))
+}
+# boxplot(combiFeaturesPC,     cex.axis=0.6)
+# boxplot(combiFeaturesPCscal, cex.axis=0.6)
+
 
 # == WRITE FILES
 write.csv(data,  OUT_NA_FILE, row.names=TRUE)
@@ -399,6 +413,7 @@ write.csv(syn, OUT_SYN_FILE, row.names=FALSE)
 write.csv(combiFeatures, OUT_COMBI_FILE, row.names=TRUE)
 write.csv(combiFeaturesNoH, OUT_COMBI_NO_H_FILE, row.names=TRUE)
 write.csv(combiFeaturesPC, OUT_COMBI_PC_FILE, row.names=TRUE)
+write.csv(combiFeaturesPCscal, OUT_COMBI_PCS_FILE, row.names=TRUE)
 
 
 # == DONE
