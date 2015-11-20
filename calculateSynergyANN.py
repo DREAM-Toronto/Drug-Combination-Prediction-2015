@@ -33,6 +33,23 @@ def read_synergy_data(synergy):
     return synergy_dict
 
 
+def read_pca_data(pca):
+    print(pca)
+    with open(pca, 'r') as csvfile:
+        pca_reader = csv.reader(csvfile, delimiter=",")
+        next(pca_reader)
+        pca_dict = {}
+        for r in pca_reader:
+            if not pca_dict.get(r[0].split('.')[0], None):
+                pca_dict[r[0].split('.')[0]] = []
+            if not pca_dict.get(r[0].split('.')[1], None):
+                pca_dict[r[0].split('.')[1]] = []
+            print (r)
+            pca_dict[r[0].split('.')[0]] = [float(c) for c in r[1:6]]
+            pca_dict[r[0].split('.')[1]] = [float(c) for c in r[6:]]
+    return pca_dict
+
+
 def dump_drug_dict_as_flat(drug_dict, out):
     pass
 
@@ -53,15 +70,19 @@ def build_training_input(drug_dict, synergy_dict):
 
 if __name__ == '__main__':
 
-    features = sys.argv[1]
+    # features = sys.argv[1]
+    # Make the first argument the PCA scaled file.
+    pca = sys.argv[1]
+    # The second argument is the synergy file.
     synergy = sys.argv[2]
 
     out = "feature_sets.csv"
 
-    drug_dict = read_drug_data(features)
+    # drug_dict = read_drug_data(features)
+    pca_dict = read_pca_data(pca)
     synergy_dict = read_synergy_data(synergy)
-    dump_drug_dict_as_flat(drug_dict, out)
-    training_input,input_len = build_training_input(drug_dict, synergy_dict)
+    # dump_drug_dict_as_flat(pca_dict, out)
+    training_input,input_len = build_training_input(pca_dict, synergy_dict)
     # input_len = training_input[list(training_input.keys())[0]]['INPUT']
     target_len = 1
     ds = SupervisedDataSet(input_len, target_len)
@@ -71,7 +92,7 @@ if __name__ == '__main__':
             ds.addSample(training_input[t1][t2]['INPUT'], training_input[t1][t2]['OUTPUT'])
 
 
-    n = buildNetwork(ds.indim, 2, ds.outdim, bias=True)
+    n = buildNetwork(ds.indim, 3, ds.outdim, bias=True)
     t = BackpropTrainer(n, learningrate=0.001, momentum=0.05, verbose=True)
     print("Training")
     t.trainUntilConvergence(ds,
@@ -81,11 +102,11 @@ if __name__ == '__main__':
     # n = NetworkReader.readFrom('trainedNetwork_2.xml')
 
     predictions = {}
-    for d1 in drug_dict:
+    for d1 in pca_dict:
         if not predictions.get(d1, None):
             predictions[d1]={}
-        for d2 in drug_dict:
-            predictions[d1][d2] = n.activate(drug_dict[d1] + drug_dict[d2])[0]
+        for d2 in pca_dict:
+            predictions[d1][d2] = n.activate(pca_dict[d1] + pca_dict[d2])[0]
 
     with open('predictions_4.json', 'w') as outfile:
         json.dump(predictions, outfile)
