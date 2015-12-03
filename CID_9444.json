@@ -1,0 +1,2651 @@
+{
+  "Record": {
+    "RecordType": "CID",
+    "RecordNumber": 9444,
+    "Section": [
+      {
+        "TOCHeading": "2D Structure",
+        "Description": "A two-dimensional representation of the compound.",
+        "Information": [
+          {
+            "ReferenceNumber": 15,
+            "Name": "2D Structure",
+            "BoolValue": true
+          }
+        ]
+      },
+      {
+        "TOCHeading": "3D Conformer",
+        "Description": "A three-dimensional representation of the compound.  The 3-D structure is not experimentally determined, but computed by PubChem.  More detailed information on this conformer model is described in the <a href=\"http://www.jcheminf.com/series/pubchem3d\">PubChem3D themetic series </a> published in the Journal of Cheminformatics.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#3DConformer\">Read more...</a>",
+        "Information": [
+          {
+            "ReferenceNumber": 15,
+            "Name": "3D Conformer",
+            "Description": "5-azacytidine",
+            "NumValue": 9444
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Names and Identifiers",
+        "Description": "Information describing the identity of this PubChem Compound record, including record identifiers, synonyms (i.e., chemical names), descriptors, etc.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#Identification\">Read more...</a>",
+        "Section": [
+          {
+            "TOCHeading": "Record Title",
+            "Description": "Text used as the title for this PubChem record",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Record Title",
+                "StringValue": "5-azacytidine"
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Record Description",
+            "Description": "Textual summary about this PubChem record",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Record Description",
+                "StringValue": "A pyrimidine nucleoside analogue that inhibits DNA methyltransferase, impairing DNA methylation. It is also an antimetabolite of <a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a>, incorporated primarily into RNA. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacytidine\">Azacytidine</a> has been used as an antineoplastic agent. [PubChem]"
+              },
+              {
+                "ReferenceNumber": 7,
+                "Name": "Record Description",
+                "Description": "FDA Pharmacology Summary",
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is a Nucleoside Metabolic Inhibitor. The mechanism of action of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> is as a Nucleic Acid Synthesis Inhibitor. "
+              },
+              {
+                "ReferenceNumber": 14,
+                "Name": "Record Description",
+                "Description": "Physical Description",
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> is a white crystalline powder.  (NTP, 1992)"
+              },
+              {
+                "ReferenceNumber": 16,
+                "Name": "Record Description",
+                "StringValue": "A pyrimidine analogue that inhibits DNA methyltransferase, impairing DNA methylation. It is also an antimetabolite of cytidine, incorporated primarily into RNA. Azacytidine has been used as an antineoplastic agent."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Computed Descriptors",
+            "Description": "Computer algorithm generated (computed) descriptors that use as input the chemical structure information from this record",
+            "Section": [
+              {
+                "TOCHeading": "IUPAC Name",
+                "Description": "Computed chemical name from the chemical structure that uses International Union of Pure and Applied Chemistry (IUPAC) nomenclature standards.  <a href=\"http://old.iupac.org/publications/books/seriestitles/nomenclature.html\">Read more..</a> ",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "IUPAC Name",
+                    "StringValue": "4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1,3,5-triazin-2-one"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "InChI",
+                "Description": "Computed International Chemical Identifier (InChI) from the chemical structure using the International Union of Pure and Applied Chemistry (IUPAC) standard. <a href=\"http://www.iupac.org/home/publications/e-resources/inchi.html\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "InChI",
+                    "StringValue": "InChI=1S/C8H12N4O5/c9-7-10-2-12(8(16)11-7)6-5(15)4(14)3(1-13)17-6/h2-6,13-15H,1H2,(H2,9,11,16)/t3-,4-,5-,6-/m1/s1"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "InChI Key",
+                "Description": "Computed International Chemical Identifier hash (InChIKey) from the chemical structure using the International Union of Pure and Applied Chemistry (IUPAC) standard. <a href=\"http://www.iupac.org/home/publications/e-resources/inchi.html\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "InChI Key",
+                    "StringValue": "NMUSYJAQQFHJEW-KVTDHHQDSA-N"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Canonical SMILES",
+                "Description": "Computed Simplified Molecular-Input Line-Entry System (SMILES) from the chemical structure devoid of isotopic and stereochemical information.  <a href=\"http://www.daylight.com/dayhtml/doc/theory/theory.smiles.html\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Canonical SMILES",
+                    "StringValue": "C1=NC(=NC(=O)N1C2C(C(C(O2)CO)O)O)N"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Isomeric SMILES",
+                "Description": "Computed Simplified Molecular-Input Line-Entry System (SMILES) from the chemical structure containing isotopic and stereochemical information.  SMILES written with isotopic and chiral specifications are collectively known as \"isomeric SMILES\".  <a href=\"http://www.daylight.com/dayhtml/doc/theory/theory.smiles.html\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Isomeric SMILES",
+                    "StringValue": "C1=NC(=NC(=O)N1[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O)N"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Other Identifiers",
+            "Description": "Important identifiers assigned to this chemical substance by authoritative organizations",
+            "Section": [
+              {
+                "TOCHeading": "CAS",
+                "Description": "A proprietary registry number assigned by the Chemical Abstracts Service (CAS) division of the American Chemical Society (ACS) often used to help describe chemical ingredients.  <a href=\"http://en.wikipedia.org/wiki/CAS_Registry_Number\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 2,
+                    "Name": "CAS",
+                    "StringValue": "320-67-2"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "EC Number",
+                "Description": "A seven-digit regulatory identifier currently assigned by the European Chemicals Agency (ECHA) known as a European Community (EC) number.  It is sometimes referred to as an EINECS, ELINCS, or NLP number, which are subsets of an EC number. <a href=\"http://en.wikipedia.org/wiki/European_Community_number\">Read more..</a>  ",
+                "Information": [
+                  {
+                    "ReferenceNumber": 13,
+                    "Name": "EC Number",
+                    "StringValue": "206-280-2"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "NSC Number",
+                "Description": "The NSC number is a numeric identifier for substances submitted to the National Cancer Institute (NCI) for testing and evaluation. It is a registration number for the Developmental Therapeutics Program (DTP) repository. NSC stands for National Service Center.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "NSC Number",
+                    "StringValue": "102816"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "UNII",
+                "Description": "A non-proprietary registry number assigned by the U.S. Food and Drug Administration (FDA) known as an UNique Ingredient Identifier (UNII) code.  <a href=\"http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 11,
+                    "Name": "UNII",
+                    "URL": "http://www.accessdata.fda.gov/spl/data/94c82569-d486-40fd-a27e-7251270ec975/94c82569-d486-40fd-a27e-7251270ec975.xml",
+                    "StringValue": "M801H13NRU"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Synonyms",
+            "Description": "Alternative names for this PubChem Compound record.  A compound can have many different names.  For example, acetone (CH3C(=O)CH3) is also known as propanone, propan-2-one, or dimethyl ketone.  The brand name of a product is commonly used to indicate the primary chemical ingredient(s) in the product (e.g., Tylenol, a common pain killer, is often used for acetaminophen, its active ingredient).  Another example of common synonyms is record identifiers used in different data collections, such as Chemical Abstract Service (CAS) registry numbers, FDA�s UNII (Unique Ingredient Identifiers), and many others.  All these various names and identifiers that designate this compound are organized under the Synonyms section.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingSynonyms\">Read more...</a>",
+            "Section": [
+              {
+                "TOCHeading": "MeSH Synonyms",
+                "Description": "Medical Subject Heading (MeSH) names or identifiers matching this PubChem Compound record.  The matching between the MeSH and compound records is performed by name matching (i.e., identical common names). <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#DataProcessingMeSH\">Read more...</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 16,
+                    "Name": "MeSH Synonyms",
+                    "URL": "http://www.ncbi.nlm.nih.gov/mesh/68001374",
+                    "StringValueList": [
+                      "5 Azacytidine",
+                      "5-Azacytidine",
+                      "Azacitidine",
+                      "Azacytidine",
+                      "NSC 102816",
+                      "NSC-102816",
+                      "NSC102816",
+                      "Pharmion Brand of Azacitidine",
+                      "Vidaza"
+                    ]
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Depositor-Supplied Synonyms",
+                "Description": "Chemical names and identifiers provided by individual data contributors and associated to PubChem Substance records. Synonyms of Substances corresponding to a PubChem Compound record are combined.  [<a href=\"http://pubchemblog.ncbi.nlm.nih.gov/2014/06/19/what-is-the-difference-between-a-substance-and-a-compound-in-pubchem/\">Read this blog</a> on the difference between Compound and Substance records in PubChem.]  Some contributed names may be considered erroneous and suppressed.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#SynonymsFiltered\">Read more...</a>",
+                "HintEmbeddedHTML": false,
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Depositor-Supplied Synonyms",
+                    "StringValueList": [
+                      "5-azacytidine",
+                      "Azacitidine",
+                      "320-67-2",
+                      "Ladakamycin",
+                      "Azacytidine",
+                      "Vidaza",
+                      "Mylosar",
+                      "Azacitidinum",
+                      "Azacitidina",
+                      "5-AZAC",
+                      "Azacitidinum [INN-Latin]",
+                      "Azacitidina [INN-Spanish]",
+                      "NSC-102816",
+                      "Antibiotic U 18496",
+                      "mylo sar",
+                      "CCRIS 60",
+                      "5 AZC",
+                      "UNII-M801H13NRU",
+                      "NSC102816",
+                      "5AzaC",
+                      "NSC 102816",
+                      "Vidaza (TN)",
+                      "CHEBI:2038",
+                      "U-18496",
+                      "S1782_Selleck",
+                      "5-aza-CR",
+                      "HSDB 6879",
+                      "Spectrum_001262",
+                      "NCI-C01569",
+                      "Spectrum2_000786",
+                      "Spectrum3_001509",
+                      "Spectrum4_000922",
+                      "Spectrum5_001166",
+                      "EINECS 206-280-2",
+                      "Azacitidine [USAN:INN]",
+                      "MolMap_000062",
+                      "AC1L1T1Y",
+                      "BRN 0620461",
+                      "CHEMBL1489",
+                      "Lopac0_000035",
+                      "4-Amino-1-beta-D-ribofuranosyl-s-triazin-2(1H)-one",
+                      "NCGC00090851-04",
+                      "BSPBio_003157",
+                      "KBioGR_001444",
+                      "KBioGR_002556",
+                      "KBioSS_001742",
+                      "KBioSS_002565",
+                      "ST056940",
+                      "A1287_SIGMA",
+                      "A2385_SIGMA",
+                      "DivK1c_000125",
+                      "SPBio_000892",
+                      "SPECTRUM1502111",
+                      "Azacitidine (JAN/USAN/INN)",
+                      "MLS001333121",
+                      "MLS001333122",
+                      "MLS002153249",
+                      "WR-183027",
+                      "4-Amino-1-beta-d-ribofuranosyl-1,3,5-triazin-2(1H)-one",
+                      "Jsp005945",
+                      "1,3,5-Triazin-2(1H)-one, 4-amino-1-beta-D-ribofuranosyl-",
+                      "BCBcMAP01_000083",
+                      "HMS500G07",
+                      "KBio1_000125",
+                      "KBio2_001742",
+                      "KBio2_002556",
+                      "KBio2_004310",
+                      "KBio2_005124",
+                      "KBio2_006878",
+                      "KBio2_007692",
+                      "KBio3_002657",
+                      "KBio3_003034",
+                      "NMUSYJAQQFHJEW-KVTDHHQDSA-",
+                      "5-AZCR",
+                      "cMAP_000082",
+                      "NINDS_000125",
+                      "Azacytidine, 5-",
+                      "HMS1921J22",
+                      "HMS2092D08",
+                      "NS-17",
+                      "U 18496",
+                      "wr 183027",
+                      "5-AC",
+                      "2-(beta-D-Ribofuranosyl)-4-amino-1,3,5-triazin-2-one",
+                      "DB00928",
+                      "LS-1189",
+                      "IDI1_000125",
+                      "NCGC00090851-01",
+                      "NCGC00090851-02",
+                      "NCGC00090851-03",
+                      "NCGC00090851-08",
+                      "NCGC00178234-01",
+                      "4-Amino-1-beta-D-ribofuranosyl-1,3,5-traizin-2(1H)-one",
+                      "4-Amino-1-beta-D-ribofuranosyl-1,3,5-triazine-2(1H)-one",
+                      "CPD000857239",
+                      "SAM002264595",
+                      "SMR000857239",
+                      "4-Amino-1-(beta-D-ribofuranosyl)-1,3,5-triazin-2(1H)-one",
+                      "DSSTox_CID_116",
+                      "EU-0100035",
+                      "FT-0081170",
+                      "TL80073599",
+                      "A 2385",
+                      "C11262",
+                      "D03021",
+                      "4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1,3,5-triazin-2-one",
+                      "DSSTox_RID_75378",
+                      "DSSTox_GSID_20116",
+                      "s-Triazin-2(1H)-one, 4-amino-1-beta-D-ribofuranosyl-",
+                      "4-amino-1-beta-L-ribofuranosyl-1,3,5-triazin-2(1H)-one",
+                      "5-azacytidine, Mylosar, Ladakamycin, Vidaza, Azacitidine",
+                      "pyrimidine antimetabolite: inhibits nucleic acid replication",
+                      "s-Triazin-2(1H)-one, 4-amino-1-beta-D-ribofuranosyl- (8CI)",
+                      "5 Azacytidine",
+                      "4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1,3,5-triaz",
+                      "InChI=1/C8H12N4O5/c9-7-10-2-12(8(16)11-7)6-5(15)4(14)3(1-13)17-6/h2-6,13-15H,1H2,(H2,9,11,16)/t3-,4-,5-,6-/m1/s1",
+                      "Vidazareg",
+                      "Pharmion Brand of Azacitidine",
+                      "5-azacitidine",
+                      "CID9444",
+                      "1-[(4S,2R,3R,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-4-amino-1,3,5-tri azin-2-one",
+                      "CAS-320-67-2",
+                      "Azacitidine (Vidaza)",
+                      "PubChem14167",
+                      "SCHEMBL3741",
+                      "D001374",
+                      "KSC222S1T",
+                      "MLS002548894",
+                      "GTPL6796",
+                      "M801H13NRU",
+                      "CTK1C2919",
+                      "NMUSYJAQQFHJEW-KVTDHHQDSA-N",
+                      "62402-31-7 (hydrochloride)",
+                      "HMS2231F15",
+                      "HMS3259D19",
+                      "HMS3260G11",
+                      "Pharmakon1600-01502111",
+                      "Tox21_111032",
+                      "Tox21_302985",
+                      "ABP001093",
+                      "ANW-27256",
+                      "BDBM50424715",
+                      "CCG-39046",
+                      "DAP000640",
+                      "EBD145507",
+                      "NSC758186",
+                      "SBB066305",
+                      "AKOS015896938",
+                      "Tox21_111032_1",
+                      "AM83944",
+                      "CS-1287",
+                      "LP00035",
+                      "MCULE-8318770472",
+                      "NC00672",
+                      "NSC-758186",
+                      "RP28647",
+                      "RTR-013523",
+                      "5-azacytidine;Mylosar;Ladakamycin;Vidaza",
+                      "NCGC00090851-05",
+                      "NCGC00090851-06",
+                      "NCGC00090851-07",
+                      "NCGC00090851-10",
+                      "NCGC00256541-01",
+                      "AK142815",
+                      "Azacitidine-Supplied by Selleck Chemicals",
+                      "HY-10586",
+                      "KB-41704",
+                      "NU000206",
+                      "NU004636",
+                      "NU004637",
+                      "SC-09078",
+                      "AB2000290",
+                      "DB-006955",
+                      "SL-000003",
+                      "TR-013523",
+                      "A5777",
+                      "FT-0601307",
+                      "ST24044344",
+                      "33795-EP2275420A1",
+                      "33795-EP2295055A2",
+                      "33795-EP2295416A2",
+                      "33795-EP2298748A2",
+                      "33795-EP2298764A1",
+                      "33795-EP2298765A1",
+                      "33795-EP2305642A2",
+                      "33795-EP2311453A1",
+                      "33795-EP2311840A1",
+                      "124679-EP2270008A1",
+                      "124679-EP2292617A1",
+                      "124679-EP2295426A1",
+                      "124679-EP2295427A1",
+                      "3B3-001809",
+                      "4-Amino-1-(beta-D-ribofuranosyl)-1,3,5-triazin-2(1H)-one; Ladakamycin",
+                      "4-amino-1-((2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl)-1,3,5-triazin-2(1H)-",
+                      "4-amino-1-((2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl)-1,3,5-triazin-2(1H)-one",
+                      "4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)oxolan-2-yl]-1,2-dihydro-1,3,5-triazin-2-one",
+                      "4-amino-1-[(2R,3R,4S,5R)-3,4-dihydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl]-1,3,5-triazin-2-one",
+                      "5AE"
+                    ]
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Removed Synonyms",
+                "Description": "Potentially erroneous chemical names and identifiers provided by PubChem Substance records for the same chemical structure that were removed by name/structure consistency filtering.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#SynonymsUnfiltered\">Read more...</a>",
+                "HintEmbeddedHTML": false,
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Removed Synonyms",
+                    "StringValueList": [
+                      "FAZARABINE",
+                      "5,6-Dihydro-5-azacytidine",
+                      "5-Fluoro-2-nitrobenzoicacid",
+                      "UNII-0627D8VG1C",
+                      "5-fluoro-2-nitro-benzoic Acid",
+                      "CCRIS 6743",
+                      "C8H12N4O5",
+                      "ZINC03861768",
+                      "4-Amino-1-?-D-ribofuranosyl-1,3,5-triazin-2(1H)-one",
+                      "4-Amino-5,6-dihydro-1-beta-D-ribofuranosyl-s-triazin-2(1H)-one",
+                      "5,6-Dihydro-4-amino-1-beta-D-ribofuranosyl-s-triazin-2(1H)-one",
+                      "s-Triazin-2(1H)-one, 5,6-dihydro-4-amino-1-beta-D-ribofuranosyl-",
+                      "1,3,5-triazin-2(1H)-one, 4-amino-3,6-dihydro-1-beta-D-ribofuranosyl-",
+                      "4-Amino-5,6-dihydro-1-beta-D-ribofuranosyl-1,3,5-triazin-2(1H)-one",
+                      "320-98-9",
+                      "62488-57-7",
+                      "931-86-2",
+                      "one"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Create Date",
+            "Description": "Date the compound record was initially added to PubChem",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Create Date",
+                "DateValue": "2004-09-16"
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Modify Date",
+            "Description": "Date this record was last updated in PubChem",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Modify Date",
+                "DateValue": "2015-11-28"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Chemical and Physical Properties",
+        "Description": "Chemical and physical properties such as melting point, molecular weight, etc.",
+        "Section": [
+          {
+            "TOCHeading": "Computed Properties",
+            "Description": "Properties computed automatically from the given chemical structure",
+            "Section": [
+              {
+                "TOCHeading": "Molecular Weight",
+                "Description": "Molecular weight or molecular mass refers to the mass of a molecule. It is calculated as the sum of the mass of each constituent atom multiplied by the number of atoms of that element in the molecular formula.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Molecular Weight",
+                    "NumValue": 244.20468,
+                    "ValueUnit": "g/mol"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Molecular Formula",
+                "Description": "A chemical formula is a way of expressing information about the proportions of atoms that constitute a particular chemical compound, using a single line of chemical element symbols, numbers. PubChem is using the Hill system that write the chemical formulas in a way that the number of carbon atoms in a molecule is indicated first, the number of hydrogen atoms next, and then the number of all other chemical elements subsequently, in alphabetical order. When the formula contains no carbon, all the elements, including hydrogen, are listed alphabetically. ",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Molecular Formula",
+                    "StringValue": "C8H12N4O5"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "XLogP3",
+                "Description": "Computed Octanol/Water Partition Coefficient",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "XLogP3",
+                    "NumValue": -2.2
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Hydrogen Bond Donor Count",
+                "Description": "Hydrogen Bond Donor count",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Hydrogen Bond Donor Count",
+                    "NumValue": 4
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Hydrogen Bond Acceptor Count",
+                "Description": "Hydrogen Bond Acceptor count",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Hydrogen Bond Acceptor Count",
+                    "NumValue": 5
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Rotatable Bond Count",
+                "Description": "Rotatable bond is defined as any single non-ring bond, bounded to nonterminal heavy (i.e., non-hydrogen) atom.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Rotatable Bond Count",
+                    "NumValue": 2
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Exact Mass",
+                "Description": "The exact mass of an isotopic species is obtained by summing the masses of the individual isotopes of the molecule.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Exact Mass",
+                    "NumValue": 244.08077,
+                    "ValueUnit": "g/mol"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Monoisotopic Mass",
+                "Description": "The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Monoisotopic Mass",
+                    "NumValue": 244.08077,
+                    "ValueUnit": "g/mol"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Topological Polar Surface Area",
+                "Description": "The topological polar surface area (TPSA) of a molecule is defined as the surface sum over all polar atoms in a molecule. ",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Topological Polar Surface Area",
+                    "NumValue": 141,
+                    "ValueUnit": "A^2"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Heavy Atom Count",
+                "Description": "A heavy atom is defined as any atom except hydrogen in a chemical structure.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Heavy Atom Count",
+                    "NumValue": 17
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Formal Charge",
+                "Description": "Formal charge is the difference between the number of valence electrons of each atom and the number of electrons the atom is associated with. Formal charge assumes any shared electrons are equally shared between the two bonded atoms.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Formal Charge",
+                    "NumValue": 0
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Complexity",
+                "Description": "The complexity rating of a compound is a rough estimate of how complicated a structure is, seen from both the point of view of the elements contained and the displayed structural features including symmetry. This complexity rating is computed using the Bertz/Hendrickson/Ihlenfeldt formula.  <a href=\"//pubchem.ncbi.nlm.nih.gov/help.html#Glossary\">Read more...</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Complexity",
+                    "NumValue": 384
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Isotope Atom Count",
+                "Description": "Isotopte Atom Count is the number of isotopes that are not most abundant for the corresponding chemical elements.  Isotopes are variants of a chemical element which differ in neutron number.  For example, among three isotopes of carbon (i.e., C-12, C-13, and C-14), the isotope atom count considers the C-13 and C-14 atoms, because C-12 is the most abundant isotope of carbon.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Isotope Atom Count",
+                    "NumValue": 0
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Defined Atom Stereocenter Count",
+                "Description": "An atom stereocenter, also known as a chiral center, is an atom that is attached to four different types of atoms (or groups of atoms) in the tetrahedral arrangement. It can have either (R)- or (S)- configurations.  Some compounds, such as racemic mixtures, have an undefined atom stereocenter, whose (R/S)-configuration is not specifically defined.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Defined Atom Stereocenter Count",
+                    "NumValue": 4
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Undefined Atom Stereocenter Count",
+                "Description": "An atom stereocenter, also known as a chiral center, is an atom that is attached to four different types of atoms (or groups of atoms) in the tetrahedral arrangement. It can have either (R)- or (S)- configurations.  Some compounds, such as racemic mixtures, have an undefined atom stereocenter, whose (R/S)-configuration is not specifically defined.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Undefined Atom Stereocenter Count",
+                    "NumValue": 0
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Defined Bond Stereocenter Count",
+                "Description": "A bond stereocenter is a non-rotatable bond around which two atoms can have different arrangement (as in cis- and trans-forms of butene around its double bond).  Some compounds have an undefined bond stereocenter, whose stereochemistry is not specifically defined.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Defined Bond Stereocenter Count",
+                    "NumValue": 0
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Undefined Bond Stereocenter Count",
+                "Description": "A bond stereocenter is a non-rotatable bond around which two atoms can have different arrangement (as in cis- and trans-forms of butene around its double bond).  Some compounds have an undefined bond stereocenter, whose stereochemistry is not specifically defined.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Undefined Bond Stereocenter Count",
+                    "NumValue": 0
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Covalently-Bonded Unit Count",
+                "Description": "Covalently-Bonded Unit Count ",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Covalently-Bonded Unit Count",
+                    "NumValue": 1
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "CACTVS Substructure Key Fingerprint",
+                "Description": "CACTVS Substructure Key Fingerprint",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "CACTVS Substructure Key Fingerprint",
+                    "BinaryValue": "AAADccBzuAAAAAAAAAAAAAAAAAAAASAAAAAgAAAAAAAAAAAAAAAAHgAQCAAACBThgAYBAANABgAoAAABNAAAAAEAAAABAAAIAACDEAIAiAAOQAAHBgITAADwMAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Compound Is Canonicalized",
+                "Description": "Compound is canonicalized",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Compound Is Canonicalized",
+                    "BoolValue": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Experimental Properties",
+            "Description": "Properties determined experimentally",
+            "Section": [
+              {
+                "TOCHeading": "Physical Description",
+                "Description": "Physical description in general",
+                "Information": [
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Physical Description",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> is a white crystalline powder.  (NTP, 1992)"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Color",
+                "Description": "Physical description - color",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Color",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Budavari, S. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Whitehouse Station, NJ: Merck and Co., Inc., 1996., p. 153"
+                    ],
+                    "StringValue": "Crystals from methanol"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Melting Point",
+                "Description": "The melting point is the temperature at which a substance changes state from solid to liquid at atmospheric pressure. When considered as the temperature of the reverse change, from liquid to solid, it is referred to as the freezing point.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Melting Point",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Aldrich; Aldrich Handbook of Fine Chemicals and Laboratory Equipment. 2000-2001. Milwaukee, WI: Aldrich Chem Co. p. 132 (2000)"
+                    ],
+                    "StringValue": "228-230 deg C (decomposes)"
+                  },
+                  {
+                    "ReferenceNumber": 2,
+                    "Name": "Melting Point",
+                    "Reference": [
+                      "PhysProp"
+                    ],
+                    "NumValue": 229,
+                    "ValueUnit": "°C"
+                  },
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Melting Point",
+                    "Reference": [
+                      "(NTP, 1992)"
+                    ],
+                    "StringValue": "442 to 446 °F (decomposes)"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Solubility",
+                "Description": "The solubility of a substance is the amount of that substance that will dissolve in a given amount of solvent. The default solvent is water, if not indicated.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 2,
+                    "Name": "Water Solubility",
+                    "NumValue": 89000,
+                    "ValueUnit": "mg/L"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Solubility",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-679\" href=\"/compound/DMSO\">DMSO</a>                               52.7 (mg/mL)"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Solubility",
+                    "StringValue": "Distilled H2O                 13.7-14.0 (mg/mL)"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Solubility",
+                    "StringValue": "0.1 N HCL                     27.7-28.0 (mg/mL)"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Solubility",
+                    "StringValue": "0.1 N NaOH                    42.0-43.8 (mg/mL)"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Solubility",
+                    "StringValue": "35% <a class=\"pubchem-internal-link CID-702\" href=\"/compound/Ethyl%20alcohol\">Ethyl alcohol</a>             14.2-15.0 (mg/mL)"
+                  },
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Solubility",
+                    "Reference": [
+                      "(NTP, 1992)"
+                    ],
+                    "StringValue": "5 to 10 mg/mL at 70 ° F"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "LogP",
+                "Description": "Octanol/Water Partition Coefficient, used as a measure of molecular lipophilicity",
+                "Information": [
+                  {
+                    "ReferenceNumber": 2,
+                    "Name": "LogP",
+                    "NumValue": -3.5
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Stability",
+                "Description": "Tendency of a material to resist change or decomposition due to internal reaction, or due to the action of air, heat, light, pressure, etc.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Stability",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Trissel, L.A. Handbook on Injectable Drugs. 9th ed. Bethesda, MD. American Society of Health-System Pharmacists' Product Development. 1996., p. 1143"
+                    ],
+                    "StringValue": "Intact vials should be stored under refrigeration & are stable for a least 4 yr. Although the drug is stable for 3 yr at room temp, refrigeration is recommended because degradation may result at elevated temperatures. The constituted soln hydrolyzes at room temp & should be used within 30 min. The pH providing optimum soln stability has been reported to be about 6.5-7. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> 0.5 & 2 mg/ml in Ringer's injection, lactated, was stable for up to one month when frozen at -20 deg C in <a class=\"pubchem-internal-link CID-8252\" href=\"/compound/polypropylene\">polypropylene</a> syringes."
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Stability",
+                    "StringValue": "Bulk: Samples of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacitidine\">5- azacitidine</a> and <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacitidine\">5- azacitidine</a> hydrate were found to be stable at 25 °C and 60 °C for at least 30 days. \u000ASolution: Dilute aqueous solutions of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacitidine\">5-azacitidine</a> have been found to be unstable at 24 -26 ° C. A 1% aqueous solution at 5-6°C decomposes 2, 5, and 9% in 2, 8, and 24 hours respectively. At room temperature a 1% aqueous solution shows 7, 20 and 41% decomposition in 2, 8, and 24 hours respectively (UV and NMR)."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Optical Rotation",
+                "Description": "Optical rotation is a property of chiral substances that is expressed as the angle to which the material causes polarized light to rotate at a particular temperature, wavelength, and concentration",
+                "Information": [
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "Optical Rotation",
+                    "StringValue": "(c = 1, H2O)          [a]20 D = 40.0 ± 1.0°"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Decomposition",
+                "Description": "The decomposition temperature of a substance is the temperature at which the substance chemically decomposes",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Decomposition",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Gleason, M.N., R.E. Gosselin, H.C. Hodge, and R.P. Smith. Clinical Toxicology of Commercial Products. 3rd ed. Baltimore: Williams and Wilkins, 1969., p. 296"
+                    ],
+                    "StringValue": "When heated to decomposition it emits toxic fumes of /nitrogen oxides/."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Spectral Properties",
+            "Description": "Property data related to spectroscopy",
+            "Information": [
+              {
+                "ReferenceNumber": 1,
+                "Name": "Spectral Properties",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Budavari, S. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Whitehouse Station, NJ: Merck and Co., Inc., 1996., p. 153"
+                ],
+                "StringValue": "UV max (<a class=\"pubchem-internal-link CID-962\" href=\"/compound/water\">water</a>): 241 nm (epsilon 8767); (0.01 N HCl): 249 nm (epsilon 3077); (0.01 N KOH): 223 nm (epsilon 24200)"
+              },
+              {
+                "ReferenceNumber": 1,
+                "Name": "Spectral Properties",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Budavari, S. (ed.). The Merck Index - An Encyclopedia of Chemicals, Drugs, and Biologicals. Whitehouse Station, NJ: Merck and Co., Inc., 1996., p. 153"
+                ],
+                "StringValue": "Optical rotation: + 39 degrees @ 25 deg C (c = 1 in <a class=\"pubchem-internal-link CID-962\" href=\"/compound/water\">water</a>)"
+              }
+            ],
+            "Section": [
+              {
+                "TOCHeading": "UV",
+                "Description": "Ultraviolet-visible spectroscopy or ultraviolet-visible spectrophotometry (UV-Vis or UV/Vis) refers to absorption spectroscopy or reflectance spectroscopy in the ultraviolet-visible spectral region.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "UV",
+                    "StringValue": "(0.1 M <a class=\"pubchem-internal-link CID-175\" href=\"/compound/acetate\">acetate</a> buffer, pH 5)  max = 242 ±2nm          E = 6,850 - 7,250"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "HPLC",
+                "Description": "High-performance liquid chromatography (HPLC; formerly referred to as high-pressure liquid chromatography), is a technique in analytic chemistry used to separate the components in a mixture, to identify each component, and to quantify each component.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "HPLC",
+                    "StringValue": "Column: Alltech C8 300 mm x 4.6 mm i.d.\u000AMobile Phase: pH 6.5, 0.02 M KH\u000AFlow Rate: 1.5 mL/min\u000ADetection: UV at 210 nm\u000ASample Preparation: 0.5 mg of the sample is quickly dissolved in 1.0 mL of the mobile phase or internal standard solution\u000AInternal Standard: <a class=\"pubchem-internal-link CID-6029\" href=\"/compound/Uridine\">Uridine</a> (1.5 mg/mL in mobile phase)\u000ARetention Volume: 6.8 mL (NSC - 102816)\u000A9.0 mL (I.S)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Related Records",
+        "Description": "Related compounds/substances information based on the similar structure, annotations, etc.",
+        "Information": [
+          {
+            "ReferenceNumber": 31,
+            "Name": "LinkOut",
+            "BoolValue": true
+          }
+        ],
+        "Section": [
+          {
+            "TOCHeading": "Related Compounds with Annotation",
+            "Description": "The subset of compounds that are related to the one currently displayed AND that have biomedical annotations. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#RelatedRecords\">Read more..</a>",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Related Compounds with Annotation",
+                "BoolValue": true
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Related Compounds",
+            "Description": "Compound records closely associated to this record. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#RelatedRecords\">Read more..</a>",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Connectivity Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_sameconnectivity_pulldown&from_uid=9444",
+                "NumValue": 26
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Stereo Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_samestereochem_pulldown&from_uid=9444",
+                "NumValue": 7
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Isotope Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_sameisotopic_pulldown&from_uid=9444",
+                "NumValue": 18
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Parent, Connectivity Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_parent_connectivity_pulldown&from_uid=9444",
+                "NumValue": 56
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Parent, Stereo Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_parent_stereo_pulldown&from_uid=9444",
+                "NumValue": 33
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Parent, Isotope Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_parent_isotopes_pulldown&from_uid=9444",
+                "NumValue": 48
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Same Parent, Exact Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_parent_pulldown&from_uid=9444",
+                "NumValue": 27
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Mixtures, Components, and Neutralized Forms Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_mixture&from_uid=9444",
+                "NumValue": 74
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Similar Compounds Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound&from_uid=9444",
+                "NumValue": 301
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Similar Conformers Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&LinkName=pccompound_pccompound_3d&from_uid=9444",
+                "NumValue": 3839
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Substances",
+            "Description": "Substance records linked to this compound.",
+            "Section": [
+              {
+                "TOCHeading": "Related Substances",
+                "Description": "Substances identical or nearly identical to this record.  <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#RelatedRecords\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "All Count",
+                    "URL": "http://www.ncbi.nlm.nih.gov/pcsubstance/?term=9444[CompoundID]",
+                    "NumValue": 278
+                  },
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Same Count",
+                    "URL": "http://www.ncbi.nlm.nih.gov/pcsubstance/?term=9444[StandardizedCID]",
+                    "NumValue": 166
+                  },
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Mixture Count",
+                    "URL": "http://www.ncbi.nlm.nih.gov/pcsubstance/?term=9444[ComponentCID]",
+                    "NumValue": 112
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Substances by Category",
+                "Description": "Substance category according to the depositors. Substance Categorization Classification - The subheaders in this section of a PubChem Compound record reflect the various categories of depositors that have submitted corresponding PubChem Substance records. This allows you to quickly find the corresponding PubChem Substance records that are likely to contain a given type of information, such as Chemical Reactions. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#Classification\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 15,
+                    "Name": "Substances by Category",
+                    "StringValueList": [
+                      "Chemical Vendors",
+                      "Curation Efforts",
+                      "Governmental Organizations",
+                      "Journal Publishers",
+                      "Legacy Depositors",
+                      "NIH Initiatives",
+                      "Research and Development",
+                      "Subscription Services"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Entrez Crosslinks",
+            "Description": "Cross-references to associated records in other Entrez databases such as PubMed, Gene, Protein, etc.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "PubMed Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 2502
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Protein Structures Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_structure&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 1
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Taxonomy Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_taxonomy&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 3
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "OMIM Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_omim&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 26
+              },
+              {
+                "ReferenceNumber": 15,
+                "Name": "Gene Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_gene&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 423
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Chemical Vendors",
+        "Description": "A list of chemical vendors that sell this compound.  Each vendor may have multiple products containing the same chemical, but different in various aspects, such as amount and purity.  For each product, the external identifier used to locate the product on the vendor's website is provided under the Purcharsable Chemical column, and clicking this identifier directs you to the vendor's website.  The information on the product provided by the vendor to PubChem can be accessed at the Summary page of the corresponding PubChem Substance ID (SID).  Note that the order of chemical vendors on the list is randomized, and that PubChem do not endorse any of the vendors.",
+        "Information": [
+          {
+            "ReferenceNumber": 15,
+            "Name": "Chemical Vendors",
+            "BoolValue": true
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Drug and Medication Information",
+        "Description": "Drug and medication information from multiple sources.",
+        "Section": [
+          {
+            "TOCHeading": "Drug Information",
+            "Description": "Drug information related to prescription and over the counter drugs from Drugs@FDA, FDA Organge Book, DailyMed, and PubMed Health.",
+            "HintGroupSubsectionsByReference": true,
+            "Section": [
+              {
+                "TOCHeading": "Drug Name",
+                "Description": "A brand name drug is a drug marketed under a proprietary, trademark-protected name.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Drug Name",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> (<i>from <a href=\"http://www.accessdata.fda.gov/scripts/cder/drugsatfda/index.cfm?fuseaction=Search.SearchResults_Browse&DrugInitial=A\">Drugs@FDA</a></i>)"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Drug Name",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a> (<i>from <a href=\"http://www.accessdata.fda.gov/scripts/cder/drugsatfda/index.cfm?fuseaction=Search.SearchResults_Browse&DrugInitial=V\">Drugs@FDA</a></i>)"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "PubMed Health",
+                "Description": "PubMed Health Drug information title.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "PubMed Health",
+                    "StringValue": "<a href=\"http://www.ncbi.nlm.nih.gov/pubmedhealth/PMHT0009162/\"><a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> (Injection)</a>"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "PubMed Health",
+                    "StringValue": "<a href=\"http://www.ncbi.nlm.nih.gov/pubmedhealth/PMHT0009162/\"><a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> (Injection)</a>"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Drug Classes",
+                "Description": "Drug classes from PubMed Health.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Drug Classes",
+                    "StringValue": "Antineoplastic Agent (<i>from <a href=\"http://www.ncbi.nlm.nih.gov/pubmedhealth/PMHT0009162/\">PubMed Health</a></i>)"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Drug Classes",
+                    "StringValue": "Antineoplastic Agent (<i>from <a href=\"http://www.ncbi.nlm.nih.gov/pubmedhealth/PMHT0009162/\">PubMed Health</a></i>)"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Drug Label",
+                "Description": "Drug label information from DailyMed.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Drug Label",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> for injectable suspension) contains <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>, which is a pyrimidine nucleoside analog of <a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a>. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is 4-amino-1--D-ribofuranosyl-s-triazin-2(1H)-one. The structural formula is as follows:The empirical formula i...<br/> <a href=\"http://dailymed.nlm.nih.gov/dailymed/search.cfm?adv=1&labeltype=all&query=NAME:(AZACITIDINE)\">Click here to see drug label(s) from DailyMed</a>"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Drug Label",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> for injectable suspension) contains <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>, which is a pyrimidine nucleoside analog of <a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a>. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is 4-amino-1--D-ribofuranosyl-s-triazin-2(1H)-one. The structural formula is as follows:The empirical formula i...<br/> <a href=\"http://dailymed.nlm.nih.gov/dailymed/search.cfm?adv=1&labeltype=all&query=NAME:(VIDAZA)\">Click here to see drug label(s) from DailyMed</a>"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Active Ingredient",
+                "Description": "An active ingredient is any component that provides pharmacological activity or other direct effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body of man or animals.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Active Ingredient",
+                    "StringValue": "Azacitidine"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Active Ingredient",
+                    "StringValue": "Azacitidine"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Dosage Form",
+                "Description": "A dosage form is the physical form in which a drug is produced and dispensed, such as a tablet, a capsule, or an injectable.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Dosage Form",
+                    "StringValue": "Injectable"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Dosage Form",
+                    "StringValue": "Injectable"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Route",
+                "Description": "A route of administration is a way of administering a drug to a site in a patient. A comprehensive list of specific routes of administration appears in the CDER Data Standards Manual.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Route",
+                    "StringValue": "Intravenous, subcutaneous"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Route",
+                    "StringValue": "Intravenous, subcutaneous"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Strength",
+                "Description": "The strength of a drug product tells how much of the active ingredient is present in each dosage.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Strength",
+                    "StringValue": "100mg/vial"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Strength",
+                    "StringValue": "100mg/vial"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Market Status",
+                "Description": "Marketing status indicates how a drug product is sold in the United States.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Market Status",
+                    "StringValue": "Prescription"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Market Status",
+                    "StringValue": "Prescription"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Company",
+                "Description": "The company (also called applicant or sponsor) submits an application to FDA for approval to market a drug product in the United States.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 9,
+                    "Name": "Company",
+                    "StringValue": "Dr Reddys Labs"
+                  },
+                  {
+                    "ReferenceNumber": 10,
+                    "Name": "Company",
+                    "StringValue": "Celgene"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Therapeutic Uses",
+            "Description": "Therapeutic Uses information from HSDB",
+            "Information": [
+              {
+                "ReferenceNumber": 1,
+                "Name": "Therapeutic Uses",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Kirk-Othmer Encyclopedia of Chemical Technology. 4th ed. Volumes 1: New York, NY. John Wiley and Sons, 1991-Present., p. V5 (1993) 872"
+                ],
+                "StringValue": "Anticancer agent used to treat acute myclogenous leukemia"
+              },
+              {
+                "ReferenceNumber": 1,
+                "Name": "Therapeutic Uses",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Prasanna P et al; Clin Cancer Res 1 (8): 865-71"
+                ],
+                "StringValue": "Expl Ther: The ability of <a class=\"pubchem-internal-link CID-4409936\" href=\"/compound/phenylacetate\">phenylacetate</a> to prevent carcinogenesis by the chemotherapeutic hypomethylating drug <a class=\"pubchem-internal-link CID-451668\" href=\"/compound/5-aza-2%27-deoxycytidine\">5-aza-2'-deoxycytidine</a> (5AzadC) was tested in vitro and in mice. Transient exposure of immortalized, but poorly tumorigenic ras-transformed 4C8 fibroblasts to 5AzadC resulted in neoplastic transformation manifested by loss of contact inhibition of growth, acquired invasiveness, and increased tumorigenicity in athymic mice."
+              },
+              {
+                "ReferenceNumber": 1,
+                "Name": "Therapeutic Uses",
+                "Description": "**QC REVIEWED**",
+                "Reference": [
+                  "Hardman, J.G., L.E. Limbird, P.B. Molinoff, R.W. Ruddon, A.G. Goodman (eds.). Goodman and Gilman's The Pharmacological Basis of Therapeutics. 9th ed. New York, NY: McGraw-Hill, 1996., p. 1249"
+                ],
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a>, an inhibitor of DNA methylation as well as a <a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a> antimetabolite, becomes incorporated predominantly into RNA and has antileukemic and differentiating action. A newer analog, <a class=\"pubchem-internal-link CID-60750\" href=\"/compound/2%27%2C2%27-difluorodeoxycytidine\">2',2'-difluorodeoxycytidine</a> (<a class=\"pubchem-internal-link CID-60750\" href=\"/compound/gemcitabine\">gemcitabine</a>), becomes incorporated into DNA and inhibits the elongation of nascent DNA strands. It has promising activity in various human solid tumors, including lung cancer and ovarian cancer ... ."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Drug Indication",
+            "Description": "Drug Indication information from HSDB",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Drug Indication",
+                "StringValue": "For treatment of patients with the following French-American-British myelodysplastic syndrome subtypes: refractory anemia or refractory anemia with ringed sideroblasts (if accompanied by neutropenia or thrombocytopenia or requiring transfusions), refractory anemia with excess blasts, refractory anemia with excess blasts in transformation (now classified as acute myelogenous leukemia with multilineage dysplasia), and chronic myelomonocytic leukemia."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Pharmacology and Biochemistry",
+        "Description": "Pharmacology and biochemistry information related to this record",
+        "Section": [
+          {
+            "TOCHeading": "Pharmacology",
+            "Description": "Pharmacology information related to this record",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Pharmacology",
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is believed to exert its antineoplastic effects by causing hypomethylation of DNA and direct cytotoxicity on abnormal hematopoietic cells in the bone marrow. The concentration of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> required for maximum inhibition of DNA methylation in vitro does not cause major suppression of DNA synthesis. Hypomethylation may restore normal function to genes that are critical for differentiation and proliferation. The cytotoxic effects of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> cause the death of rapidly dividing cells, including cancer cells that are no longer responsive to normal growth control mechanisms. Non-proliferating cells are relatively insensitive to <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>. Upon uptake into cells, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> is phosphorylated to 5-azacytidine monophosphate by <a class=\"pubchem-internal-link CID-6029\" href=\"/compound/uridine\">uridine</a>-<a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a> kinase, then to <a class=\"pubchem-internal-link CID-644102\" href=\"/compound/diphosphate\">diphosphate</a> by pyrimidine monophosphate kinases and <a class=\"pubchem-internal-link CID-3440921\" href=\"/compound/triphosphate\">triphosphate</a> by <a class=\"pubchem-internal-link CID-644102\" href=\"/compound/diphosphate\">diphosphate</a> kinases. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacitidine\">5-Azacitidine</a> <a class=\"pubchem-internal-link CID-3440921\" href=\"/compound/triphosphate\">triphosphate</a> is incorporated into RNA, leading to the disruption of nuclear and cytoplasmic RNA metabolism and inhibition of protein synthesis. 5-Azacytidine diphosphate is reduced to 5-aza-deoxycytidine diphosphate by ribonucleotide reductase. The resultant metabolite is phosphorylated to 5-azadeoxycitidine <a class=\"pubchem-internal-link CID-3440921\" href=\"/compound/triphosphate\">triphosphate</a> by nucleoside <a class=\"pubchem-internal-link CID-644102\" href=\"/compound/diphosphate\">diphosphate</a> kinases. 5-azadeoxycitidine <a class=\"pubchem-internal-link CID-3440921\" href=\"/compound/triphosphate\">triphosphate</a> is then incoporated into DNA, leading to inhibition of DNA synthesis. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is most toxic during the S-phase of the cell cycle."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "MeSH Pharmacological Classification",
+            "Description": "Pharmacological action classes that provided by MeSH",
+            "Information": [
+              {
+                "ReferenceNumber": 29,
+                "Name": "Antimetabolites, Antineoplastic",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pccompound&DbFrom=mesh&Cmd=Link&LinkName=mesh_pccompound&IdsFromResult=68000964",
+                "StringValue": "Antimetabolites that are useful in cancer chemotherapy."
+              },
+              {
+                "ReferenceNumber": 30,
+                "Name": "Enzyme Inhibitors",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pccompound&DbFrom=mesh&Cmd=Link&LinkName=mesh_pccompound&IdsFromResult=68004791",
+                "StringValue": "Compounds or agents that combine with an enzyme in such a manner as to prevent the normal substrate-enzyme combination and the catalytic reaction."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "FDA Pharmacological Classification",
+            "Description": "Pharmacological classes codes are from the National Drug File Reference Terminology (NDF-RT) maintained by the Department of Veterans Affairs. Click the class link to see all drugs information under the class from DailyMed",
+            "Section": [
+              {
+                "TOCHeading": "FDA Pharmacology Summary",
+                "Description": "Descriptive text summarizing FDA's pharmacological annotation for a given UNII.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 7,
+                    "Name": "FDA Pharmacology Summary",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is a Nucleoside Metabolic Inhibitor. The mechanism of action of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> is as a Nucleic Acid Synthesis Inhibitor. "
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Active Moiety",
+                "Description": "Active ingredient name",
+                "Information": [
+                  {
+                    "ReferenceNumber": 7,
+                    "Name": "Active Moiety",
+                    "StringValue": "Azacitidine"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "FDA UNII",
+                "Description": "UNII to the record",
+                "Information": [
+                  {
+                    "ReferenceNumber": 7,
+                    "Name": "FDA UNII",
+                    "StringValue": "M801H13NRU"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Pharmacological Classes",
+                "Description": "FDA pharm classes",
+                "Information": [
+                  {
+                    "ReferenceNumber": 7,
+                    "Name": "Mechanisms of Action [MoA]",
+                    "StringValue": "Nucleic Acid Synthesis Inhibitors"
+                  },
+                  {
+                    "ReferenceNumber": 7,
+                    "Name": "Established Pharmacologic Class [EPC]",
+                    "StringValue": "Nucleoside Metabolic Inhibitor"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "ATC Code",
+            "Description": "The Anatomical Therapeutic Chemical (ATC) Classification System is used for the classification of drugs. This pharmaceutical coding system divides drugs into different groups according to the organ or system on which they act and/or their therapeutic and chemical characteristics. Each bottom-level ATC code stands for a pharmaceutically used substance, or a combination of substances, in a single indication (or use). This means that one drug can have more than one code: acetylsalicylic acid (aspirin), for example, has A01AD05 as a drug for local oral treatment, B01AC06 as a platelet inhibitor, and N02BA01 as an analgesic and antipyretic. On the other hand, several different brands share the same code if they have the same active substance and indications. <a href=\"http://www.whocc.no/atc/\">Read more..</a>",
+            "Information": [
+              {
+                "ReferenceNumber": 12,
+                "Name": "ATC Code",
+                "URL": "http://www.whocc.no/atc_ddd_index/?code=L01BC07&showdescription=yes",
+                "StringValue": "L01BC07 - <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> < L01BC - Pyrimidine analogues < L01B - Antimetabolites < L01 - Antineoplastic agents < L - Antineoplastic and immunomodulating agents"
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Absorption, Distribution and Excretion",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Absorption",
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is rapidly absorbed after subcutaneous administration. The bioavailability of subcutaneous <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> relative to IV <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> is approximately 89%, based on area under the curve."
+              },
+              {
+                "ReferenceNumber": 2,
+                "Name": "Route of Elimination",
+                "StringValue": "Following IV administration of radioactive <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> to 5 cancer patients, the cumulative urinary excretion was 85% of the radioactive dose. Fecal excretion accounted for <1% of administered radioactivity over three days. Mean excretion of radioactivity in urine following SC administration of 14C-azacitidine was 50%."
+              },
+              {
+                "ReferenceNumber": 2,
+                "Name": "Volume of Distribution",
+                "StringValue": "76 ± 26 L"
+              },
+              {
+                "ReferenceNumber": 2,
+                "Name": "Clearance",
+                "StringValue": "167 +/- 49 L/h"
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Metabolism/Metabolites",
+            "Description": "Metabolism/Metabolites information related to the record",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Metabolism",
+                "StringValue": "An in vitro study of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> incubation in human liver fractions indicated that <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> may be metabolized by the liver. The potential of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> to inhibit cytochrome P450 (CYP) enzymes is not known."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Biological Half-Life",
+            "Description": "Biological Half-Life information related to the record",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Biological Half-Life",
+                "StringValue": "Mean elimination half-life is approximately 4 hours."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Mechanism of Action",
+            "Description": "Mechanism of Action  information related to the record",
+            "Information": [
+              {
+                "ReferenceNumber": 1,
+                "Name": "Mechanism of Action",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Kitagawa Y et al; Clin cancer Res 6 (7): 2868-75 (2000)"
+                ],
+                "URL": "http://www.ncbi.nlm.nih.gov/pubmed/10914736?dopt=Abstract",
+                "StringValue": "Telomerase activation is thought to be a critical step in cellular immortality and oncogenesis. Several reagents including differentiation-inducing and antineoplastic agents are known to inhibit telomerase activity, although the molecular mechanisms through which they inhibit telomerase activity remain unclear. Demethylating reagents have recently been used as potential antineoplastic drugs for some types of cancers including those of the prostate. In the present study, we examined the effect of the demethylating reagent <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-aza-CR\">5-aza-CR</a>) on telomerase activity using cells of two prostate cancer cell lines, DU-145 and TSU-PR1. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-aza-CR\">5-aza-CR</a> treatment significantly reduced telomerase activity in TSU-PR1 cells, but not in DU-145 cells, although growth inhibition was observed to a similar extent in both cell lines. Reverse transcription-PCR analyses revealed that inhibition of telomerase activity was accompanied by down-regulation of telomerase catalytic subunit (hTERT) mRNA expression. Transient expression assays showed that <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-aza-CR\">5-aza-CR</a> repressed the transcriptional activity of the hTERT promoter and that the E-box within the core promoter was responsible for this down-regulation. Western blot analyses revealed that <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-aza-CR\">5-aza-CR</a> reactivated p16 expression and repressed c-Myc expression in TSU-PR1 cells but not in DU-145 cells. Overexpression of p16 in TSU-PR1 cells led to significant repression of c-Myc transcription. These findings suggest that <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-aza-CR\">5-aza-CR</a> inhibits telomerase activity via transcriptional repression of hTERT, in which p16 and c-Myc may play a key role."
+              },
+              {
+                "ReferenceNumber": 1,
+                "Name": "Mechanism of Action",
+                "Description": "**PEER REVIEWED**",
+                "Reference": [
+                  "Locklin RM et al; Cell Biol Int 22 (3): 207-15"
+                ],
+                "StringValue": "Cellular differentiation is controlled by a variety of factors including gene methylation, which represses particular genes as cell fate is determined. The incorporation of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5azaC\">5azaC</a>) into DNA in vitro prevents methylation and thus can alter cellular differentiation pathways. Human bone marrow fibroblasts and MG63 cells treated with <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5azaC\">5azaC</a> were used as models of osteogenic progenitors and of a more mature osteoblast phenotype, respectively. The capacity for differentiation of these cells following treatment with glucocorticoids was investigated. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5azaC\">5azaC</a> treatment led to significant expression of the osteoblastic marker alkaline phosphatase in MG63 osteosarcoma cells, which was further augmented by glucocorticoids; however, in human marrow fibroblasts alkaline phosphatase activity was only observed in glucocorticoid-treated cultures. MG63 cells represent a phenotype late in the osteogenic lineage in which demethylation is sufficient to induce alkaline phosphatase activity. Marrow fibroblasts are at an earlier stage of differentiation and require stimulation with glucocorticoids. In contrast, the expression of osteocalcin, an osteoblastic marker, was unaffected by <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5azaC\">5azaC</a> treatment, suggesting that regulation of expression of the osteocalcin gene does not involve methylation. These models provide novel approaches to the study of the control of differentiation in the marrow fibroblastic system."
+              },
+              {
+                "ReferenceNumber": 2,
+                "Name": "Mechanism of Action",
+                "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>) is a chemical analogue of the cytosine nucleoside used in DNA and RNA. <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> is thought to induce antineoplastic activity via two mechanisms; inhibition of DNA methyltransferase at low doses, causing hypomethylation of DNA, and direct cytotoxicity in abnormal hematopoietic cells in the bone marrow through its incorporation into DNA and RNA at high doses, resulting in cell death. As <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> is a ribonucleoside, it incoporates into RNA to a larger extent than into DNA. The incorporation into RNA leads to the dissembly of polyribosomes, defective methylation and acceptor function of transfer RNA, and inhibition of the production of protein. Its incorporation into DNA leads to a covalent binding with DNA methyltransferases, which prevents DNA synthesis and subsequent cytotoxicity."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Identification",
+        "Description": "This section contains laboratory methods how to identify the chemical and more.",
+        "Section": [
+          {
+            "TOCHeading": "Analytic Laboratory Methods",
+            "Description": "Analytic Laboratory Methods for the sample analysis",
+            "Information": [
+              {
+                "ReferenceNumber": 1,
+                "Name": "Analytic Laboratory Methods",
+                "Description": "**QC REVIEWED**",
+                "Reference": [
+                  "Association of Official Analytical Chemists. Official Methods of Analysis. 15th ed. and Supplements. Washington, DC: Association of Analytical Chemists, 1990, p. 1176"
+                ],
+                "StringValue": "AOAC Method 973.30. Polycyclic Aromatic Hydrocarbons and <a class=\"pubchem-internal-link CID-2336\" href=\"/compound/Benzo%28a%29pyrene\">Benzo(a)pyrene</a> in Food.. Spectrophotometric method. /Polycyclic aromatic hydrocarbons/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Safety and Hazards",
+        "Description": "Safety and hazards information, properties, management techniques, reactivities and incompatibilities, first aid treatments, and more.",
+        "Section": [
+          {
+            "TOCHeading": "Hazards Identification",
+            "Description": "Hazards Identification includes all hazards regarding the chemical; required label elements",
+            "Section": [
+              {
+                "TOCHeading": "Health Hazard",
+                "Description": "Description of the chemical's health hazards (such as toxicity, flammability, or corrosivity).",
+                "Information": [
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Health Hazard",
+                    "StringValue": "SYMPTOMS:  Symptoms of exposure to this compound via intravenous route include nausea, vomiting, diarrhea, reduction in white cell count, leukopenia and agranulocytosis.  Other symptoms via intravenous route include dose-related leukemia, thrombocytopenia, myelosuppression, gastrointestinal upset, alterations in hepatic function tests, fatal hepatic coma, myalgia, rhabdomyolysis, rash, stomatitis, fever, hypotension and reversible renal impairment.  Symptoms of exposure to this type of compound include anorexia, local irritant effects, allergic reactions including pruritus and erythema, headache, malaise, weakness, anaphylaxis, vesicant or irritant effect on skin and mucous membranes, thrombophlebitis, anemia, bleeding, immunosuppressant effect, mouth ulcers, esophagitis, abdominal pain, hemorrhage, perforation of the stomach, alopecia, delayed wound healing, amenorrhea, inhibition of spermatogenesis, gynecomastia, hyperuricemia, acute renal failure due to <a class=\"pubchem-internal-link CID-1175\" href=\"/compound/uric%20acid\">uric acid</a> nephropathy, hyperphosphatemia, disturbances of electrolyte balance, pigmentation of the skin and nails, jaundice and abnormal liver function tests.  ACUTE/CHRONIC HAZARDS:  This compound is harmful if swallowed, inhaled or absorbed through the skin.  It may cause irritation.  When heated to decomposition it emits toxic fumes of <a class=\"pubchem-internal-link CID-281\" href=\"/compound/carbon%20monoxide\">carbon monoxide</a>, <a class=\"pubchem-internal-link CID-280\" href=\"/compound/carbon%20dioxide\">carbon dioxide</a> and nitrogen oxides.  (NTP, 1992)"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Skin, Eye, and Respiratory Irritations",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Skin, Eye, and Respiratory Irritations",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "A skin irritant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Accidental Release Measures",
+            "Description": "Accidental release measures lists emergency procedures; protective equipment; proper methods of containment and cleanup.",
+            "Section": [
+              {
+                "TOCHeading": "Disposal Methods",
+                "Description": "Disposal Methods for this chemical",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Disposal Methods",
+                    "Description": "**PEER REVIEWED**",
+                    "StringValue": "SRP: At the time of review, criteria for land treatment or burial (sanitary landfill) disposal practices are subject to significant revision. Prior to implementing land disposal of waste residue (including waste sludge), consult with environmental regulatory agencies for guidance on acceptable disposal practices."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Handling and Storage",
+            "Description": "Handling and storage lists precautions for safe handling and storage, including incompatibilities.",
+            "Section": [
+              {
+                "TOCHeading": "Storage Conditions",
+                "Description": "Information for Storage Conditions",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Storage Conditions",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Trissel, L.A. Handbook on Injectable Drugs. 9th ed. Bethesda, MD. American Society of Health-System Pharmacists' Product Development. 1996., p. 1143"
+                    ],
+                    "StringValue": "Intact vials should be stored under refrigeration & are stable for a least 4 yr. Although the drug is stable for 3 yr at room temp, refrigeration is recommended because degradation may result at elevated temperatures. The constituted soln hydrolyzes at room temp & should be used within 30 min. ... <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> 0.5 & 2 mg/ml in Ringer's injection, lactated, was stable for up to one month when frozen at -20 deg C in <a class=\"pubchem-internal-link CID-8252\" href=\"/compound/polypropylene\">polypropylene</a> syringes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Stability and Reactivity",
+            "Description": "Stability and reactivity lists chemical stability and possibility of hazardous reactions.",
+            "Section": [
+              {
+                "TOCHeading": "Air and Water Reactions",
+                "Description": "Special alerts if the chemical reacts with air, water, or moisture.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Air and Water Reactions",
+                    "StringValue": "Slightly <a class=\"pubchem-internal-link CID-962\" href=\"/compound/water\">water</a> soluble. Unstable in solution."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Reactive Group",
+                "Description": "List of reactive groups that the chemical is assigned to, based on its known chemistry. Reactive groups are categories of chemicals that react in similar ways because their chemical structures are similar.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 14,
+                    "Name": "Reactive Group",
+                    "StringValue": "Alcohols and Polyols; Amides and Imides; Amines, Phosphines, and Pyridines"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Toxicity",
+        "Description": "Toxicity information related to this record, includes routes of exposure; related symptoms, acute and chronic effects; numerical measures of toxicity.",
+        "Section": [
+          {
+            "TOCHeading": "Toxicological Information",
+            "Description": "Toxicological Information",
+            "Section": [
+              {
+                "TOCHeading": "Carcinogen",
+                "Description": "A substance or agent that can cause cancer",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Carcinogen",
+                    "Description": "**QC REVIEWED**",
+                    "Reference": [
+                      "DHHS/National Toxicology Program; Eleventh Report on Carcinogens: Azacitidine (320-67-2) (January 2005). Available from, as of July 31, 2009: http://ntp.niehs.nih.gov/ntp/roc/eleventh/profiles/s017azac.pdf"
+                    ],
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>: reasonably anticipated to be a human carcinogen."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "ToxicityData",
+                "Description": "Toxicity data from NCI Investigational Drugs 92",
+                "Information": [
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "ToxicityData",
+                    "Reference": [
+                      "Cancer Chemotherapy Reports, 56,413,(1972)"
+                    ],
+                    "StringValue": "Woman(iv): TDLo,: 500 ,ug/kg"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "ToxicityData",
+                    "Reference": [
+                      "Toxicology and Applied Pharmacology, 19,382,(1971)"
+                    ],
+                    "StringValue": "Mouse(po): LD50: 572 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "ToxicityData",
+                    "Reference": [
+                      "Experientia, 22,53,(1966)"
+                    ],
+                    "StringValue": "Mouse(ip): LD50: 68 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "ToxicityData",
+                    "Reference": [
+                      "National Technical Information Service, PB84- 211432"
+                    ],
+                    "StringValue": "Mouse(iv): LD50: 229 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 8,
+                    "Name": "ToxicityData",
+                    "Reference": [
+                      "Advances in Pharmacology and Chemotherapy,14,285,(1977)"
+                    ],
+                    "StringValue": "Dog(iv): LD50: 7200 ug/kg"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Toxicity Summary",
+                "Description": "Toxicity Summary",
+                "Information": [
+                  {
+                    "ReferenceNumber": 2,
+                    "Name": "Toxicity",
+                    "StringValue": "One case of overdose with <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> was reported during clinical trials. A patient experienced diarrhea, nausea, and vomiting after receiving a single IV dose of approximately 290 mg/m2, almost 4 times the recommended starting dose."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Antidote and Emergency Treatment",
+                "Description": "Antidote and Emergency Treatment",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Antidote and Emergency Treatment",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Bronstein, A.C., P.L. Currance; Emergency Care for Hazardous Materials Exposure. 2nd ed. St. Louis, MO. Mosby Lifeline. 1994., p. 139"
+                    ],
+                    "StringValue": "Basic treatment: Establish a patent airway. Suction if necessary. Watch for signs of respiratory insufficiency and assist ventilations if needed. Administer <a class=\"pubchem-internal-link CID-977\" href=\"/compound/oxygen\">oxygen</a> by nonrebreather mask at 10 to 15 L/min. Monitor for pulmonary edema and treat if necessary ... . Monitor for shock and treat if necessary ... . Anticipate seizures and treat if necessary ... . For eye contamination, flush eyes immediately with <a class=\"pubchem-internal-link CID-962\" href=\"/compound/water\">water</a>. Irrigate each eye continuously with normal saline during transport ... . Do not use emetics. For ingestion, rinse mouth and administer 5 ml/kg up to 200 ml of <a class=\"pubchem-internal-link CID-962\" href=\"/compound/water\">water</a> for dilution if the patient can swallow, has a strong gag reflex, and does not drool ... . Cover skin burns with dry sterile dressings after decontamination ... . /Poison A and B/"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Antidote and Emergency Treatment",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Bronstein, A.C., P.L. Currance; Emergency Care for Hazardous Materials Exposure. 2nd ed. St. Louis, MO. Mosby Lifeline. 1994., p. 139"
+                    ],
+                    "StringValue": "Advanced treatment: Consider orotracheal or nasotracheal intubation for airway control in the patient who is unconscious, has severe pulmonary edema, or is in respiratory arrest. Positive pressure ventilation techniques with a bag valve mask device may be beneficial. Monitor cardiac rhythm and treat arrhythmias as necessary ... . Start an IV with <a class=\"pubchem-internal-link CID-22814120\" href=\"/compound/D5W\">D5W</a> /SRP: \"To keep open\", minimal flow rate/. Use lactated Ringer's if signs of hypovolemia are present. Watch for signs of fluid overload. Consider drug therapy for pulmonary edema ... . For hypotension with signs of hypovolemia, administer fluid cautiously. Watch for signs of fluid overload ... . Treat seizures with <a class=\"pubchem-internal-link CID-3016\" href=\"/compound/diazepam\">diazepam</a> (<a class=\"pubchem-internal-link CID-3016\" href=\"/compound/Valium\">Valium</a>) ... . Use <a class=\"pubchem-internal-link CID-517321\" href=\"/compound/proparacaine%20hydrochloride\">proparacaine hydrochloride</a> to assist eye irrigation ... . /Poison A and B/"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Human Toxicity Excerpts",
+                "Description": "Human Toxicity Excerpts",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "Human systemic effects by iv route: nausea, vomiting & diarrhea, reduction in white cell count (leukopenia & agranulocytosis)."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Ellenhorn, M.J., S. Schonwald, G. Ordog, J. Wasserberger. Ellenhorn's Medical Toxicology: Diagnosis and Treatment of Human Poisoning. 2nd ed. Baltimore, MD: Williams and Wilkins, 1997., p. 1324"
+                    ],
+                    "StringValue": "Acute Toxicity: Nausea & vomiting; diarrhea; fever; rash; drowsiness. Delayed Toxicity: Bone marrow depression; hepatic damage; muscle pain & weakness; possibly cardiotoxicity. /From table/"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "A skin irritant."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Rodriguez MJ et al; Mutagenesis 16 (2): 109-14 (2001)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/11230551?dopt=Abstract",
+                    "StringValue": "... Treated human cells, in which separation does not depend upon the quantity of heterochromatin, /was coducted/ with 2x10(-5) and 6x10(-6) M <a class=\"pubchem-internal-link multiple-CIDs\" href=\"/compound/5-AC\">5-AC</a> for 5 and 8 hr. Compared with the control, <a class=\"pubchem-internal-link multiple-CIDs\" href=\"/compound/5-AC\">5-AC</a> treatment resulted in an increased frequency of separated centromeres of acrocentric chromosomes in relation to those of non-acrocentric chromosomes. In the control the acrocentric chromosomes are the last to separate; in the treated population there was almost random separation of the two types of chromosomes. This epigenetic alteration might be another factor which results in genesis of aneuploidy."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Kintzel PE; Drug Saf 24 (1): 19-38 (2001)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/11219485?dopt=Abstract",
+                    "StringValue": "High dose <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> causes renal dysfunction manifested by tubular acidosis, polyuria and increased urinary excretion of electrolytes, <a class=\"pubchem-internal-link CID-5793\" href=\"/compound/glucose\">glucose</a> and amino acids."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Non-Human Toxicity Excerpts",
+                "Description": "Non-Human Toxicity Excerpts",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "An experimental teratogen. Other experimental reproductive effects."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Bulut HE et al; Okijimas Folia Anat Jpn 76 (1): 47-53"
+                    ],
+                    "StringValue": "DNA methylation is an epigenetical mechanism that plays crucial roles in cellular differentiation and tissue development in embryogenesis. The aim of the present study was to determine the effects of a demethylating agent, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>, on testicular development during embryonal life in mouse. Ten pregnant mice were administered <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azaC\">5-azaC</a>) (ip 2 mg/kg of agent dissolved in 0.1 mg/ml PBS) during 8th (Group 1), 11th (Group 2), 14th (Group 3) and 18th (Group 4) days of pregnancy periods and male siblings of these animals were obtained (experimental groups) whereas the control group animals received no treatment and siblings of this group were also obtained. Testicular tissues from all groups were taken 20 days after birth and examined at the light and electron microscopical levels. All pregnancies were terminated in Group 1 animals, therefore no observations could be done in this group. While Group 2 and 3 siblings showed distinctive kongenital abnormalities such as; anancephaly, growth failure, cleft palate, extremity abnormalities, supernumerary ribs and whirled shaped-tails, no such abnormalities were observed in Group 4 when compared to the control group. Microscopical examination of testicular tissues in groups 2 and 3 demonstrated cellular disintegration of spermatocytes in seminiferous tubules. In addition, cytoplasmic vacuoles and thickening of the basement membrane were also evident in both groups 2 and 3. Apoptotic-like cells were seen especially in group 2 and rarely in group 3. There were no structural alterations in group 4 animals, except a decreased number of spermatocytes in seminiferous tubules when compared to the control group, possibly indicating the completion of embryogenesis in this group. In conclusion, it could be suggested that the demethylating agent <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> may trigger an unknown gene reactivation during early embryogenesis possibly affecting the cell and tissue differentiation in developing mammalian embryos."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Broday L et al; Mol Cell Biol 19 (4): 3198-204"
+                    ],
+                    "StringValue": "The <a class=\"pubchem-internal-link CID-597\" href=\"/compound/cytosine\">cytosine</a> analog <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-AzaC\">5-AzaC</a>) is a demethylating agent that is also known to induce mutagenesis in mammalian cells. In this study, the mutagenic potential of this drug was tested in the G10 and G12 transgenic Chinese hamster cell lines, which have a single bacterial gpt gene integrated into the genome at different sites, with its expression driven by a simian virus 40 (SV40) promoter. We show that the mutation frequencies following a 48-h exposure to different concentrations of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-AzaC\">5-AzaC</a> were 10 to 20 times higher than those of any of the other numerous mutagens that have been tested in the G10-G12 system. Moreover, the mutation frequencies were much higher in the G10 cell line than in the G12 cells. Detailed molecular analysis of the <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a> (<a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-TG\">6-TG</a>)-resistant variants demonstrated that transgene silencing by de novo DNA methylation and increased chromatin condensation in the SV40 promoter was the major factor responsible for this high level of <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-TG\">6-TG</a> resistance. As would be expected, exposure to <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-AzaC\">5-AzaC</a> lowered the overall genomic DNA methylation levels, but it unexpectedly caused hypermethylation and increased chromatin condensation of the transgene in both the G10 and G12 cell lines. These results provide the first evidence that <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-AzaC\">5-AzaC</a> may also induce transgene-specific DNA methylation, a phenomenon that can further be used for the elucidation of the mechanism that controls silencing of foreign DNA."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Di Ianni M et al; Gene Ther 6 (4): 703-7 (1999)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/10476232?dopt=Abstract",
+                    "StringValue": "Retroviral sequence can silence transgene expression in vitro and in vivo. We report that this effect can be efficiently prevented by in vivo administration of the demethylating agent <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (aza-C). We engineered the U937 human cell line with a retroviral vector consisting of the <a class=\"pubchem-internal-link CID-5789\" href=\"/compound/thymidine\">thymidine</a> kinase suicide gene (tk), which induces sensitivity to <a class=\"pubchem-internal-link CID-3454\" href=\"/compound/ganciclovir\">ganciclovir</a> (gcv) and through an IRES sequence, the bacterial beta-galactosidase gene (lacZ) as a marker gene. About 90% of the U937 cells expressed the transgene. By injecting the transduced U937 cells in severe combined immunodeficient disease (SCID) mice, we generated a tumor which, during in vivo treatment with aza-C, maintained the high expression of lacZ and tk genes at the baseline values. LacZ-positive cells in the tumour masses after death was weak (1-2%) in the control group, while in mice treated with aza-C it was maintained at 90%. The delay in tumour onset was significantly longer when animals were treated with both aza-C and gcv (P &lt; 0.0001) compared with animals treated with gcv or with aza-C alone. The prevention of silencing phenomena has important implications for gene therapy, because an efficient transduction associated with appropriate drug therapy, might be a powerful strategy for successful application of gene therapy protocols."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lockin RM et al; Cell Biol Int 22 (3): 207-15 (1998)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/9974215?dopt=Abstract",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> induces <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a> resistance in AS52 cells. To characterize these resistant clones, we isolated 148 of them from 50 independently treated flasks. Less than nine (6%) of the 148 variants were spontaneous. PCR amplification of the DNA primers flanking the gpt gene produced no product in 15 clones (10%). Of the 133 remaining clones, 52 showed sequence alterations in the gpt structural gene. Of these 52, 34 (65%) were GC--&gt;CG transversions. Only seven were located in CpG sequences. Thus, methyltransferase complexes are not major contributors to <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>-induced point mutations in AS52 cells. The remaining 81 clones had no sequence alterations within the coding region of the gpt gene. Southern blot analysis of a sample of these variants (37/81) indicated that the <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a>-resistant phenotype was not due to local rearrangements or deletions (resolution 50 bp). Sequence analysis of the early promoter region of another sample of these variants (24/81) indicated that lesions in the promoter could not be responsible for the <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a> resistance observed. Thus, a majority of these variants were formed via a mechanism other than small genomic rearrangements, point mutations or deletions of the gpt structural gene or its promoter. Neither the mechanisms leading to these variants nor the biological and morphological consequences of these variants are known."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Patkin EL et al; Zygote 6 (4): 351-8 (1998)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/9921646?dopt=Abstract",
+                    "StringValue": "The effects of two demethylating drugs with a different mechanism of action (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (Aza) and <a class=\"pubchem-internal-link CID-25674\" href=\"/compound/L-ethionine\">L-ethionine</a> (Eth)) on mouse preimplantation development were investigated. Preimplantation embryos were cultured for 24 h in the presence of the drug and for an additional 24 or 48 h (depending on the cleavage stage) in medium supplemented with <a class=\"pubchem-internal-link CID-6035\" href=\"/compound/bromodeoxyuridine\">bromodeoxyuridine</a> to reveal sister chromatid exchanges (SCEs) and the number of cell cycles performed before harvesting. Striking differences between the two drugs were observed in their influence on proliferation of blastomeres, primary differentiation and sister chromatid differentiation (SCD), and in the pattern of DNA methylation and the frequency of SCEs per cell. At a final concentration of 1 microM Aza had no effects, whereas higher concentrations stopped development of all stages except the zygote. In contrast Eth treatments (5 mM) resulted in a severe reduction of the mean cell number per embryo in comparison with controls. Moreover both the absence of blastocyst formation and no effects on mitotic activity were detected. The most prominent effect of Eth was detected at the zygote and 4-cell stages. An unexpected decrease in SCE frequency in Eth-treated morulae and 4-cell embryos has been observed. Data are explained taking into account the different mechanisms of action of the agents."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Rodriguez MJ et al; Mutagenesis 16 (2): 109-14 (2001)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/11230551?dopt=Abstract",
+                    "StringValue": "The factors which control the sequential separation of the various chromosomes in a genome at the meta-anaphase junction are not well understood. In genomes in which separation is correlated with the quantity of pericentric heterochromatin one factor appears to be the epigenetic nature, namely condensation, of pericentric heterochromatin. When we induced decondensation of pericentric heterochromatin in mouse cells with 10(-6), 4x 10(-6) and 6x10(-6) M <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link multiple-CIDs\" href=\"/compound/5-AC\">5-AC</a>) for 8 hr, it resulted in alteration of the sequence of centromere separation. The centromeres which lacked pericentric heterochromatin appeared not to have been affected because there could not be an epigenetic alteration induced by <a class=\"pubchem-internal-link multiple-CIDs\" href=\"/compound/5-AC\">5-AC</a>. The major effect was on chromosomes with the largest quantity of pericentric heterochromatin. These chromosomes separated at significantly higher frequency than in the untreated population. ..."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Kim HD et al; Antioxid Redox Signal 1 (3): 297-304 (1999)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/11229441?dopt=Abstract",
+                    "StringValue": "To elucidate the role of stress response during macrophage activation, the effects of heat shock and the amino acid analog, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> on <a class=\"pubchem-internal-link CID-145068\" href=\"/compound/nitric%20oxide\">nitric oxide</a> (NO) production, tumor necrosis factor-alpha (TNF-alpha) secretion, and heat shock protein (HSP) synthesis have been studied in murine peritoneal macrophages (C57BL/6). Heat shock (1 hr at 43 degrees C) or <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> markedly inhibited the release of NO into the medium from interferon-gamma (IFN-gamma) plus <a class=\"pubchem-internal-link CID-11970143\" href=\"/compound/lipopolysaccharide\">lipopolysaccharide</a> (LPS)-stimulated macrophages. Although heat shock significantly decreased TNF-alpha secretion only at the initiation stage of macrophage stimulation, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> treatment resulted in a more prolonged reduction in the secretion of TNF-alpha. When heat-shocked cells were stimulated with IFN-gamma plus LPS under normal culture conditions at 37 degrees C, the heat shock-induced inhibition of NO release reversed progressively with increasing recovery time. Although the total amount of cellular HSP72 measured by Western blot increased time-dependently over 7 hr, newly synthesized HSP72 measured by [35S]methionine incorporation was evident only after 1 and 3 hr of recovery time after heat shock treatment. At these time points, the lowest <a class=\"pubchem-internal-link CID-946\" href=\"/compound/nitrite\">nitrite</a> accumulation and TNF-alpha secretion into the medium was evident. It is concluded that signaling pathways related to newly synthesized HSP such as HSP72 are implicated in the down regulation of NO synthesis and TNF-alpha secretion in macrophages."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Doiron KM et al; Mutat Res 429 (1): 37-44 (1999)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/10434023?dopt=Abstract",
+                    "StringValue": "The purpose of this study was to determine the effect of the Dcm <a class=\"pubchem-internal-link CID-597\" href=\"/compound/cytosine\">cytosine</a> methyltransferase on <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azaC\">5-azaC</a>) mutagenesis in Escherichia coli. We used a Lac reversion assay to measure C-to-G and C-to-T mutations at a single, methylatable <a class=\"pubchem-internal-link CID-597\" href=\"/compound/cytosine\">cytosine</a> in the lacZ gene, in the presence and absence of Dcm. C-to-G mutations are stimulated by <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azaC\">5-azaC</a> but are largely independent of Dcm. In contrast, C-to-T mutations are not stimulated by <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azaC\">5-azaC</a> in either wild type or dcm cells. However, in cells which contain Dcm but are defective in very short patch repair, the normally high frequency of spontaneous C-to-T mutations is decreased by the analog in a dose-dependent manner."
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Excerpts",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Kelwcsenyi Z et al; Mutagenesis 15 (1): 25-31 (2000)"
+                    ],
+                    "URL": "http://www.ncbi.nlm.nih.gov/pubmed/10640527?dopt=Abstract",
+                    "StringValue": "<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> induces <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a> resistance in AS52 cells. To characterize these resistant clones, we isolated 148 of them from 50 independently treated flasks. Less than nine (6%) of the 148 variants were spontaneous. PCR amplification of the DNA primers flanking the gpt gene produced no product in 15 clones (10%). Of the 133 remaining clones, 52 showed sequence alterations in the gpt structural gene. Of these 52, 34 (65%) were GC--&gt;CG transversions. Only seven were located in CpG sequences. Thus, methyltransferase complexes are not major contributors to <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>-induced point mutations in AS52 cells. The remaining 81 clones had no sequence alterations within the coding region of the gpt gene. Southern blot analysis of a sample of these variants (37/81) indicated that the <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a>-resistant phenotype was not due to local rearrangements or deletions (resolution 50 bp). Sequence analysis of the early promoter region of another sample of these variants (24/81) indicated that lesions in the promoter could not be responsible for the <a class=\"pubchem-internal-link CID-2723601\" href=\"/compound/6-thioguanine\">6-thioguanine</a> resistance observed. Thus, a majority of these variants were formed via a mechanism other than small genomic rearrangements, point mutations or deletions of the gpt structural gene or its promoter. Neither the mechanisms leading to these variants nor the biological and morphological consequences of these variants are known."
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Non-Human Toxicity Values",
+                "Description": "Non-Human Toxicity Values",
+                "Information": [
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Values",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "LD50 Mouse oral 572 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Values",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "LD50 Mouse iv 229 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Values",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "LD50 Mouse ip 68 mg/kg"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Values",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "LD50 Dog iv 7200 ug/kg"
+                  },
+                  {
+                    "ReferenceNumber": 1,
+                    "Name": "Non-Human Toxicity Values",
+                    "Description": "**PEER REVIEWED**",
+                    "Reference": [
+                      "Lewis, R.J. Sax's Dangerous Properties of Industrial Materials. 9th ed. Volumes 1-3. New York, NY: Van Nostrand Reinhold, 1996., p. 295"
+                    ],
+                    "StringValue": "LD50 Wild bird oral 100 mg/kg"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Literature",
+        "Description": "Literature citation references mainly refers to regular publications such as journal articles, etc. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#Literature\">Scrollable table that lists all PubMed Citations associated with the chemical structure. Read more..</a>",
+        "Section": [
+          {
+            "TOCHeading": "Depositor Provided PubMed Citations",
+            "Description": "This section displays a concatenated list of all PubMed records that have been cited by the depositors of all PubChem Substance records that contain the same chemical structure as the compound.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Depositor Provided PubMed Citation Count",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed&db=pccompound&cmd=Link&from_uid=9444",
+                "NumValue": 2502
+              }
+            ]
+          },
+          {
+            "TOCHeading": "NLM Curated PubMed Citations",
+            "Description": "The \"NLM Curated PubMed Citations\" section links to all PubMed records that are tagged with the same MeSH term that has been associated with a particular compound.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "NLM Curated PubMed Citations",
+                "URL": "http://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed_mesh&db=pccompound&cmd=Link&from_uid=9444",
+                "BoolValue": true
+              }
+            ]
+          },
+          {
+            "TOCHeading": "Synthesis References",
+            "Description": "References that are related to the preparation and synthesis reaction.",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "Synthesis Reference",
+                "StringValue": "Lorenzo  DE FERRA, Maurizio ZENONI, Stefano TURCHETTA, Mauro ANIBALDI, Ettore AMMIRATI, Paolo BRANDI, Giorgio BERARDI, \"PROCESS FOR THE SYNTHESIS OF <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/AZACITIDINE\">AZACITIDINE</a> AND <a class=\"pubchem-internal-link CID-451668\" href=\"/compound/DECITABINE\">DECITABINE</a>.\" U.S. Patent US20110245485, issued October 06, 2011."
+              }
+            ]
+          },
+          {
+            "TOCHeading": "General References",
+            "Description": "General References",
+            "Information": [
+              {
+                "ReferenceNumber": 2,
+                "Name": "General Reference",
+                "StringValueList": [
+                  "Cihak A: Biological effects of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a> in eukaryotes. Oncology. 1974;30(5):405-22. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/4142650\">Pubmed</a>",
+                  "Kaminskas E, Farrell AT, Wang YC, Sridhara R, Pazdur R: FDA drug approval summary: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a>) for injectable suspension. Oncologist. 2005 Mar;10(3):176-82. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/15793220\">Pubmed</a>",
+                  "Leone G, Voso MT, Teofili L, Lubbert M: Inhibitors of DNA methylation in the treatment of hematological malignancies and MDS. Clin Immunol. 2003 Oct;109(1):89-102. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/14585280\">Pubmed</a>",
+                  "Ghoshal K, Bai S: DNA methyltransferases as targets for cancer therapy. Drugs Today (Barc). 2007 Jun;43(6):395-422. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/17612710\">Pubmed</a>",
+                  "Silverman LR, Demakos EP, Peterson BL, Kornblith AB, Holland JC, Odchimar-Reissig R, Stone RM, Nelson D, Powell BL, DeCastro CM, Ellerton J, Larson RA, Schiffer CA, Holland JF: Randomized controlled trial of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> in patients with the myelodysplastic syndrome: a study of the cancer and leukemia group B. J Clin Oncol. 2002 May 15;20(10):2429-40. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/12011120\">Pubmed</a>",
+                  "Silverman LR: Targeting hypomethylation of DNA to achieve cellular differentiation in myelodysplastic syndromes (MDS). Oncologist. 2001;6 Suppl 5:8-14. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/11700387\">Pubmed</a>",
+                  "Issa JP, Kantarjian H: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>. Nat Rev Drug Discov. 2005 May;Suppl:S6-7. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/15962522\">Pubmed</a>",
+                  "O'Dwyer K, Maslak P: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> and the beginnings of therapeutic epigenetic modulation. Expert Opin Pharmacother. 2008 Aug;9(11):1981-6. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/18627335\">Pubmed</a>",
+                  "Siddiqui MA, Scott LJ: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>: in myelodysplastic syndromes. Drugs. 2005;65(13):1781-9; discussion 1790-1. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/16114977\">Pubmed</a>",
+                  "Abdulhaq H, Rossetti JM: The role of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> in the treatment of myelodysplastic syndromes. Expert Opin Investig Drugs. 2007 Dec;16(12):1967-75. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/18042004\">Pubmed</a>",
+                  "Keating GM: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>: a review of its use in higher-risk myelodysplastic syndromes/acute myeloid leukaemia. Drugs. 2009;69(17):2501-18. doi: 10.2165/11202840-000000000-00000. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/19911860\">Pubmed</a>",
+                  "Sullivan M, Hahn K, Kolesar JM: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>: a novel agent for myelodysplastic syndromes. Am J Health Syst Pharm. 2005 Aug 1;62(15):1567-73. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/16030365\">Pubmed</a>",
+                  "Dapp MJ, Clouser CL, Patterson S, Mansky LM: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a> can induce lethal mutagenesis in human immunodeficiency virus type 1. J Virol. 2009 Nov;83(22):11950-8. Epub 2009 Sep 2. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/19726509\">Pubmed</a>"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Patents",
+        "Description": "A PubChem summary page displays Patent information when available for the given molecule. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#Patents\">Read more..</a>",
+        "Section": [
+          {
+            "TOCHeading": "Depositor-Supplied Patent Identifiers",
+            "Description": "Patent identifiers and more information provided by depositors in form of a widget.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Depositor-Supplied Patent Identifiers",
+                "BoolValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Biomolecular Interactions and Pathways",
+        "Description": "A PubChem summary page displays biomolecular interactions and pathways information when available for the given record.",
+        "Section": [
+          {
+            "TOCHeading": "Protein Bound 3-D Structures",
+            "Description": "Protein Bound 3-D Structures (from Structure) - links to experimentally resolved 3D structures that contain biomolecules bound to the small molecule.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "Protein Bound 3-D Structures",
+                "NumValueList": [
+                  121059
+                ]
+              }
+            ]
+          },
+          {
+            "TOCHeading": "DrugBank Interactions",
+            "HintGroupSubsectionsByReference": true,
+            "Section": [
+              {
+                "TOCHeading": "Target",
+                "Description": "A protein, macromolecule, nucleic acid, or small molecule to which a given drug binds, resulting in an alteration of the normal function of the bound molecule and a desirable therapeutic effect. Drug targets are most commonly proteins such as enzymes, ion channels, and receptors.",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "Target",
+                    "URL": "http://www.drugbank.ca/biodb/bio_entities/BE0000892",
+                    "StringValue": "DNA (<a class=\"pubchem-internal-link CID-597\" href=\"/compound/cytosine\">cytosine</a>-5)-methyltransferase 1"
+                  },
+                  {
+                    "ReferenceNumber": 4,
+                    "Name": "Target",
+                    "URL": "http://www.drugbank.ca/biodb/bio_entities/BE0004810",
+                    "StringValue": "RNA"
+                  },
+                  {
+                    "ReferenceNumber": 5,
+                    "Name": "Target",
+                    "URL": "http://www.drugbank.ca/biodb/bio_entities/BE0004796",
+                    "StringValue": "DNA"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Enzyme",
+                "Description": "A protein which catalyzes chemical reactions involving the a given drug (substrate).",
+                "Information": [
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "Enzyme",
+                    "URL": "http://www.drugbank.ca/biodb/bio_entities/BE0002443",
+                    "StringValue": "Cytidine deaminase"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Action",
+                "Description": "Action",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "Action",
+                    "StringValue": "inhibitor"
+                  },
+                  {
+                    "ReferenceNumber": 4,
+                    "Name": "Action",
+                    "StringValue": "other"
+                  },
+                  {
+                    "ReferenceNumber": 5,
+                    "Name": "Action",
+                    "StringValue": "other"
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "Action",
+                    "StringValue": "substrate"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "General Function",
+                "Description": "Short 3-4 word summary of the primary functions",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "General Function",
+                    "StringValue": "Replication, recombination and repair"
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "General Function",
+                    "StringValue": "Involved in <a class=\"pubchem-internal-link CID-23994\" href=\"/compound/zinc\">zinc</a> ion binding"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Specific Function",
+                "Description": "Detailed 30-40 word summary of the specific functions",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "Specific Function",
+                    "StringValue": "Methylates CpG residues. Preferentially methylates hemimethylated DNA. It is responsible for maintaining methylation patterns established in development. DNA methylation is coordinated with methylation of histones. Mediates transcriptional repression by direct binding to HDAC2"
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "Specific Function",
+                    "StringValue": "This enzyme scavenge exogenous and endogenous <a class=\"pubchem-internal-link CID-6175\" href=\"/compound/cytidine\">cytidine</a> and <a class=\"pubchem-internal-link CID-13711\" href=\"/compound/2%27-deoxycytidine\">2'-deoxycytidine</a> for UMP synthesis"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Gene Name",
+                "Description": "Gene Name",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "Gene Name",
+                    "StringValue": "DNMT1"
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "Gene Name",
+                    "StringValue": "CDA"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "GenBank Gene",
+                "Description": "GenBank Gene",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "GenBank Gene",
+                    "URL": "http://www.ncbi.nlm.nih.gov/gene/?term=X63692",
+                    "StringValue": "X63692"
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "GenBank Gene",
+                    "URL": "http://www.ncbi.nlm.nih.gov/gene/?term=L27943",
+                    "StringValue": "L27943"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "GenBank Protein",
+                "Description": "GenBank Protein",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "GenBank Protein",
+                    "URL": "http://www.ncbi.nlm.nih.gov/protein/1632819",
+                    "StringValue": "1632819"
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Interaction References",
+                "Description": "Interaction References",
+                "Information": [
+                  {
+                    "ReferenceNumber": 3,
+                    "Name": "References",
+                    "StringValueList": [
+                      "Chen X, Ji ZL, Chen YZ: TTD: Therapeutic Target Database. Nucleic Acids Res. 2002 Jan 1;30(1):412-5. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/11752352\">Pubmed</a>",
+                      "Kaminskas E, Farrell AT, Wang YC, Sridhara R, Pazdur R: FDA drug approval summary: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a>) for injectable suspension. Oncologist. 2005 Mar;10(3):176-82. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/15793220\">Pubmed</a>",
+                      "Cataldo VD, Cortes J, Quintas-Cardama A: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> for the treatment of myelodysplastic syndrome. Expert Rev Anticancer Ther. 2009 Jul;9(7):875-84. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/19589026\">Pubmed</a>",
+                      "Leone G, Voso MT, Teofili L, Lubbert M: Inhibitors of DNA methylation in the treatment of hematological malignancies and MDS. Clin Immunol. 2003 Oct;109(1):89-102. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/14585280\">Pubmed</a>",
+                      "Ghoshal K, Bai S: DNA methyltransferases as targets for cancer therapy. Drugs Today (Barc). 2007 Jun;43(6):395-422. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/17612710\">Pubmed</a>",
+                      "Silverman LR, Demakos EP, Peterson BL, Kornblith AB, Holland JC, Odchimar-Reissig R, Stone RM, Nelson D, Powell BL, DeCastro CM, Ellerton J, Larson RA, Schiffer CA, Holland JF: Randomized controlled trial of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> in patients with the myelodysplastic syndrome: a study of the cancer and leukemia group B. J Clin Oncol. 2002 May 15;20(10):2429-40. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/12011120\">Pubmed</a>",
+                      "Fenaux P: Inhibitors of DNA methylation: beyond myelodysplastic syndromes. Nat Clin Pract Oncol. 2005 Dec;2 Suppl 1:S36-44. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/16341239\">Pubmed</a>",
+                      "Silverman LR: Targeting hypomethylation of DNA to achieve cellular differentiation in myelodysplastic syndromes (MDS). Oncologist. 2001;6 Suppl 5:8-14. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/11700387\">Pubmed</a>",
+                      "O'Dwyer K, Maslak P: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> and the beginnings of therapeutic epigenetic modulation. Expert Opin Pharmacother. 2008 Aug;9(11):1981-6. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/18627335\">Pubmed</a>",
+                      "Hollenbach PW, Nguyen AN, Brady H, Williams M, Ning Y, Richard N, Krushel L, Aukerman SL, Heise C, MacBeth KJ: A comparison of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> and <a class=\"pubchem-internal-link CID-451668\" href=\"/compound/decitabine\">decitabine</a> activities in acute myeloid leukemia cell lines. PLoS One. 2010 Feb 2;5(2):e9001. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/20126405\">Pubmed</a>",
+                      "Glover AB, Leyland-Jones B: Biochemistry of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>: a review. Cancer Treat Rep. 1987 Oct;71(10):959-64. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/2443243\">Pubmed</a>"
+                    ]
+                  },
+                  {
+                    "ReferenceNumber": 4,
+                    "Name": "References",
+                    "StringValueList": [
+                      "Muller A, Florek M: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a>/<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>. Recent Results Cancer Res. 2010;184:159-70. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/20072837\">Pubmed</a>",
+                      "Kaminskas E, Farrell AT, Wang YC, Sridhara R, Pazdur R: FDA drug approval summary: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a>) for injectable suspension. Oncologist. 2005 Mar;10(3):176-82. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/15793220\">Pubmed</a>",
+                      "Hollenbach PW, Nguyen AN, Brady H, Williams M, Ning Y, Richard N, Krushel L, Aukerman SL, Heise C, MacBeth KJ: A comparison of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> and <a class=\"pubchem-internal-link CID-451668\" href=\"/compound/decitabine\">decitabine</a> activities in acute myeloid leukemia cell lines. PLoS One. 2010 Feb 2;5(2):e9001. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/20126405\">Pubmed</a>",
+                      "Glover AB, Leyland-Jones B: Biochemistry of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>: a review. Cancer Treat Rep. 1987 Oct;71(10):959-64. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/2443243\">Pubmed</a>",
+                      "Cihak A, Vesely J, Skoda J: Azapyrimidine nucleosides: metabolism and inhibitory mechanisms. Adv Enzyme Regul. 1985;24:335-54. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/2424284\">Pubmed</a>",
+                      "Dapp MJ, Clouser CL, Patterson S, Mansky LM: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a> can induce lethal mutagenesis in human immunodeficiency virus type 1. J Virol. 2009 Nov;83(22):11950-8. Epub 2009 Sep 2. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/19726509\">Pubmed</a>"
+                    ]
+                  },
+                  {
+                    "ReferenceNumber": 5,
+                    "Name": "References",
+                    "StringValueList": [
+                      "Overington JP, Al-Lazikani B, Hopkins AL: How many drug targets are there? Nat Rev Drug Discov. 2006 Dec;5(12):993-6. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/17139284\">Pubmed</a>",
+                      "Imming P, Sinning C, Meyer A: Drugs, their targets and the nature and number of drug targets. Nat Rev Drug Discov. 2006 Oct;5(10):821-34. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/17016423\">Pubmed</a>",
+                      "Allen A: Epigenetic alterations and cancer: New targets for therapy. IDrugs. 2007 Oct;10(10):709-12. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/17899489\">Pubmed</a>",
+                      "Kaminskas E, Farrell AT, Wang YC, Sridhara R, Pazdur R: FDA drug approval summary: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> (<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-azacytidine\">5-azacytidine</a>, <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Vidaza\">Vidaza</a>) for injectable suspension. Oncologist. 2005 Mar;10(3):176-82. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/15793220\">Pubmed</a>",
+                      "O'Dwyer K, Maslak P: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a> and the beginnings of therapeutic epigenetic modulation. Expert Opin Pharmacother. 2008 Aug;9(11):1981-6. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/18627335\">Pubmed</a>",
+                      "Muller A, Florek M: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a>/<a class=\"pubchem-internal-link CID-9444\" href=\"/compound/Azacitidine\">Azacitidine</a>. Recent Results Cancer Res. 2010;184:159-70. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/20072837\">Pubmed</a>",
+                      "Hollenbach PW, Nguyen AN, Brady H, Williams M, Ning Y, Richard N, Krushel L, Aukerman SL, Heise C, MacBeth KJ: A comparison of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a> and <a class=\"pubchem-internal-link CID-451668\" href=\"/compound/decitabine\">decitabine</a> activities in acute myeloid leukemia cell lines. PLoS One. 2010 Feb 2;5(2):e9001. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/20126405\">Pubmed</a>",
+                      "Glover AB, Leyland-Jones B: Biochemistry of <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>: a review. Cancer Treat Rep. 1987 Oct;71(10):959-64. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/2443243\">Pubmed</a>",
+                      "Cihak A, Vesely J, Skoda J: Azapyrimidine nucleosides: metabolism and inhibitory mechanisms. Adv Enzyme Regul. 1985;24:335-54. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/2424284\">Pubmed</a>",
+                      "Dapp MJ, Clouser CL, Patterson S, Mansky LM: <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/5-Azacytidine\">5-Azacytidine</a> can induce lethal mutagenesis in human immunodeficiency virus type 1. J Virol. 2009 Nov;83(22):11950-8. Epub 2009 Sep 2. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/19726509\">Pubmed</a>"
+                    ]
+                  },
+                  {
+                    "ReferenceNumber": 6,
+                    "Name": "References",
+                    "StringValue": "Garcia-Manero G, Stoltz ML, Ward MR, Kantarjian H, Sharma S: A pilot pharmacokinetic study of oral <a class=\"pubchem-internal-link CID-9444\" href=\"/compound/azacitidine\">azacitidine</a>. Leukemia. 2008 Sep;22(9):1680-4. Epub 2008 Jun 12. <a href=\"http://www.ncbi.nlm.nih.gov/pubmed/18548103\">Pubmed</a>"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Biological Test Results",
+        "Description": "A PubChem substance or compound summary page displays biological test results from the PubChem BioAssay database, if/as available, for the chemical structure currently displayed. (Note that you can embed biological test results displays within your own web pages, for a PubChem Compound or Substance of interest, by using theBioActivity Widget.) <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#BiologicalTestResults\">Read more..</a>",
+        "Section": [
+          {
+            "TOCHeading": "BioAssay Results",
+            "Description": "BioActivity information showed in tabular widget.",
+            "Information": [
+              {
+                "ReferenceNumber": 15,
+                "Name": "BioAssay Results",
+                "BoolValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TOCHeading": "Classification",
+        "Description": "Chemical classification systems from MeSH, ChEBI, Kegg, etc. <a href=\"//pubchem.ncbi.nlm.nih.gov/docs/subcmpd_summary_page_help.html#Classification\">Read more..</a>",
+        "Section": [
+          {
+            "TOCHeading": "Ontologies",
+            "Description": "Ontologies",
+            "Section": [
+              {
+                "TOCHeading": "MeSH Tree",
+                "Description": "MeSH tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 17,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=1",
+                    "NumValue": 1
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "ChEBI Ontology",
+                "Description": "ChEBI Ontology tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 18,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=2",
+                    "NumValue": 2
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Gene Ontology: Biological Process",
+                "Description": "Gene Ontology : Biological Process tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 24,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=55",
+                    "NumValue": 55
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Gene Ontology: Cellular Component",
+                "Description": "Gene Ontology : Cellular Component tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 25,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=56",
+                    "NumValue": 56
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "Gene Ontology: Molecular Function",
+                "Description": "Gene Ontology : Molecular Function tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 26,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=57",
+                    "NumValue": 57
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "KEGG: Carcinogen",
+                "Description": "KEGG : Carcinogen tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 19,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=9",
+                    "NumValue": 9
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "KEGG: Drug",
+                "Description": "KEGG : Drug tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 20,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=14",
+                    "NumValue": 14
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "KEGG: ATC",
+                "Description": "KEGG : ATC tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 21,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=16",
+                    "NumValue": 16
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "KEGG: Antineoplastics",
+                "Description": "KEGG : Antineoplastics tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 22,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=21",
+                    "NumValue": 21
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "KEGG: Target-based Classification of Drugs",
+                "Description": "KEGG : Target-based Classification of Drugs tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 23,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=22",
+                    "NumValue": 22
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "WIPO IPC",
+                "Description": "WIPO IPC tree",
+                "Information": [
+                  {
+                    "ReferenceNumber": 27,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=58",
+                    "NumValue": 58
+                  }
+                ]
+              },
+              {
+                "TOCHeading": "WHO ATC Classification System",
+                "Description": "The Anatomical Therapeutic Chemical (ATC) Classification System is used for the classification of drugs. This pharmaceutical coding system divides drugs into different groups according to the organ or system on which they act and/or their therapeutic and chemical characteristics. Each bottom-level ATC code stands for a pharmaceutically used substance, or a combination of substances, in a single indication (or use). This means that one drug can have more than one code: acetylsalicylic acid (aspirin), for example, has A01AD05 as a drug for local oral treatment, B01AC06 as a platelet inhibitor, and N02BA01 as an analgesic and antipyretic. On the other hand, several different brands share the same code if they have the same active substance and indications. <a href=\"http://www.whocc.no/atc/\">Read more..</a>",
+                "Information": [
+                  {
+                    "ReferenceNumber": 28,
+                    "Name": "HID",
+                    "URL": "http://pubchem.ncbi.nlm.nih.gov/classification/#hid=71",
+                    "NumValue": 71
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Reference": [
+      {
+        "ReferenceNumber": 1,
+        "SourceName": "HSDB",
+        "SourceID": "6879",
+        "Name": "AZACITIDINE",
+        "URL": "http://toxnet.nlm.nih.gov/cgi-bin/sis/search/r?dbs+hsdb:@term+@rn+@rel+320-67-2"
+      },
+      {
+        "ReferenceNumber": 2,
+        "SourceName": "DrugBank",
+        "SourceID": "DB00928",
+        "Name": "Azacitidine",
+        "URL": "http://www.drugbank.ca/drugs/DB00928"
+      },
+      {
+        "ReferenceNumber": 14,
+        "SourceName": "CAMEO Chemicals",
+        "SourceID": "CBNOAA00000000019834",
+        "Name": "5-azacytidine",
+        "URL": "http://cameochemicals.noaa.gov/chemical/19834"
+      },
+      {
+        "ReferenceNumber": 8,
+        "SourceName": "NCI Investigational Drugs ",
+        "SourceID": "102816",
+        "Name": "AZACITIDINE",
+        "URL": "http://dtp.nci.nih.gov/NCI-InvestigationalDrugsCI92/102816%20(1992).txt"
+      },
+      {
+        "ReferenceNumber": 7,
+        "SourceName": "FDA Pharm Classes",
+        "SourceID": "2066",
+        "Name": "AZACITIDINE",
+        "URL": "http://www.accessdata.fda.gov/spl/data/d6bf01f3-090c-4f71-94e2-c49936cadb84/d6bf01f3-090c-4f71-94e2-c49936cadb84.xml"
+      },
+      {
+        "ReferenceNumber": 3,
+        "SourceName": "DrugBank",
+        "SourceID": "DB00928 interaction #1",
+        "URL": "http://www.drugbank.ca/drugs/DB00928#targets"
+      },
+      {
+        "ReferenceNumber": 4,
+        "SourceName": "DrugBank",
+        "SourceID": "DB00928 interaction #2",
+        "URL": "http://www.drugbank.ca/drugs/DB00928#targets"
+      },
+      {
+        "ReferenceNumber": 5,
+        "SourceName": "DrugBank",
+        "SourceID": "DB00928 interaction #3",
+        "URL": "http://www.drugbank.ca/drugs/DB00928#targets"
+      },
+      {
+        "ReferenceNumber": 6,
+        "SourceName": "DrugBank",
+        "SourceID": "DB00928 interaction #4",
+        "URL": "http://www.drugbank.ca/drugs/DB00928#enzymes"
+      },
+      {
+        "ReferenceNumber": 9,
+        "SourceName": "FDA Drugs, DailyMed, and PubMed Health",
+        "SourceID": "371",
+        "Name": "Azacitidine"
+      },
+      {
+        "ReferenceNumber": 10,
+        "SourceName": "FDA Drugs, DailyMed, and PubMed Health",
+        "SourceID": "3863",
+        "Name": "Vidaza"
+      },
+      {
+        "ReferenceNumber": 11,
+        "SourceName": "FDA/SPL Indexing data",
+        "SourceID": "M801H13NRU",
+        "URL": "http://www.fda.gov/ForIndustry/DataStandards/StructuredProductLabeling/ucm377913.htm"
+      },
+      {
+        "ReferenceNumber": 12,
+        "SourceName": "WHOCC",
+        "SourceID": "3494",
+        "URL": "http://www.whocc.no/atc/"
+      },
+      {
+        "ReferenceNumber": 13,
+        "SourceName": "ECHA",
+        "SourceID": "206-280-2",
+        "URL": "http://echa.europa.eu/"
+      },
+      {
+        "ReferenceNumber": 15,
+        "SourceName": "PubChem",
+        "SourceID": "PubChem",
+        "Description": "Data deposited in or computed by PubChem",
+        "URL": "http://pubchem.ncbi.nlm.nih.gov"
+      },
+      {
+        "ReferenceNumber": 16,
+        "SourceName": "MeSH",
+        "SourceID": "68001374",
+        "Name": "Azacitidine",
+        "URL": "http://www.ncbi.nlm.nih.gov/mesh/68001374"
+      },
+      {
+        "ReferenceNumber": 17,
+        "SourceName": "MeSH",
+        "SourceID": "DescTree",
+        "Name": "MeSH Tree",
+        "Description": "MeSH (Medical Subject Headings) is the NLM controlled vocabulary thesaurus used for indexing articles for PubMed.",
+        "URL": "http://www.nlm.nih.gov/mesh/meshhome.html"
+      },
+      {
+        "ReferenceNumber": 18,
+        "SourceName": "ChEBI",
+        "SourceID": "OBO",
+        "Name": "ChEBI Ontology",
+        "Description": "The ChEBI Ontology is a structured classification of the entities contained within ChEBI.",
+        "URL": "http://www.ebi.ac.uk/chebi/userManualForward.do#ChEBI%20Ontology"
+      },
+      {
+        "ReferenceNumber": 19,
+        "SourceName": "KEGG",
+        "SourceID": "br08008",
+        "Name": "Carcinogen",
+        "Description": "Carcinogens",
+        "URL": "http://www.genome.jp/dbget-bin/www_bget?brite:br08008"
+      },
+      {
+        "ReferenceNumber": 20,
+        "SourceName": "KEGG",
+        "SourceID": "br08301",
+        "Name": "Drug",
+        "Description": "Therapeutic category of drugs in Japan",
+        "URL": "http://www.genome.jp/dbget-bin/www_bget?brite:br08301"
+      },
+      {
+        "ReferenceNumber": 21,
+        "SourceName": "KEGG",
+        "SourceID": "br08303",
+        "Name": "ATC",
+        "Description": "Anatomical Therapeutic Chemical (ATC) classification",
+        "URL": "http://www.genome.jp/dbget-bin/www_bget?brite:br08303"
+      },
+      {
+        "ReferenceNumber": 22,
+        "SourceName": "KEGG",
+        "SourceID": "br08308",
+        "Name": "Antineoplastics",
+        "Description": "Antineoplastics",
+        "URL": "http://www.genome.jp/dbget-bin/www_bget?brite:br08308"
+      },
+      {
+        "ReferenceNumber": 23,
+        "SourceName": "KEGG",
+        "SourceID": "br08310",
+        "Description": "Target-based classification of drugs",
+        "URL": "http://www.genome.jp/dbget-bin/www_bget?brite:br08310"
+      },
+      {
+        "ReferenceNumber": 24,
+        "SourceName": "Gene Ontology",
+        "SourceID": "GO_ROOT_486550",
+        "Name": "biological process",
+        "Description": "The <A HREF=\"http://www.geneontology.org/\">Gene Ontology (GO)</A> project provides a controlled vocabulary of terms for describing the functions of gene products, and is divided into three domains. Each term in the biological processes domain, shown here, represents recognized series of events, or a collection of molecular events with a defined beginning and end. Mutant phenotypes often reflect disruptions in biological processes. The terms below apply to the <B>gene/protein target(s) tested by the BioAssay</B>. ",
+        "URL": "http://amigo.geneontology.org/amigo/term/GO:0008150"
+      },
+      {
+        "ReferenceNumber": 25,
+        "SourceName": "Gene Ontology",
+        "SourceID": "GO_ROOT_486551",
+        "Name": "cellular component",
+        "Description": "The <A HREF=\"http://www.geneontology.org/\">Gene Ontology (GO)</A> project provides a controlled vocabulary of terms for describing the functions of gene products, and is divided into three domains.  The cellular components domain, shown here, describes locations, at the levels of subcellular structures and macromolecular complexes. An example of a cellular component is the nuclear inner membrane, with the synonym inner envelope. Generally, a gene product is <I>located in</I> or is a <I>subcomponent of</I> a particular cellular component. The terms below apply to the <B>gene/protein target(s) tested by the BioAssay</B>. ",
+        "URL": "http://amigo.geneontology.org/amigo/term/GO:0005575"
+      },
+      {
+        "ReferenceNumber": 26,
+        "SourceName": "Gene Ontology",
+        "SourceID": "GO_ROOT_486552",
+        "Name": "molecular function",
+        "Description": "The <A HREF=\"http://www.geneontology.org/\">Gene Ontology (GO)</A> project provides a controlled vocabulary of terms for describing the functions of gene products, and is divided into three domains.  Each term in the molecular functions domain, shown here, represent a protein's jobs or abilities. These may include transporting things around, binding to things, holding things together and changing one thing into another. This is different from the biological processes the gene product is involved in, which involve more than one activity. The terms below apply to the <B>gene/protein target(s) tested by the BioAssay</B>. ",
+        "URL": "http://amigo.geneontology.org/amigo/term/GO:0003674"
+      },
+      {
+        "ReferenceNumber": 27,
+        "SourceName": "WIPO",
+        "SourceID": "IPC",
+        "Name": "International Patent Classification 2015",
+        "Description": "The World Intellectual Property Organization (WIPO) International Patent Classification (IPC) provides for a hierarchical system of language independent symbols for the classification of patents and utility models according to the different areas of technology to which they pertain.",
+        "URL": "http://www.wipo.int/classifications/ipc/"
+      },
+      {
+        "ReferenceNumber": 28,
+        "SourceName": "WHO ATC Code",
+        "SourceID": "ATCTree",
+        "Name": "ATC Code",
+        "Description": "In the World Health Organization (WHO) Anatomical Therapeutic Chemical (ATC) classification system, the active substances are divided into different groups according to the organ or system on which they act and their therapeutic, pharmacological and chemical properties.",
+        "URL": "http://www.whocc.no/atc/"
+      },
+      {
+        "ReferenceNumber": 29,
+        "SourceName": "MeSH",
+        "SourceID": "68000964",
+        "Name": "Antimetabolites, Antineoplastic",
+        "URL": "http://www.ncbi.nlm.nih.gov/mesh/68000964"
+      },
+      {
+        "ReferenceNumber": 30,
+        "SourceName": "MeSH",
+        "SourceID": "68004791",
+        "Name": "Enzyme Inhibitors",
+        "URL": "http://www.ncbi.nlm.nih.gov/mesh/68004791"
+      },
+      {
+        "ReferenceNumber": 31,
+        "SourceName": "NCBI",
+        "SourceID": "LinkOut",
+        "Description": "LinkOut is a service that allows one to link directly from NCBI databases to a wide range of information and services beyond NCBI systems.",
+        "URL": "http://www.ncbi.nlm.nih.gov/projects/linkout"
+      }
+    ]
+  }
+}
