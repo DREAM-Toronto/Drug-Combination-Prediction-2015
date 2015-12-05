@@ -1,6 +1,6 @@
 setwd(DREAMDIR)
 
-PATHWAYS_FILE <- "../Challenge Data/External/c6.all.v5.0.symbols.gmt"
+PATHWAYS_FILE <- "c6.all.v5.0.symbols.gmt"
 DRUGS_FILE <- "../Challenge Data/Drug Synergy Data/Drug_info_release.csv"
 GEX_FILE <- "../Challenge Data/Sanger Molecular Data/gex.csv"
 
@@ -17,13 +17,16 @@ if (! require(magrittr, quietly=TRUE)) {
 # ================================================================================
 readGEX <- function(gex_file = GEX_FILE) {
   raw <- read.csv(gex_file, header = FALSE, stringsAsFactors = FALSE)
-  cell_lines <- raw[1,2:84]
-  genes <- raw[2:17420,1] 
+  nrow <- nrow(raw)
+  ncol <- ncol(raw)
   
-  tmp <- raw[2:17420, 2:84]%>%
+  cell_lines <- raw[1,2:ncol]
+  genes <- raw[2:nrow,1] 
+  
+  tmp <- raw[2:nrow, 2:ncol]%>%
     unlist %>%
     as.numeric
-  gex <- matrix(tmp, nrow = 17419, ncol = 83)
+  gex <- matrix(tmp, nrow = nrow - 1, ncol = ncol - 1)
   dimnames(gex) <- list(genes, cell_lines)
   return(gex)
 }
@@ -37,7 +40,7 @@ readDrugs <- function(drugs_file = DRUGS_FILE) {
 # ================================================================================
 readPathways <- function(pathways_file = PATHWAYS_FILE) {
   
-   
+  
 }
 
 # ================================================================================
@@ -71,10 +74,10 @@ getCellRelatedGenes <- function(cell_name, gex, pathways) {
   low_related <- c()
   
   for(i in 1:length(high_genes)) {
-    high_related <- c(high_related, getRelatedGenes(high_genes[i]), pathways)
+    high_related <- c(high_related, getRelatedGenes(high_genes[i], pathways))
   }
   for(i in 1:length(low_genes)) {
-    low_related <- c(low_related, getRelatedGenes(low_genes[i]), pathways)
+    low_related <- c(low_related, getRelatedGenes(low_genes[i], pathways))
   }
   
   return(list(high = unique(high_related), low = unique(low_related))) ######get rid of duplicates??
