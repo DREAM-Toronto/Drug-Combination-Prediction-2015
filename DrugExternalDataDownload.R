@@ -49,7 +49,7 @@ for (i in 2:nrow(raw)) {
       input = paste(inputDomain, inputQuery, sep = '')
       
       url = paste(prolog, input, output, operations, sep = '')
-    
+  
       # compounds of the same drug will be distinguisehd by (compound #) 
       if (length(splitQueries) != 1) {
         fname = paste(compound, "(compound", i, ")", sep = '')
@@ -62,6 +62,7 @@ for (i in 2:nrow(raw)) {
       
       # download json output into the destination file 
       download.file(url, destfile = file, mode = "w")
+      
     }
   } 
   

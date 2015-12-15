@@ -1,52 +1,52 @@
-drop database if exists dream;
-create database dream;
-use dream;
+drop database if exists dream2015;
+create database dream2015;
+use dream2015;
 
 create table drug_name
 (
   id int primary key not null auto_increment,
-  name varchar(10) not null
+  name varchar(25) unique not null
 )
 engine = InnoDB;
 
 create table cell_name
 (
   id int primary key not null auto_increment,
-  name varchar(10) not null
+  name varchar(25) unique not null
 )
 engine = InnoDB;
 
 create table drug_feature
 (
   id int primary key not null auto_increment,
-  feature varchar(10) not null
+  feature varchar(50) unique not null
 )
 engine = InnoDB;
 
 create table cell_feature
 (
   id int primary key not null auto_increment,
-  feature varchar(10) not null
+  feature varchar(50) unique not null
 )
 engine = InnoDB;
 
 create table drug_drug_feature
 (
   id int primary key not null auto_increment,
-  feature varchar(10) not null
+  feature varchar(50) unique not null
 )
 engine = InnoDB;
 
 create table drug_cell_feature
 (
   id int primary key not null auto_increment,
-  feature varchar(10) not null
+  feature varchar(50) unique not null
 ) engine = InnoDB;
 
 create table drug_drug_cell_feature
 (
   id int primary key not null auto_increment,
-  feature varchar(10) not null
+  feature varchar(50) unique not null
 )
 engine = InnoDB;
 
@@ -55,7 +55,7 @@ create table drug
   id int primary key not null auto_increment,
   drug_id int not null,
   feature_id int not null,
-  value varchar(10),
+  value decimal(20,10) not null,
    
   foreign key (drug_id)
   references drug_name (id)
@@ -73,7 +73,7 @@ create table cell
   id int primary key not null auto_increment,
   cell_id int not null,
   feature_id int not null,
-  value varchar(10),
+  value decimal(20,10) not null,
    
   foreign key (cell_id)
   references cell_name (id)
@@ -92,7 +92,7 @@ create table drug_drug
   drugA_id int not null,
   drugB_id int not null,
   feature_id int not null,
-  value varchar(10),
+  value decimal(20,10) not null,
    
   foreign key (drugA_id)
   references drug_name (id)
@@ -116,7 +116,7 @@ create table drug_cell
   drug_id int not null,
   cell_id int not null,
   feature_id int not null,
-  value varchar(10),
+  value decimal(20,10) not null,
    
   foreign key (drug_id)
   references drug_name (id)
@@ -141,7 +141,7 @@ create table drug_drug_cell
   drugB_id int not null,
   cell_id int not null,
   feature_id int not null,
-  value varchar(10) not null,
+  value decimal(20,10) not null,
    
   foreign key (drugA_id)
   references drug_name (id)
@@ -163,23 +163,3 @@ create table drug_drug_cell
   on delete no action
   on update no action
 ) engine = InnoDB;
-
-create table drug_synergy_data (
-	id int not null auto_increment primary key,
-	src varchar(30) not null,
-	cell_line varchar(30) not null,
-	compound_a varchar(30) not null,
-	compound_b varchar(30) not null,
-	max_conc_a decimal(5,2) not null, # precision 5, scale 2 (i.e. xxx.xx)
-	max_conc_b decimal(5,2) not null,
-	ic50_a decimal(50,25) not null,
-	ic50_b decimal(50,25) not null,
-	h_a decimal(50,25) not null,
-	h_b decimal(50,25) not null,
-	e_inf_a decimal(50,2) not null,
-	e_inf_b decimal(50,25) not null,
-	synergy_score varchar(10) not null,
-	qa int not null,
-	combination_id varchar(30) not null
-);
-
