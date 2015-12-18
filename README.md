@@ -79,7 +79,7 @@ Feature -> ML -> Combination scores
 * Data Preprocessing: Ashley, Fred
 * Data Reduction: Boris
 * Cross Validation: Chris, Julian
-* Drug Similarity: Bhawan, Zach, Ricardo, Emma
+* Drug Similarity: Bhawan, Zack, Ricardo, Emma
 * Cell Line Similarity: Pruthvi, Jenny
 
 ### Support
