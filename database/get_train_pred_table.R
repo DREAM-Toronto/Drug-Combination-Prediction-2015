@@ -1,6 +1,6 @@
 setwd(DREAMDIR)
 
-getCh1TraPreTriplets <- function(){
+getCh1TraPreTripletsAndSynScores <- function(){
   trainPath <- paste(DREAMDIR,"../Challenge Data/Drug Synergy Data/ch1_train_combination_and_monoTherapy.csv",sep = "")
   ch1LeadPath <- paste(DREAMDIR,"sample_submission/ch1_leaderboard-prediction.csv",sep = "")
   trainData <- read.csv(trainPath,header = FALSE,stringsAsFactors=FALSE)
@@ -18,5 +18,12 @@ getCh1TraPreTriplets <- function(){
   rowNames <- 1:nrow(ch1TraPreTriplets)
   ch1TraPreTriplets <- data.frame(ch1TraPreTriplets,row.names = rowNames)
   names(ch1TraPreTriplets) <- c("drugA","drugB","cell")
-  return(ch1TraPreTriplets)
+  
+  synergyScores <- as.numeric(matrix(trainData[2:nrow(trainData),12],ncol = 1))
+  
+  ch1TraPreTripletsAndSynScores <- list()
+  ch1TraPreTripletsAndSynScores$traPreTri <- ch1TraPreTriplets
+  ch1TraPreTripletsAndSynScores$synSco <- synergyScores
+  
+  return(ch1TraPreTripletsAndSynScores)
 }
