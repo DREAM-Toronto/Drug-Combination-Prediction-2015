@@ -19,7 +19,8 @@ getCh1TraPreTripletsAndSynScores <- function(){
   ch1TraPreTriplets <- data.frame(ch1TraPreTriplets,row.names = rowNames)
   names(ch1TraPreTriplets) <- c("drugA","drugB","cell")
   
-  synergyScores <- as.numeric(matrix(trainData[2:nrow(trainData),12],ncol = 1))
+  synergyScores <- as.numeric(trainData[2:nrow(trainData),12],ncol = 1)
+  synergyScores <- matrix(synergyScores,ncol = 1)
   
   ch1TraPreTripletsAndSynScores <- list()
   ch1TraPreTripletsAndSynScores$traPreTri <- ch1TraPreTriplets
