@@ -25,25 +25,6 @@ CH2_FINAL <- "ch2_final-synergy_matrix.csv"
 # == HELPER FUNCTIONS ==============================
 #
 
-getCh1LeaderMatrix <- function(featureList){
-  predictingFeatures <- featureList[1:4]
-  predFeatLength <- length(predictingFeatures[[1]])+length(predictingFeatures[[2]])+length(predictingFeatures[[3]])+length(predictingFeatures[[4]])
-  trainingFeatures <- featureList[5]
-  traFeatLength <- length(trainingFeatures[[1]])
-  chFile <- CH1_LEAD
-  ch1SampleSubmission <- read.csv(paste(PRED_SAMPLE_DIR, chFile, sep=""),head=FALSE,stringsAsFactors=FALSE)
-  # return(ch1SampleSubmission)
-  
-  for(i in 2:nrow(ch1SampleSubmission)){
-    cell <- ch1SampleSubmission[i,1]
-    drugPair <- strsplit(ch1SampleSubmission[i,2],'[.]') 
-    drugA <- drugPair[1]
-    drugB <- drugPair[2]
-    
-    
-  }
-}
-
 getMatrix <- function(chType, featureList){
   # chType (challenge type) can be '1f', '1l', '2f', '2l'
   if(substr(chType,1,1)=='1'){
@@ -149,18 +130,18 @@ getSingleTripletMatrix <- function(triplet, featureList){
   rs = dbSendQuery(mydb,drugBCellQuery)
   drugBCellData = fetch(rs,n=-1)
   drugBCellData <- t(as.matrix(drugBCellData))
-  
-  # drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData, drugDrugCellData
-  abab <- cbind(drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData)
-  abba <- cbind(drugAData, drugBData, cellData, drugDrugData, drugBCellData, drugACellData)
-  baab <- cbind(drugBData, drugAData, cellData, drugDrugData, drugACellData, drugBCellData)
-  baba <- cbind(drugBData, drugAData, cellData, drugDrugData, drugBCellData, drugACellData)
-  
-  #   # drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData, drugDrugCellData
-  #   preparedMatrix[1,] <- cbind(drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData)
-  #   preparedMatrix[2,] <- cbind(drugAData, drugBData, cellData, drugDrugData, drugBCellData, drugACellData)
-  #   preparedMatrix[3,] <- cbind(drugBData, drugAData, cellData, drugDrugData, drugACellData, drugBCellData)
-  #   preparedMatrix[4,] <- cbind(drugBData, drugAData, cellData, drugDrugData, drugBCellData, drugACellData)
+
+    # drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData, drugDrugCellData
+    abab <- cbind(drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData)
+    abba <- cbind(drugAData, drugBData, cellData, drugDrugData, drugBCellData, drugACellData)
+    baab <- cbind(drugBData, drugAData, cellData, drugDrugData, drugACellData, drugBCellData)
+    baba <- cbind(drugBData, drugAData, cellData, drugDrugData, drugBCellData, drugACellData)
+    
+#   # drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData, drugDrugCellData
+#   preparedMatrix[1,] <- cbind(drugAData, drugBData, cellData, drugDrugData, drugACellData, drugBCellData)
+#   preparedMatrix[2,] <- cbind(drugAData, drugBData, cellData, drugDrugData, drugBCellData, drugACellData)
+#   preparedMatrix[3,] <- cbind(drugBData, drugAData, cellData, drugDrugData, drugACellData, drugBCellData)
+#   preparedMatrix[4,] <- cbind(drugBData, drugAData, cellData, drugDrugData, drugBCellData, drugACellData)
   
   currTripValues <- rbind(abab,abba,baab,baba)
   
