@@ -4,11 +4,12 @@
 #             Combination Prediction Challenge. This is a 
 #             framework to tie together our code assets.
 #
-# Version: 0.1           
+# Version: 0.1.1           
 #
-# Date:    Jan 22 2016
+# Date:    Jan 23 2016
 # Author:  Boris and DREAM team UofT
 #
+# V 0.1.1  Minor changes to align with actual workflow
 # V 0.1    First code
 #
 # TODO:    
@@ -19,7 +20,7 @@
 
 # == PURPOSE ==
 # Note: Provide a summary of the purpose of a particular
-#        run here, then save a version to keep a record.
+#       run here, then save a version to keep a record.
 
 # == RESULTS ==
 # Note: Record key results here.
@@ -28,7 +29,7 @@
 # == SETUP =================================================
 
 setwd(DREAMDIR)
-DCP <- new.env() # Drug Combination Prediction "environment"
+DCP <- list() # List of Drug Combination Prediction "globals"
 
 # == CONFIGURE =============================================
 
@@ -43,12 +44,12 @@ source("DCP_HelperFunctions.R")
 # Enter the correct source files for your actual 
 # functions here:
 
-ABCSLOADER <- "loadABCSFromMaster.0.1.R"            # functions to load synergy score tables
-FEATUREMAKER <- "makeFeaturesFromMonotherapy.0.1.R" # functions to make feature tables
-FEATURECOMBINER <- "combineDC_Features.0.1.R"       # functions to combine features for training
-PREDICTOR <- "quickPredictFunctions.0.1.R"          # functions to make the actual prediction
-FORMATTER <- "formatSubmissionFunctions.0.1.R"      # functions to reformat a prediction into a submission
-SCORER <- "scoreSubmissionFunctions.0.1.R"          # functions to evaluate prediction scores
+ABCSLOADER <- "loadABCSFromMaster.0.1.R"                # functions to load synergy score tables
+FEATUREMAKER <- "makeFeaturesFromCombinationData.0.1.R" # functions to make feature tables
+FEATURECOMBINER <- "combineDC_Features.0.1.R"           # functions to combine features for training
+PREDICTOR <- "quickPredictFunctions.0.1.R"              # functions to make the actual prediction
+FORMATTER <- "formatSubmissionFunctions.0.1.R"          # functions to reformat a prediction into a submission
+SCORER <- "scoreSubmissionFunctions.0.1.R"              # functions to evaluate prediction scores
 
 
 # == I: FEATURES ===========================================
@@ -113,13 +114,20 @@ if (DCP$MODE == "RANDOM") {
                               stringsAsFactors=FALSE)
 }
 
+# We keep synergy scores in the test data (if available) for later 
+# validation, but we remove them from the dataset ABC_all that we
+# use to make feature sets.
 
-# Postcondition: ABCS_Training and ABCS_Test are defined.
+tmp <- ABCS_Test
+tmp$S <- NA
+ABCS_All <- rbind(ABCS_Training, tmp)
+
+# Postcondition: ABCS_All, ABCS_Training, and ABCS_Test are defined.
 
 
 # == CREATE FEATURE LISTS ==
 
-# Precondition: ABCS_Training and ABCS_Test are defined.
+# Precondition: ABCS_All is defined.
 # EITHER make feature files,
 # OR read features from file.
 
@@ -145,12 +153,13 @@ if (DCP$MAKE_FEATURES) {
     #    These columns are empty if they don't apply but
     #    must be present.
     #    The names are followed by feature-columns.
+    #
 
-    AllFeatures$D   <- makeDrugFeatures(ABCS_Training)    
-    AllFeatures$C   <- makeCellFeatures(ABCS_Training)
-#    AllFeatures$DD  <- makeDrugDrugFeatures(ABCS_Training)     
-#    AllFeatures$DC  <- makeDrugCellFeatures(ABCS_Training)     
-#    AllFeatures$DDC <- makeDrugDrugCellFeatures(ABCS_Training)     
+    AllFeatures$D   <- makeDrugFeatures(ABCS_All)    
+    AllFeatures$C   <- makeCellFeatures(ABCS_All)
+#    AllFeatures$DD  <- makeDrugDrugFeatures(ABCS_All)     
+#    AllFeatures$DC  <- makeDrugCellFeatures(ABCS_All)     
+#    AllFeatures$DDC <- makeDrugDrugCellFeatures(ABCS_All)     
 
     # Uncomment if you want to store the results
     # OUT <- sprintf("%s%s_D_Features.csv", DCP$PATH, DCP$PREFIX)
@@ -207,7 +216,7 @@ if (DCP$COMBINE_FEATURES) {
     #    Columns five to seven are synergy categories.
     #    The remaining columns are features.
 
-    CombiFeatures <- makeCombiFeatures(ABCS_Training,
+    CombiFeatures <- makeCombiFeatures(ABCS_All,
                                        AllFeatures)    
 
     # Uncomment if you want to store the results
@@ -228,18 +237,22 @@ source(PREDICTOR)
 
 # == TRAIN AND PREDICT TEST DATA ==
 
-PredictionResults <- runPrediction(CombiFeatures,
-                                   ABCS_Test)
+PredictionResults <- runPrediction(AllFeatures,
+                                   CombiFeatures)
 
-# runPrediction() takes as input the combined feature set
-# and the test-data list.
-# It returns a dataframe:
+# PredictionResults <- runPrediction(CombiFeatures)
+
+# runPrediction() takes as input the combined feature set.
+# All combinations for which synergy scores are reported
+# are used for training. All combinations without
+# scores are to be predicted.
+# The function returns a dataframe of predictions only:
 #    The first three columns are names; 
 #    Drug A name / Drug B name / Cell line name
 #    Column four is the predicted synergy score.
-#    Columns five to seven are booleans for synergy
+#    Columns five to seven are 0 and 1 values for synergy
 #       category membership.
-#    Column eight is the confidence score for the prediction.
+#    Column eight is the confidence score for the prediction [0,1].
 
 
 # == III: SUBMISSION ======================================
@@ -248,15 +261,17 @@ DCP$CHALLENGE_TYPE <- "1A"
 # DCP$CHALLENGE_TYPE <- "1B"
 # DCP$CHALLENGE_TYPE <- "2"
 
-DCP$PREDICTION_FILE <- sprintf("%s%s_prediction.csv", DCP$PATH, DCP$PREFIX)
-DCP$CONFIDENCE_FILE <- sprintf("%s%s_confidence.csv", DCP$PATH, DCP$PREFIX)
-
 source(FORMATTER)
 
 predictionSubmission <- format_prediction(DCP$CHALLENGE_TYPE, PredictionResults)
 confidenceSubmission <- format_confidence(DCP$CHALLENGE_TYPE, PredictionResults)
 
+
+# == save files ==
+DCP$PREDICTION_FILE <- sprintf("%s%s_prediction.csv", DCP$PATH, DCP$PREFIX)
 write.csv(predictionSubmission, DCP$PREDICTION_FILE, row.names=FALSE)
+
+DCP$CONFIDENCE_FILE <- sprintf("%s%s_combination_priority.csv", DCP$PATH, DCP$PREFIX)
 write.csv(confidenceSubmission, DCP$CONFIDENCE_FILE, row.names=FALSE)
 
 
@@ -270,7 +285,7 @@ source(SCORER)
 prediction <- read.csv(DCP$PREDICTION_FILE, stringsAsFactors=FALSE)
 confidence <- read.csv(DCP$CONFIDENCE_FILE, stringsAsFactors=FALSE)
 
-scores <- score(DCP$CHALLENGE_TYPE, prediction, confidence)
+scores <- score(DCP$CHALLENGE_TYPE, ABCS_Master, prediction, confidence)
 
 
 # == CALCULATE ANALYTICS ==
