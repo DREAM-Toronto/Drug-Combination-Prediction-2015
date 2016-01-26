@@ -44,8 +44,6 @@ readPathways <- function(pathways_file = PATHWAYS_FILE) {
   raw <- read.csv("c6.all.v5.0.symbols.csv",
                   head=FALSE,
                   stringsAsFactors=FALSE)
-  
-  # we probaly should include the first gene in the pathway ):
 }
 
 # ================================================================================
@@ -97,16 +95,21 @@ getCellRelatedGenes <- function(cell_name, gex, pathways) {
 # ================================================================================
 # returns all genes in the same pathways as the given gene
 getRelatedGenes <- function(gene, pathways) {
-  # gene = is read from drug_info_release.csv = the drug target but can be "DNA", "proteosome", etc.??
-  # also genes can be listed with '*' denoting any character if there is uncertainty as to the specific gene i.e. AKT* can be AKT1, AKT2...
+  # TODO gene = is read from drug_info_release.csv = the drug target but can be "DNA", "proteosome", etc.??
+  
+  # genes can be listed with '*' denoting any character if there is uncertainty as to the specific gene i.e. AKT* can be AKT1, AKT2...
+  if(length(grep("\\*", gene) > 0)) {
+    gene <- gsub("\\*", "(.)*", gene)
+  }
   
   containedGenes <- c()
   nRow <- nrow(pathways)
   nCol <- ncol(pathways)
   for(i in 1:nRow){
-    currRow <- pathways[i,3:nCol]
-    if(gene %in% currRow == TRUE){
-      containedGenes <- union(containedGenes, pathways[i,3:nCol])
+    currRow <- c(pathways[i,3:nCol], strsplit(pathways[i, 1], '_')[[1]][1]) #adds gene in col1
+    # TODO sometimes in pathways file, ex: gene entered from col1 is AKT instead of AKT1 or AKT*, and is not matched if gene = AKT1
+    if(length(grep(gene, currRow) > 0)){
+      containedGenes <- union(containedGenes, currRow)
     }
   }
   return (containedGenes)
